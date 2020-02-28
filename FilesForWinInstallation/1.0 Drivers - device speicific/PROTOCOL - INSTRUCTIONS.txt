@@ -1,0 +1,45 @@
+26.02.2020
+
+Security:
+All files are public but heavily encrypted using the old method. All files are just links to encypted files. 
+
+Nomenclature:
+A file include its name(content's name), size and location (provider) 
+You have their names,  size, location and login account name of the provider.
+Example: EN1-12GB-Mega-killsburry@mail2tor.com
+
+If a file is not encrypted add a UNENCRYPTED at the start of the name.
+
+Security logic:
+It is pointless to rely on Mega, Google or Yandex for security. Not only do I not trust them for save data keeping, but also logging to different accounts to get the data is annoying. The solution is simple: the data is publicly accessible, but heavilly encrypted. Long pass + short pass + another layer of security. 
+
+Instructions for encryption:
+
+Public layer - AxLayer - 2015 pass 2 times
+Outer layer - long password - 2014 pass	
+Inner layer - short password - 2012 pass
+
+Info about EN formations:
+
+If it happens that a EN set of notes is does not end in 000, the old notes and new notes will have to be sync-ed and their sum is going to be sync-ed too. Bellow are a number of EN filles that are double sync-ed:
+
+c54001-54453localNotebook - 
+
+Legend: 
+
+{Long ass pass} = very large that you made in Ed
+{short password variant 0} = traditional short pass variant 0
+{short password variant 1} = traditional short pass variant 1
+{short password variant 2} = traditional short pass variant 2
+
+
+DO not use AHKCoordinator - it is deprecated. It is pointless to have a windows only method of coordination
+if coordination is not even required in the first place. AHKcoordinator can replaced with just links to 
+encrypted files. 
+
+AHKCoordinator - 2 times the {Long ass pass} so bruteforcing is hard. + AxLayering
+FOR THE AHKCoordinator - 2 times the long pass so bruteforcing is hard. + AxLayering also 2 times
+
+
+
+

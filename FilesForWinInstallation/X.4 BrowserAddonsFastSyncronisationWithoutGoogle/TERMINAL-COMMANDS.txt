@@ -1,0 +1,11 @@
+To download and unrar:
+
+
+download-crx --url https://chrome.google.com/webstore/detail/bigefpfhnfcobdlfbedofhhaibnlghod --name MEGA && 7z x MEGA.crx -o"MEGA"
+download-crx --url https://chrome.google.com/webstore/detail/ohcpnigalekghcmgcdcenkpelffpdolg --name ColorPickEyedropper && 7z x ColorPickEyedropper.crx -o"ColorPickEyedropper"
+
+To install:
+
+"C:\Users\Fallar\AppData\Local\Programs\Opera GX\launcher.exe" --load-extension=D:\ChromeExtensionInstall\MEGA,D:\ChromeExtensionInstall\ColorPickEyedropper
+
+You need to change the launch shortcut to include the install command. And fix the damn directory locations

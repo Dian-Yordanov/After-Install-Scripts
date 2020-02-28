@@ -1,0 +1,39 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+  "name": "MEGA",
+  "description": "Secure Cloud Storage",
+  "version": "3.80.3",
+  "content_security_policy": "script-src 'self' https://*.mega.co.nz https://*.mega.nz blob:; object-src 'self' https://*.mega.co.nz https://*.mega.nz;",
+  "nacl_modules": [{
+    "path": "mega",
+    "mime_type": "text/html"
+  }],
+  "permissions": 
+  [
+    "webRequest",
+    "webRequestBlocking",
+    "https://mega.is/",
+    "https://mega.co.nz/",
+    "https://mega.nz/",
+    "https://mega.io/",	
+    "http://mega.co.nz/",
+    "http://mega.is/",
+    "http://mega.nz/",
+    "http://mega.io/",
+    "unlimitedStorage",
+    "clipboardWrite"
+  ],
+  "web_accessible_resources": [
+    "mega/secure.html"
+  ],
+  "homepage_url": "https://mega.nz/",
+  "background": {"scripts":["mega.js"]},
+  "icons": 
+  {
+    "16": "images/icon_16.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
+  }
+}
