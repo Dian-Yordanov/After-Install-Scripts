@@ -1,0 +1,8 @@
+04.03.2020
+
+Security:
+All files are public but heavily encrypted using the old method. All files are just links to encypted files. 
+
+4 layers of encryption using 2 different programs and 4 different passes for each layer. Link layer is just a normal 2012 pass usigng 3 different characters. 
+link names should be encrypted but if they are not .... a 5th layer should be added with 2008 pass. 
+

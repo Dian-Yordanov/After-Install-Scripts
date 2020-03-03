@@ -1,0 +1,25 @@
+04.03.2020
+
+I want the old layer and yet it is both currently a bit useless and a massive danger to security. 
+
+in normal use you should not use the old layer:
+decrypt the link layer to get the links, download files
+decrypt axx layer with big pass 2 times, 
+decrpyt smaller layers with old passes 
+
+the instruction for it are:
+Public layer - AxLayer - 2015 pass 2 times
+Outer layer - long password - 2014 pass	- 2015 pass 1 times (change it to a 2013 version but in 2015 style when you upload new files (after EN7))
+Inner later 2 - 2013 pass - p0
+Inner layer - short password - 2012 pass
+
+and you are done.
+
+But if you are an idiot and need to know what the 4 passes are and how they change, you need this security weakness. 
+
+as a result however this file should also be encrpyted hard:
+
+3 7zip layers with an axx layer between them, all with different passes: you just try the right one for each layer but q1-p0-q21 is a hint
+The axx layer is a standart big pass 2 times. 
+
+YES THAT IS A LOT OF LAYERS, BUT IF THIS SH*T IS BREACHED, SO IS ALL THE SECURITY. 
