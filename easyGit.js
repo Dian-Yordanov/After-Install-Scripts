@@ -3,1604 +3,1576 @@ var fs = require('fs');
 var exec = require('child_process').exec, child;
 const prompts = require('prompts');
 const { execSync } = require('child_process');
+
+var figlet = require('figlet');
 const chalk = require('chalk');
 
 var Spinner = require('cli-spinner').Spinner;
-
 var spawn = require('child_process').spawn;
 
-var clear = require('clear');
-clear();
+const gradient = require('gradient-string');
+const CFonts = require('cfonts');
+const functions = require('./libEasyGit/functions');
 
-// var cmd=require('node-cmd');
+const SYNCMakeacommitandpush = require('./libEasyGit/SYNC-Make-a-commit-and-push');
+const SYNCMakeacommit = require('./libEasyGit/SYNCMakeacommit');
+const SYNCgitpush = require('./libEasyGit/SYNC-git-push');
+const SYNCgitpulloriginmaster = require('./libEasyGit/SYNC-git-pull-origin-master');
+const SYNCgitpullrebase = require('./libEasyGit/SYNC-git-pull-rebase');
+const SYNCgitpull = require('./libEasyGit/SYNC-git-pull');
+const SYNCgitclonefromurl = require('./libEasyGit/SYNC-git-clone-from-url');
+const SYNCgitclonefromlistofrepos = require('./libEasyGit/SYNC-git-clone-from-list-of-repos');
+const BRANCHINGmakenewbranches = require('./libEasyGit/BRANCHING-make-new-branches');
+const BRANCHINGShowbranches = require('./libEasyGit/BRANCHING-Show-branches');
+const BRANCHINGSwitchbranches = require('./libEasyGit/BRANCHING-Switch-branches');
+const BRANCHINGRemovebranch = require('./libEasyGit/BRANCHING-Remove-branch');
+const BRANCHINGMergebranch = require('./libEasyGit/BRANCHING-Merge-branch');
+const REVERTHeadAndLastCommitSoft = require('./libEasyGit/REVERTHeadAndLastCommitSoft');
+const REVERTHeadAndLastCommitHard = require('./libEasyGit/REVERTHeadAndLastCommitHard');
+const REVERTReturnthelastcommit = require('./libEasyGit/REVERTReturnthelastcommit');
+const INFOVisualisegit = require('./libEasyGit/INFO-Visualise-git');
+const INFOGotoorigin = require('./libEasyGit/INFO-Go-to-origin');
+const INFOGetlistofrepos = require('./libEasyGit/INFO-Get-list-of-repos');
+const INFOGitlog = require('./libEasyGit/INFO-git-log');
+const INFOGitReflog = require('./libEasyGit/INFO-GitReflog');
+const INFOGitshow = require('./libEasyGit/INFO-git-show');
+const INFOGitdiff = require('./libEasyGit/INFO-git-diff');
+const INFOGitStatus = require('./libEasyGit/INFO-git-status');
+const TaggingListAllTags = require('./libEasyGit/TaggingListAllTags');
+const TaggingShow = require('./libEasyGit/TaggingShow');
+const TaggingCreateLightweightTags = require('./libEasyGit/TaggingCreateLightweightTags');
+const TaggingCreateAnnotatedTags = require('./libEasyGit/TaggingCreateAnnotatedTags');
+const TaggingPusAllhTagsToRemote = require('./libEasyGit/TaggingPusAllhTagsToRemote');
+const TaggingDeleteTags = require('./libEasyGit/TaggingDeleteTags');
+const MANAGEMENTRegisterrepo = require('./libEasyGit/MANAGEMENT-Register-repo');
+const MANAGEMENTOpenlocalrepo = require('./libEasyGit/MANAGEMENT-Open-local-repo');
+const UTILITYgitconfigcoreautocrlftrueforWindows = require('./libEasyGit/UTILITY-git-config-core.autocrlf-true-(-for-Windows-)');
+const UTILITYTestuseofsimplegitfunctionss = require('./libEasyGit/UTILITY-Test-use-of-simple-git-functionss');
+const HELPShowinfographic = require('./libEasyGit/HELP-Show-infographic');
+const HELPShowohshitgit = require('./libEasyGit/HELP-Show-ohshitgit.com');
+const SETTINGSEnableordisablestartupdatafields = require('./libEasyGit/SETTINGS-Enable-or-disable-startup-data-fields');
+const SETTINGSEnableordisableStatusVisualisationTypes = require('./libEasyGit/SETTINGS-Enable-or-disable-Status-Visualisation-Types');
+const SETTINGSEnableordisableMiscellaneousSettings = require('./libEasyGit/SETTINGS-MiscellaneousSettings');
+const BRANCHINGRemoveremotebranch = require('./libEasyGit/BRANCHING-Remove-remote-branch');
 
-console.log(chalk.yellow("Version: 1.1.2"))
+// var clear = require('clear');
+// clear();
 
-gitStatusOnStartUp();
+// const clear = require('console-clear');
+ 
+// clear(true);
+//=> allow scrollback
+ 
+// clear();
+//=> no scrollback, if supported
 
-function gitStatusOnStartUp()
-{
-    
-    child = exec('git status',
-    { maxBuffer: 1024 * 1024 },
-    function (error, stdout, stderr) {
-        console.log(chalk.blue('\n'));
-        
-        try {
-            
-            stdout = stdout.replace('Changes not staged for commit:','');
-            stdout = stdout.replace('(use "git add/rm <file>..." to update what will be committed)','');
-            stdout = stdout.replace('(use "git restore <file>..." to discard changes in working directory)','');
-            stdout = stdout.replace('(use "git add <file>..." to update what will be committed)','');
-            stdout = stdout.replace('On branch master','');
-            stdout = stdout.replace("Your branch is up to date with 'origin/master'.",'');
-            stdout = stdout.replace('(use "git add <file>..." to include in what will be committed)','');
-            stdout = stdout.replace('no changes added to commit (use "git add" and/or "git commit -a")','');
+var clearTerminal = require("clear-terminal")
 
-            const strCopy = stdout.split('\n\n'); 
-            // console.log(stdout); 
-            // console.log(strCopy); 
+clearTerminal()
 
-            var strCopy1 = strCopy[1].split('\n');
+const functionsForReadingAndWritingToIniConfigFiles = require('./libEasyGit/StartupScreen/functionsForReadingAndWritingToIniConfigFiles');
+var topNumberOfLinesToDisplay = 15;
+var truncation = "'Yes'";
 
-            // var strCopy1 = strCopy[1].trim();
+topNumberOfLinesToDisplay=functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('topNumberOfLinesToDisplay','./libEasyGit/StartupScreen/easyGitMiscellaneousSettings.ini');
+truncation=functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('truncation','./libEasyGit/StartupScreen/easyGitMiscellaneousSettings.ini');
+topNumberOfLinesToDisplay = parseInt(topNumberOfLinesToDisplay);
 
-            var lenghtOfModifiedOrRemovedFiles = strCopy1.length;
-            var strCopy2 = strCopy[3].split('\n');
-            
-            // var strCopy2 = strCopy[2].trim();
+let chain = Promise.resolve(); 
+chain = chain.then(() => AppVersion())
+chain = chain.then(() => gitBranch())
+chain = chain.then(() => localRepos())
+chain = chain.then(() => gitStatusTypeSimpleFilesTrackingCallingFunction())
+chain = chain.then(() => gitStatusTypeOnelineGraphDecorateColorShortstatCallingFunction())
+chain = chain.then(() => gitLogAbbreviatedCommitsInAshortstatOneLineGraph())
+chain = chain.then(() => ShowCommitsPerDayInANiceFormattedWay())
+chain = chain.then(() => main())
 
-            // console.log(strCopy1); 
-            // console.log(strCopy2); 
-        
-
-            if(lenghtOfModifiedOrRemovedFiles > 0)
-            {
-                console.log(chalk.yellow('Number of changed or modified files: ' + lenghtOfModifiedOrRemovedFiles));
-                // console.log('\n');
-            }
-            if(lenghtOfModifiedOrRemovedFiles == 0)
-            {
-                console.log(chalk.green('Number of changed or modified files: ' + lenghtOfModifiedOrRemovedFiles));
-                // console.log('\n');
-            }
-            
-            strCopy.forEach(function(entry) {
-
-                entry = entry.trim();
-                if(entry.includes('modified'))
-                {
-                    console.log(chalk.rgb(0, 124, 255)(entry.replace(/modified:/g,'m: ')));
-                }
-
-            });
-            strCopy.forEach(function(entry) {
-
-                entry = entry.trim();
-                if(entry.includes('deleted'))
-                {
-                    console.log(chalk.rgb(123, 45, 67)(entry.replace(/deleted:/g,'d: ')));
-                }
-                
-            });
-            strCopy.forEach(function(entry) {
-
-                entry = entry.trim();
-                if(!entry.includes('modified') && !entry.includes('deleted') && entry!== null && entry!=="" && entry!== " " && entry!== "  ")
-                {
-                    console.log(chalk.rgb(123, 255, 67)(entry));
-                }
-
-                
-            });
-
-            strCopy2.forEach(function(entry) {
-
-                entry = entry.trim();
-                if(entry!=="" && entry!== " " && entry!== "  " && entry!== null){
-                    console.log(chalk.gray("U: " + entry));
-                }
-            });
-            
-            if (stderr !== "") {
-            console.log(chalk.yellow('stderr: ' + stderr));
-
-            }
-            if (error !== null) {
-                console.log(chalk.red('exec error: ' + error));
-
-            }
-
+function AppVersion(){
+    return new Promise((resolve) => {
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('AppVersion','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'Yes'"){
+            console.log(chalk.black.bgBlue("App Version - 1.4.0                                                                                                                                                           "))
         }
-        catch (e) {
-            if(!stdout.includes("nothing to commit, working tree clean")){
-            console.log(e);
-            }
-            if (e.name == 'TypeError') {
-                console.log(chalk.blue(stdout));
-            }
-        }
-
-        // In order to have statusbar in the beginning you have to have the main function called here.
-        main();
-
+        resolve();
     });
+}
 
+function gitBranch(){
+    return new Promise((resolve) => {
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitBranches','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'Yes'"){
+            console.log(chalk.black.bgGreen('git branches -                                                                                                                                                                \n'));
+            child = exec('git branch -a --color',
+                    { maxBuffer: 512 * 512 },
+                    function (error, stdout, stderr) {
+                        console.log(stdout);
+                        resolve();
+                }
+            );
+        }
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitBranches','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'No'"){
+            resolve();
+        }
+    });
+}
+
+function localRepos(){
+    return new Promise((resolve) => {
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('localRepos','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'Yes'"){
+            // if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('localRepos','./libEasyGit/StartupScreen/easyGitStatusVisualisationType.ini') === "'Yes'"){
+            
+            console.log(chalk.black.bgCyan('List of local repos on this PC, registered in easyGit                                                                                                                         \n'));
+
+            var opsys = process.platform;
+            if (opsys == "darwin") {
+                opsys = "MacOS";
+            }
+            else if (opsys == "win32" || opsys == "win64") {
+                WinUserName = functions.getUserHome();
+                var dir = WinUserName + '/Documents/GitRepoList';
+    
+                var FileDir = dir + "/List.txt";
+                if (fs.existsSync(FileDir)) {
+                    FileText = fs.readFileSync(dir + "/List.txt");
+                    var fileSet = functions.uniq(FileText.toString().split(/\r?\n/).clean(''));
+
+                    console.log(chalk.blue("Repository's local directory") + "                                        |" + chalk.cyan(" Remote hosting website") + "                                    |"+chalk.green(" Project name")                        );
+
+                    for (var i=0;i<fileSet.length;i++){
+                        console.log(chalk.blue(fileSet[i].replace(/,/g,'\n').split(' ')[0].padEnd(70, ' ')) 
+                        + chalk.cyan(fileSet[i].replace(/,/g,'\n').split(' ')[1].replace('https://','').replace('https:////','').replace('https////','').replace('https///','').split('/')[0].padEnd(60, ' ')) 
+                        + chalk.green(fileSet[i].replace(/,/g,'\n').split(' ')[1].replace('https://','').replace('https:////','').replace('https////','').replace('https///','').split('/')[fileSet[i].replace(/,/g,'\n').split(' ').length]));
+                    }
+    
+                    console.log("");
+                    resolve();
+
+                }
+            }
+            else if (opsys == "linux") {
+                LinuxUserName = functions.getUserHome();
+                var dir = LinuxUserName + '/GitRepoList';
+    
+                var FileDir = dir + "/List.txt";
+                if (fs.existsSync(FileDir)) {
+                    FileText = fs.readFileSync(dir + "/List.txt");
+                    var fileSet = functions.uniq(FileText.toString().split(/\r?\n/).clean(''));
+
+                    console.log(chalk.blue("Repository's local directory") + "                                        |" + chalk.cyan(" Remote hosting website") + "                                     |"+chalk.green(" Project name")                        );
+
+                    for (var i=0;i<fileSet.length;i++){
+                        console.log(chalk.blue(fileSet[i].replace(/,/g,'\n').split(' ')[0].padEnd(70, ' ')) 
+                        + chalk.cyan(fileSet[i].replace(/,/g,'\n').split(' ')[1].replace('https://','').replace('https:////','').replace('https////','').replace('https///','').split('/')[0].padEnd(60, ' ')) 
+                        + chalk.green(fileSet[i].replace(/,/g,'\n').split(' ')[1].replace('https://','').replace('https:////','').replace('https////','').replace('https///','').split('/')[fileSet[i].replace(/,/g,'\n').split(' ').length]));
+                    }
+    
+                    console.log("");
+                    resolve();
+
+                }
+            }
+        }
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('localRepos','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'No'"){
+            resolve();
+        }
+    });
+}
+
+function gitStatusTypeSimpleFilesTrackingCallingFunction(){
+    return new Promise((resolve) => {
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitStatus','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'Yes'"){
+            if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitStatusTypeSimpleFilesTracking','./libEasyGit/StartupScreen/easyGitStatusVisualisationType.ini') === "'Yes'"){
+                child = exec('git status',
+                { maxBuffer: 1024 * 1024 },
+                function (error, stdout, stderr) {
+                    // console.log(chalk.blue('\n'));
+
+                    console.log(chalk.bgMagenta('git status simple file tracking type -                                                                                                                                        \n'));
+                    try {
+                        
+                        stdout = stdout.replace('Changes not staged for commit:','');
+                        stdout = stdout.replace('(use "git add/rm <file>..." to update what will be committed)','');
+                        stdout = stdout.replace('(use "git restore <file>..." to discard changes in working directory)','');
+                        stdout = stdout.replace('(use "git add <file>..." to update what will be committed)','');
+                        stdout = stdout.replace('On branch master','');
+                        stdout = stdout.replace("Your branch is up to date with 'origin/master'.",'');
+                        stdout = stdout.replace('(use "git add <file>..." to include in what will be committed)','');
+                        stdout = stdout.replace('no changes added to commit (use "git add" and/or "git commit -a")','');
+
+                        // console.log(stdout);
+
+                        const strCopy = stdout.split('\n\n'); 
+                        var strCopy1 = strCopy[1].split('\n');
+                        var lenghtOfModifiedOrRemovedFiles = strCopy.length;
+
+                        // console.log(strCopy);
+                        
+                        try {
+                                if(strCopy[3].split('\n')!=null){
+                                    var strCopy2 = strCopy[3].split('\n');
+
+                                    // console.log("sssssssssssss");
+                                    // console.log(strCopy.length);
+                                    // console.log(strCopy2);
+
+                                    // console.log(strCopy.toString().replace(/\t/g,' '));
+                                    // console.log(strCopy[2].split('\n').toString());
+
+                                    if(lenghtOfModifiedOrRemovedFiles > 0)
+                                    {
+                                        console.log(chalk.yellow('Number of changed or modified files: ' + lenghtOfModifiedOrRemovedFiles));
+                                    }
+                                    if(lenghtOfModifiedOrRemovedFiles == 0)
+                                    {
+                                        console.log(chalk.green('Number of changed or modified files: ' + lenghtOfModifiedOrRemovedFiles));
+                                    }
+
+                                    for (var i=0;i<=strCopy.length;i++){
+
+                                        var stringArray = strCopy;
+
+                                        // console.log(strCopy.length);
+                                        // try{
+                                        //     console.log(strCopy[i]);
+                                        // }
+                                        // catch(e){
+                                        //     console.log(e);
+                                        // }
+
+                                        entry = strCopy[i].trim();
+                                        if(i === 0){
+                                            console.log(chalk.rgb(0, 124, 255)("Modified files:"));
+                                        }
+                                        if(entry.includes('modified') && i === 0)
+                                        {
+                                            console.log(chalk.rgb(0, 124, 255)(entry.replace(/\t/g,'').replace(/modified:/g,'\nm: ')));
+                                        }
+                                        if(entry.includes('modified') && i > 0)
+                                        {
+                                            console.log(chalk.rgb(0, 124, 255)(entry.replace(/\t/g,'').replace(/modified:/g,'m: ')));
+                                        }
+                                    }
+
+                                    for (var i=0;i<=strCopy.length;i++){
+                                        entry = strCopy[i].trim();
+                                        if(i === 0){
+                                            console.log(chalk.rgb(123, 45, 67)("Deleted files:"));
+                                        }
+                                        if(entry.includes('deleted') && i === 0)
+                                        {
+                                            console.log(chalk.rgb(123, 45, 67)(entry.replace(/\t/g,'').replace(/deleted:/g,'\nd: ')));
+                                        }
+                                        if(entry.includes('deleted') && i > 0)
+                                        {
+                                            console.log(chalk.rgb(123, 45, 67)(entry.replace(/\t/g,'').replace(/deleted:/g,'d: ')));
+                                        }
+                                    }
+
+                                    for (var i=0;i<=strCopy.length;i++){
+                                        entry = strCopy[i].trim();
+                                        if(!entry.includes('modified') && !entry.includes('deleted') && entry!== null && entry!=="" && entry!== " " && entry!== "  "  && i === 0)
+                                        {
+                                            console.log(chalk.rgb(123, 255, 67)(entry));
+                                        }
+                                        if(!entry.includes('modified') && !entry.includes('deleted') && entry!== null && entry!=="" && entry!== " " && entry!== "  "  && i > 0)
+                                        {
+                                            console.log(chalk.rgb(123, 255, 67)(entry));
+                                        }
+                                    }
+
+                                    if(strCopy[2].toString().includes('Untracked files:')){
+
+                                        var stringArray = strCopy[2].split('\n');
+
+                                        for (var i=0;i<stringArray.length;i++){
+                                            entry = stringArray[i].trim();
+
+                                            if(i === 0){
+                                                console.log(chalk.gray("Untracked files:"));
+                                            }
+
+                                            if(entry!=="" && entry!== " " && entry!== "  " && entry!== null && !entry.includes("Untracked files:")){
+                                                console.log(chalk.gray("U: " + entry));
+                                            }
+                                        }
+                                    }
+                                    else if(strCopy2.includes('Untracked files:')){
+                                        var stringArray = strCopy[2].split('\n');
+
+                                        for (var i=0;i<stringArray.length;i++){
+                                            entry = stringArray[i].trim();
+
+                                            if(i === 0){
+                                                console.log(chalk.gray("Untracked files:"));
+                                            }
+
+                                            if(entry!=="" && entry!== " " && entry!== "  " && entry!== null && !entry.includes("Untracked files:")){
+                                                console.log(chalk.gray("U: " + entry));
+                                            }
+                                        }
+                                    }
+
+                                    if (stderr !== "") {
+                                        console.log(chalk.yellow('stderr: ' + stderr));
+
+                                    }
+                                    if (error !== null) {
+                                        console.log(chalk.red('exec error: ' + error));
+
+                                    }
+
+                                    console.log(chalk.blue(''));
+                                    resolve();
+
+                                }
+                            }
+                            catch (e) {
+                                // console.log(e);
+
+                                if(e.includes('TypeError')){
+                                    console.log(e);
+                                }
+
+                                // console.log("sssssssssssss");
+                                // console.log(strCopy1.length);
+
+                                if (strCopy1.includes("nothing to commit, working tree clean")){
+                                    figlet('Everything is up to date !!!', function(err, data) {
+                    
+                                            
+                                        if(stdout.includes("nothing to commit, working tree clean")){
+                                            if (err) {
+                                                console.log('Something went wrong...');
+                                                console.dir(err);
+                            
+                                                return;
+                                            }
+                                            console.log(data)
+                                        }
+                    
+                                            console.log("");
+                                            resolve();
+    
+                                    });
+                                }
+                                else if(strCopy1 != null){
+                                    strCopy1 = strCopy1.filter(function(str) {
+                                        return /\S/.test(str);
+                                    });
+                        
+                                    // console.log( "strCopy2");
+                                    // console.log( strCopy1);
+
+                                    if(strCopy1.length>topNumberOfLinesToDisplay*3 && truncation === "'Yes'"){
+
+                                        for (var i=0;i<topNumberOfLinesToDisplay*2;i++){
+                                            entry = strCopy1[i].trim();
+                                            if(entry.includes('modified'))
+                                            {
+                                                console.log(chalk.rgb(0, 124, 255)(entry.replace(/modified:/g,'m: ')));
+                                            }
+                                        }
+                                        for (var i=0;i<topNumberOfLinesToDisplay*2;i++){
+                                            entry = strCopy1[i].trim();
+                                            if(entry.includes('deleted'))
+                                            {
+                                                console.log(chalk.rgb(123, 45, 67)(entry.replace(/deleted:/g,'d: ')));
+                                            }
+                                        }
+                                        for (var i=0;i<topNumberOfLinesToDisplay*2;i++){
+                                            entry = strCopy1[i].trim();
+                                            if(!entry.includes('modified') && !entry.includes('deleted') && entry!== null && entry!=="" && entry!== " " && entry!== "  ")
+                                            {
+                                                console.log(chalk.rgb(123, 255, 67)(entry));
+                                            }
+                                        }
+
+                                        console.log("");
+                                        console.log("Too many changes to display: " + strCopy1.length + " The number is bigger than " + 2*topNumberOfLinesToDisplay + " . Instead of displaying all changes normally, changes are going to be shown in a truncated way. ");
+                                    
+                                    }
+                                    else{
+
+                                        strCopy1.forEach(function(entry) {
+
+                                            entry = entry.trim();
+                                            if(entry.includes('modified'))
+                                            {
+                                                console.log(chalk.rgb(0, 124, 255)(entry.replace(/modified:/g,'m: ')));
+                                            }
+
+                                        });
+                                        strCopy1.forEach(function(entry) {
+
+                                            entry = entry.trim();
+                                            if(entry.includes('deleted'))
+                                            {
+                                                console.log(chalk.rgb(123, 45, 67)(entry.replace(/deleted:/g,'d: ')));
+                                            }
+                                            
+                                        });
+                                        strCopy1.forEach(function(entry) {
+
+                                            entry = entry.trim();
+                                            if(!entry.includes('modified') && !entry.includes('deleted') && entry!== null && entry!=="" && entry!== " " && entry!== "  ")
+                                            {
+                                                console.log(chalk.rgb(123, 255, 67)(entry));
+                                            }
+                                        });
+
+                                    }
+
+                                    strCopy2.forEach(function(entry) {
+
+                                        entry = entry.trim();
+                                        if(entry!=="" && entry!== " " && entry!== "  " && entry!== null){
+                                            console.log(chalk.gray("U: " + entry));
+                                        }
+                                    });
+                                    
+                                    if (stderr !== "") {
+                                    console.log(chalk.yellow('stderr: ' + stderr));
+
+                                    }
+                                    if (error !== null) {
+                                        console.log(chalk.red('exec error: ' + error));
+
+                                    }
+
+                                }
+                                
+                            }
+
+                    }
+                    catch (e) {
+                        if (!e.toString().includes("TypeError:")) {
+                            if(!stdout.includes("nothing to commit, working tree clean")){
+                                console.log(e);
+                    
+                                    figlet('Everything is up to date !!!', function(err, data) {
+                    
+                                            
+                                        if(stdout.includes("nothing to commit, working tree clean")){
+                                            if (err) {
+                                                console.log('Something went wrong...');
+                                                console.dir(err);
+                            
+                                                return;
+                                            }
+                                            console.log(data)
+                                        }
+                    
+                    
+                                        // if (BooleanTrackingIfMainHasBeenCalled === false){
+                                            // In order to have statusbar in the beginning you have to have the main function called here.
+                                            
+                                            console.log(chalk.blue(''));
+                                            // main();
+                                            // callback();
+                                            // callback(null, 1);
+                                            resolve();
+                                            // BooleanTrackingIfMainHasBeenCalled = true;
+                                        // }
+                    
+                                    });
+                                    
+                                }
+                                else{
+                                    // if (BooleanTrackingIfMainHasBeenCalled === false){
+                                        // In order to have statusbar in the beginning you have to have the main function called here.
+                                        
+                                        console.log(chalk.blue(''));
+                                        // main();
+                                        // callback();
+                                        resolve();
+                                        // BooleanTrackingIfMainHasBeenCalled = true;
+                                    // }
+                                }
+                        }
+                        else{
+                            figlet('Everything is up to date !!!', function(err, data) {
+                    
+                                            
+                                if(stdout.includes("nothing to commit, working tree clean")){
+                                    if (err) {
+                                        console.log('Something went wrong...');
+                                        console.dir(err);
+                                        resolve();
+                                        return;
+                                    }
+                                    console.log(data)
+                                }
+
+                                console.log("");
+                                resolve();
+
+                            });
+                                
+                        }
+                        
+                    }
+
+                });
+            }
+            else{
+                resolve();
+            }
+        }
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitStatus','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'No'"){
+            resolve();
+        }
+    });
+}
+
+function gitStatusTypeOnelineGraphDecorateColorShortstatCallingFunction(){
+    return new Promise((resolve) => {
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitStatus','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'Yes'"){
+            if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitStatusTypeOnelineGraphDecorateColorShortstat','./libEasyGit/StartupScreen/easyGitStatusVisualisationType.ini') === "'Yes'"){
+                child = exec('git log --oneline --all --graph --color --shortstat --name-only -5',
+                { maxBuffer: 1024 * 1024 },
+                function (error, stdout, stderr) {
+
+                    console.log(chalk.bgMagenta('git log, one line, graph, decorate, color, shortstat, only 5 -                                                                                                                \n'));
+
+                    // console.log(functions.getSizeOfStringLines(stdout));
+                    // console.log(topNumberOfLinesToDisplay);
+
+                    if(functions.getSizeOfStringLines(stdout) > topNumberOfLinesToDisplay  && truncation === "'Yes'"){
+                        console.log(functions.limitStringLinesCount(stdout, topNumberOfLinesToDisplay));
+                        console.log("There are " + functions.getSizeOfStringLines(stdout) + " lines of changes and so many cannot be displayed correctly. Because of that only the top " + topNumberOfLinesToDisplay + " are lines of output are displayed.");
+                        console.log("");
+                    }
+                    else{
+                        console.log(stdout);
+                    }
+
+                    resolve();
+                    
+                });
+            }
+            else{
+                resolve();
+            }
+        }
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitStatus','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'No'"){
+            resolve();
+        }
+    });
+}
+
+function gitLogAbbreviatedCommitsInAshortstatOneLineGraph(){
+    return new Promise((resolve) => {
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitStatus','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'Yes'"){
+            if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitLogAbbreviatedCommitsInAshortstatOneLineGraph','./libEasyGit/StartupScreen/easyGitStatusVisualisationType.ini') === "'Yes'"){
+                child = exec('git log --oneline --abbrev-commit --all --graph --decorate --shortstat --max-count=5',
+                { maxBuffer: 1024 * 1024 },
+                function (error, stdout, stderr) {
+
+                    console.log(chalk.bgMagenta('git  log, abbreviated commits in a shortstat one line graph -                                                                                                                 \n'));
+
+                    for ( var i=0; i<stdout.split("\n").length-1;i++){
+                        if(stdout.split("\n")[i].includes("*")){
+                            
+                            if(i%2 === 0 && i !== 0) {
+                                var stringToPrintDivisibleBy2 = "";
+                                stringToPrintDivisibleBy2 = stdout.split("\n")[i].substring(0,10) + chalk.magenta(stdout.split("\n")[i].substring(10,stdout.split("\n")[i].length));
+                                stringToPrintDivisibleBy2 = chalk.yellow(stringToPrintDivisibleBy2.substring(0,1)) + stringToPrintDivisibleBy2.substring(1,stringToPrintDivisibleBy2.length);
+                                stringToPrintDivisibleBy2 = stringToPrintDivisibleBy2.substring(0,6) + chalk.cyan(stringToPrintDivisibleBy2.substring(6,20)) + stringToPrintDivisibleBy2.substring(20,stringToPrintDivisibleBy2.length);
+
+                                console.log(stringToPrintDivisibleBy2);
+                            }
+                            if(i === 0){
+
+                                var stringToPrintNotDivisibleBy2 = "";
+                                stringToPrintNotDivisibleBy2 = stdout.split("\n")[i].toString().match(/[*] \w{7} /g,"")[0] + gradient.rainbow(stdout.split("\n")[i].toString().match(/\(([^)]+)\)/g,"")[0]) + chalk.magenta(stdout.split("\n")[i].toString().replace(/[*] \w{7} \(([^)]+)\)/g,""));
+                                stringToPrintNotDivisibleBy2 = chalk.yellow(stringToPrintNotDivisibleBy2.substring(0,1)) + stringToPrintNotDivisibleBy2.substring(1,stringToPrintNotDivisibleBy2.length);
+                                stringToPrintNotDivisibleBy2 = stringToPrintNotDivisibleBy2.substring(0,6) + chalk.cyan(stringToPrintNotDivisibleBy2.substring(6,20)) 
+                                + stringToPrintNotDivisibleBy2.substring(20,stringToPrintNotDivisibleBy2.length);
+
+                                console.log(stringToPrintNotDivisibleBy2);
+                            }
+                            
+                        }
+                        else{
+                            var stringToPrint = stdout.split("\n")[i];
+                            stringToPrint = chalk.red(stringToPrint.substring(0,1)) + stringToPrint.substring(1,stringToPrint.length);
+                            stringToPrint0 = stringToPrint.split(",")[0];
+                            if (stringToPrint0 === undefined){
+                                stringToPrint0 = "";
+                            }
+                            stringToPrint1 = stringToPrint.split(",")[1];
+                            if (stringToPrint1 === undefined){
+                                stringToPrint1 = "";
+                            }
+                            stringToPrint2 = stringToPrint.split(",")[2];
+                            if (stringToPrint2 === undefined){
+                                stringToPrint2 = "";
+                            }
+                            stringToPrint = chalk.gray(stringToPrint0) + "  " + chalk.green(stringToPrint1) + "  " + chalk.red(stringToPrint2);
+                            console.log(stringToPrint);
+                        }
+                        
+                    }
+
+                    console.log("");
+                    resolve();
+                    
+                });
+            }
+            else{
+                resolve();
+            }
+        }
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitStatus','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'No'"){
+            resolve();
+        }
+    });
+}
+
+function ShowCommitsPerDayInANiceFormattedWay(){
+    return new Promise((resolve) => {
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitStatus','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'Yes'"){
+            if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('ShowCommitsPerDayInANiceFormattedWay','./libEasyGit/StartupScreen/easyGitStatusVisualisationType.ini') === "'Yes'"){
+                child = exec('git log --date=short --pretty=format:%ad | sort -r | uniq -c',
+                { maxBuffer: 1024 * 1024 },
+                function (error, stdout, stderr) {
+                    console.log(chalk.bgMagenta('Show commits per day in a nice formatted way -                                                                                                                                \n'));
+
+                    var dateOneWeekAgo = new Date();
+                    dateOneWeekAgo.setDate(dateOneWeekAgo.getDate()-7);
+
+                    var date30DaysAgo = new Date();
+                    date30DaysAgo.setDate(date30DaysAgo.getDate()-30);
+
+                    var notPrintedWeek = true;
+                    var notPrintedMonth = true;
+
+                    var SummarisedWeeklyCommits = 0;
+                    var SummarisedMonthlyCommits = 0;
+
+                    var ArrayWithAllPossibleColours = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan','white','gray'
+                        ,'redBright','greenBright','yellowBright','blueBright','magentaBright','cyanBright','whiteBright'];
+
+                    var StringThatContainsTheBarsForEachWeek = "";
+                    var StringThatContainsTheBarsForEachMonth = "";
+
+                    for ( var i=0; i<stdout.split("\n").length-1;i++){
+                        
+                        if(stdout.split("\n")[i].trim().split(" ").length === 2){
+
+                            var dateFromArrayFromPipedGitSortedCommand = new Date(stdout.split("\n")[i].trim().split(" ")[1]);
+                            
+                            if(dateFromArrayFromPipedGitSortedCommand>date30DaysAgo){
+                                if(dateFromArrayFromPipedGitSortedCommand>dateOneWeekAgo){
+
+
+                                    if(stdout.split("\n")[i].trim().split(" ")[0].length === 1){
+                                        SummarisedWeeklyCommits = SummarisedWeeklyCommits + Number(stdout.split("\n")[i].trim().split(" ")[0]);
+                                        // console.log(SummarisedWeeklyCommits);
+                                    }
+                                    else{
+                                        SummarisedWeeklyCommits = SummarisedWeeklyCommits + Number(stdout.split("\n")[i].trim().split(" ")[0]);
+                                        // console.log(SummarisedWeeklyCommits);
+                                    }
+                                    
+
+                                }
+                                else{
+
+                                    if(stdout.split("\n")[i].trim().split(" ")[0].length === 1){
+                                        SummarisedMonthlyCommits = SummarisedMonthlyCommits + Number(stdout.split("\n")[i].trim().split(" ")[0]);
+                                        // console.log(SummarisedMonthlyCommits);
+                                    }
+                                    else{
+                                        SummarisedMonthlyCommits = SummarisedMonthlyCommits + Number(stdout.split("\n")[i].trim().split(" ")[0]);
+                                        // console.log(SummarisedMonthlyCommits);
+                                    }
+
+
+
+                                }
+
+                            }
+
+                        }
+                        else{
+                            console.log(stdout.split("\n")[i].trim().split(" ")[0]);
+                        }
+                        
+                    }
+                    
+                    for ( var i=0; i<stdout.split("\n").length-1;i++){
+                        
+                        if(stdout.split("\n")[i].trim().split(" ").length === 2){
+
+                            var dateFromArrayFromPipedGitSortedCommand = new Date(stdout.split("\n")[i].trim().split(" ")[1]);
+
+                            const CFonts = require('cfonts');
+
+                            var prettyFont;
+
+                            if(dateFromArrayFromPipedGitSortedCommand>date30DaysAgo){
+                                if(dateFromArrayFromPipedGitSortedCommand>dateOneWeekAgo){
+
+                                    if(notPrintedWeek){
+                                        console.log(chalk.blue("Activity in the past week: " + SummarisedWeeklyCommits + " commits"));
+                                        notPrintedWeek = false;
+                                    }
+
+                                    var totalNumberOfcommitsPerLineWeek = stdout.split("\n")[i].trim().split(" ")[0];
+                                    var totalNumberOfcommitsPerLineDividedWithRemainerWeek = totalNumberOfcommitsPerLineWeek / 10;
+
+                                    var mathCeilWeek =  Math.ceil(totalNumberOfcommitsPerLineDividedWithRemainerWeek);
+                                    var mathFloorWeek = Math.floor(totalNumberOfcommitsPerLineDividedWithRemainerWeek);
+
+                                    var mathCeilForCalculationWeek=  0;
+
+                                    StringThatContainsTheBarsForEachWeek="";
+
+                                    if (mathFloorWeek === 0){
+                                        prettyFont = CFonts.render("I".repeat(totalNumberOfcommitsPerLineWeek), {
+                                        font: 'tiny',              // define the font face
+                                        align: 'left',             // define text alignment
+                                        colors: ['cyan'],          // define all colors
+                                        background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+                                        letterSpacing: 0,           // define letter spacing
+                                        lineHeight: 1,              // define the line height
+                                        space: false,               // define if the output text should have empty lines on top and on the bottom
+                                        maxLength: '0',             // define how many character can be on one line
+                                        gradient: false,            // define your two gradient colors
+                                        independentGradient: false, // define if you want to recalculate the gradient for each new line
+                                        transitionGradient: false,  // define if this is a transition between colors directly
+                                        env: 'node'                 // define the environment CFonts is being executed in
+                                        });
+
+                                        prettyFont.string  // the ansi string for sexy console font
+                                        prettyFont.array   // returns the array for the output
+                                        prettyFont.lines   // returns the lines used
+                                        prettyFont.options // returns the options used
+            
+                                        StringThatContainsTheBarsForEachWeek = functions.splitString(prettyFont.string.replace(' ','').replace('\n','').trim());
+
+                                        var dateObjectToGetDay = new Date(stdout.split("\n")[i].trim().split(" ")[1].replace(/-/g,"/"));
+                                        
+                                        try{
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
+                                                if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "    " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "    " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
+                                                if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "   " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "   " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
+                                                if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "  " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "  " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
+                                                if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + " " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + " " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                            }
+                                        }
+                                        catch(e){
+                                            // console.log(e.toString());
+                                            if(e.toString().includes("TypeError:")){
+                                                
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
+                                                    if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "    " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "    " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
+                                                    if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "   " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "   " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
+                                                    if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "  " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "  " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
+                                                    if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + " " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + " " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    if (mathFloorWeek != 0){
+                                        for(var ii=0;ii<mathCeilWeek;ii++){
+                                            if(mathFloorWeek != mathCeilForCalculationWeek){
+
+                                                if(ii<15){
+                                                    if (mathFloor != 0){
+                                                        prettyFont = CFonts.render("I".repeat(10), {
+                                                        font: 'tiny',              // define the font face
+                                                        align: 'left',             // define text alignment
+                                                        colors: [ArrayWithAllPossibleColours[ii]],          // define all colors
+                                                        background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+                                                        letterSpacing: 0,           // define letter spacing
+                                                        lineHeight: 1,              // define the line height
+                                                        space: false,               // define if the output text should have empty lines on top and on the bottom
+                                                        maxLength: '0',             // define how many character can be on one line
+                                                        gradient: false,            // define your two gradient colors
+                                                        independentGradient: false, // define if you want to recalculate the gradient for each new line
+                                                        transitionGradient: false,  // define if this is a transition between colors directly
+                                                        env: 'node'                 // define the environment CFonts is being executed in
+                                                        });
+                
+                                                        prettyFont.string  // the ansi string for sexy console font
+                                                        prettyFont.array   // returns the array for the output
+                                                        prettyFont.lines   // returns the lines used
+                                                        prettyFont.options // returns the options used
+                            
+                                                        StringThatContainsTheBarsForEachWeek = StringThatContainsTheBarsForEachWeek + functions.splitString(prettyFont.string.replace(' ','').replace('\n','').trim());
+                                                        // console.log(StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                }
+                                                else{
+                                                    prettyFont = CFonts.render("I".repeat(10), {
+                                                        font: 'tiny',              // define the font face
+                                                        align: 'left',             // define text alignment
+                                                        colors: ['blue'],          // define all colors
+                                                        background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+                                                        letterSpacing: 0,           // define letter spacing
+                                                        lineHeight: 1,              // define the line height
+                                                        space: false,               // define if the output text should have empty lines on top and on the bottom
+                                                        maxLength: '0',             // define how many character can be on one line
+                                                        gradient: false,            // define your two gradient colors
+                                                        independentGradient: false, // define if you want to recalculate the gradient for each new line
+                                                        transitionGradient: false,  // define if this is a transition between colors directly
+                                                        env: 'node'                 // define the environment CFonts is being executed in
+                                                        });
+                
+                                                        prettyFont.string  // the ansi string for sexy console font
+                                                        prettyFont.array   // returns the array for the output
+                                                        prettyFont.lines   // returns the lines used
+                                                        prettyFont.options // returns the options used
+                            
+                                                        StringThatContainsTheBarsForEachWeek = StringThatContainsTheBarsForEachWeek + functions.splitString(prettyFont.string.replace(' ','').replace('\n','').trim());  
+                                                        // console.log(StringThatContainsTheBarsForEachMonth);
+                                                }
+
+                                                // console.log(mathCeilForCalculation);
+                                                mathCeilForCalculationWeek = mathCeilForCalculationWeek + 1;
+                                            }
+                                            else{
+                                                var remainder = totalNumberOfcommitsPerLineWeek % 10;
+
+                                                prettyFont = CFonts.render("I".repeat(remainder), {
+                                                    font: 'tiny',              // define the font face
+                                                    align: 'left',             // define text alignment
+                                                    colors: ['cyan'],          // define all colors
+                                                    background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+                                                    letterSpacing: 0,           // define letter spacing
+                                                    lineHeight: 1,              // define the line height
+                                                    space: false,               // define if the output text should have empty lines on top and on the bottom
+                                                    maxLength: '0',             // define how many character can be on one line
+                                                    gradient: false,            // define your two gradient colors
+                                                    independentGradient: false, // define if you want to recalculate the gradient for each new line
+                                                    transitionGradient: false,  // define if this is a transition between colors directly
+                                                    env: 'node'                 // define the environment CFonts is being executed in
+                                                    });
+            
+                                                    prettyFont.string  // the ansi string for sexy console font
+                                                    prettyFont.array   // returns the array for the output
+                                                    prettyFont.lines   // returns the lines used
+                                                    prettyFont.options // returns the options used
+                        
+                                                    StringThatContainsTheBarsForEachWeek = StringThatContainsTheBarsForEachWeek + functions.splitString(prettyFont.string.replace(' ','').replace('\n','').trim());  
+                                                    // console.log(StringThatContainsTheBarsForEachMonth);
+                                            }
+                                        }
+                                        
+                                        var dateObjectToGetDay = new Date(stdout.split("\n")[i].trim().split(" ")[1].replace(/-/g,"/"));
+                                        
+                                        try{
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
+                                                if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "    " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "    " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
+                                                if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "   " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "   " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
+                                                if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "  " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "  " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
+                                                if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + " " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + " " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                }
+                                            }
+                                        }
+                                        catch(e){
+                                            // console.log(e.toString());
+                                            if(e.toString().includes("TypeError:")){
+                                                
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
+                                                    if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "    " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "    " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
+                                                    if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "   " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "   " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
+                                                    if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "  " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "  " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
+                                                    if(totalNumberOfcommitsPerLineWeek.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + " " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + " " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }       
+                                }
+                                else{
+
+                                    if(notPrintedMonth){
+                                        console.log("");
+                                        console.log(chalk.blue("Activity in the past month (excluding last week): " + SummarisedMonthlyCommits+ " commits" + " | A total of " + (Number(SummarisedWeeklyCommits) + Number(SummarisedMonthlyCommits)) + " commits (for the whole month)"));
+                                        notPrintedMonth = false;
+                                    }
+
+                                    var totalNumberOfcommitsPerLine = stdout.split("\n")[i].trim().split(" ")[0];
+                                    var totalNumberOfcommitsPerLineDividedWithRemainer = totalNumberOfcommitsPerLine / 10;
+
+                                    var mathCeil =  Math.ceil(totalNumberOfcommitsPerLineDividedWithRemainer);
+                                    var mathFloor = Math.floor(totalNumberOfcommitsPerLineDividedWithRemainer);
+
+                                    var mathCeilForCalculation =  0;
+
+                                    StringThatContainsTheBarsForEachMonth="";
+
+                                    if (mathFloor != 0){
+                                        for(var ii=0;ii<mathCeil;ii++){
+                                            if(mathFloor != mathCeilForCalculation){
+
+                                                if(ii<15){
+                                                    if (mathFloor != 0){
+                                                        prettyFont = CFonts.render("I".repeat(10), {
+                                                        font: 'tiny',              // define the font face
+                                                        align: 'left',             // define text alignment
+                                                        colors: [ArrayWithAllPossibleColours[ii]],          // define all colors
+                                                        background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+                                                        letterSpacing: 0,           // define letter spacing
+                                                        lineHeight: 1,              // define the line height
+                                                        space: false,               // define if the output text should have empty lines on top and on the bottom
+                                                        maxLength: '0',             // define how many character can be on one line
+                                                        gradient: false,            // define your two gradient colors
+                                                        independentGradient: false, // define if you want to recalculate the gradient for each new line
+                                                        transitionGradient: false,  // define if this is a transition between colors directly
+                                                        env: 'node'                 // define the environment CFonts is being executed in
+                                                        });
+                
+                                                        prettyFont.string  // the ansi string for sexy console font
+                                                        prettyFont.array   // returns the array for the output
+                                                        prettyFont.lines   // returns the lines used
+                                                        prettyFont.options // returns the options used
+                            
+                                                        StringThatContainsTheBarsForEachMonth = StringThatContainsTheBarsForEachMonth + functions.splitString(prettyFont.string.replace(' ','').replace('\n','').trim());
+                                                        // console.log(StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                }
+                                                else{
+                                                    prettyFont = CFonts.render("I".repeat(10), {
+                                                        font: 'tiny',              // define the font face
+                                                        align: 'left',             // define text alignment
+                                                        colors: ['blue'],          // define all colors
+                                                        background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+                                                        letterSpacing: 0,           // define letter spacing
+                                                        lineHeight: 1,              // define the line height
+                                                        space: false,               // define if the output text should have empty lines on top and on the bottom
+                                                        maxLength: '0',             // define how many character can be on one line
+                                                        gradient: false,            // define your two gradient colors
+                                                        independentGradient: false, // define if you want to recalculate the gradient for each new line
+                                                        transitionGradient: false,  // define if this is a transition between colors directly
+                                                        env: 'node'                 // define the environment CFonts is being executed in
+                                                        });
+                
+                                                        prettyFont.string  // the ansi string for sexy console font
+                                                        prettyFont.array   // returns the array for the output
+                                                        prettyFont.lines   // returns the lines used
+                                                        prettyFont.options // returns the options used
+                            
+                                                        StringThatContainsTheBarsForEachMonth = StringThatContainsTheBarsForEachMonth + functions.splitString(prettyFont.string.replace(' ','').replace('\n','').trim());  
+                                                        // console.log(StringThatContainsTheBarsForEachMonth);
+                                                }
+
+                                                // console.log(mathCeilForCalculation);
+                                                mathCeilForCalculation = mathCeilForCalculation + 1;
+                                            }
+                                            else{
+                                                var remainder = totalNumberOfcommitsPerLine % 10;
+
+                                                prettyFont = CFonts.render("I".repeat(remainder), {
+                                                    font: 'tiny',              // define the font face
+                                                    align: 'left',             // define text alignment
+                                                    colors: ['cyan'],          // define all colors
+                                                    background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+                                                    letterSpacing: 0,           // define letter spacing
+                                                    lineHeight: 1,              // define the line height
+                                                    space: false,               // define if the output text should have empty lines on top and on the bottom
+                                                    maxLength: '0',             // define how many character can be on one line
+                                                    gradient: false,            // define your two gradient colors
+                                                    independentGradient: false, // define if you want to recalculate the gradient for each new line
+                                                    transitionGradient: false,  // define if this is a transition between colors directly
+                                                    env: 'node'                 // define the environment CFonts is being executed in
+                                                    });
+            
+                                                    prettyFont.string  // the ansi string for sexy console font
+                                                    prettyFont.array   // returns the array for the output
+                                                    prettyFont.lines   // returns the lines used
+                                                    prettyFont.options // returns the options used
+                        
+                                                    StringThatContainsTheBarsForEachMonth = StringThatContainsTheBarsForEachMonth + functions.splitString(prettyFont.string.replace(' ','').replace('\n','').trim());  
+                                                    // console.log(StringThatContainsTheBarsForEachMonth);
+                                            }
+                                        }
+
+                                        var dateObjectToGetDay = new Date(stdout.split("\n")[i].trim().split(" ")[1].replace(/-/g,"/"));
+
+                                        try{
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
+                                                if(totalNumberOfcommitsPerLine.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "    " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "    " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
+                                                if(totalNumberOfcommitsPerLine.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "   " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "   " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
+                                                if(totalNumberOfcommitsPerLine.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "  " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "  " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
+                                                if(totalNumberOfcommitsPerLine.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + " " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + " " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                            }
+                                        }
+                                        catch(e){
+                                            // console.log(e.toString());
+                                            if(e.toString().includes("TypeError:")){
+                                                
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
+                                                    if(totalNumberOfcommitsPerLine.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "    " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "    " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
+                                                    if(totalNumberOfcommitsPerLine.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "   " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "   " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
+                                                    if(totalNumberOfcommitsPerLine.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "  " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "  " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
+                                                    if(totalNumberOfcommitsPerLine.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + " " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + " " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }       
+
+                                    if (mathFloor === 0){
+                                        prettyFont = CFonts.render("I".repeat(totalNumberOfcommitsPerLine), {
+                                        font: 'tiny',              // define the font face
+                                        align: 'left',             // define text alignment
+                                        colors: ['cyan'],          // define all colors
+                                        background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+                                        letterSpacing: 0,           // define letter spacing
+                                        lineHeight: 1,              // define the line height
+                                        space: false,               // define if the output text should have empty lines on top and on the bottom
+                                        maxLength: '0',             // define how many character can be on one line
+                                        gradient: false,            // define your two gradient colors
+                                        independentGradient: false, // define if you want to recalculate the gradient for each new line
+                                        transitionGradient: false,  // define if this is a transition between colors directly
+                                        env: 'node'                 // define the environment CFonts is being executed in
+                                        });
+
+                                        prettyFont.string  // the ansi string for sexy console font
+                                        prettyFont.array   // returns the array for the output
+                                        prettyFont.lines   // returns the lines used
+                                        prettyFont.options // returns the options used
+            
+                                        StringThatContainsTheBarsForEachMonth = functions.splitString(prettyFont.string.replace(' ','').replace('\n','').trim());
+
+
+                                        var dateObjectToGetDay = new Date(stdout.split("\n")[i].trim().split(" ")[1].replace(/-/g,"/"));
+                                        
+                                        try{
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
+                                                if(totalNumberOfcommitsPerLine.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "    " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "    " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
+                                                if(totalNumberOfcommitsPerLine.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "   " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "   " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
+                                                if(totalNumberOfcommitsPerLine.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "  " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + "  " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                            }
+                                            if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
+                                                if(totalNumberOfcommitsPerLine.length === 1){
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + " " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                                else{
+                                                    console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                    + " " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                }
+                                            }
+                                        }
+                                        catch(e){
+                                            // console.log(e.toString());
+                                            if(e.toString().includes("TypeError:")){
+                                                
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
+                                                    if(totalNumberOfcommitsPerLine.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "    " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "    " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
+                                                    if(totalNumberOfcommitsPerLine.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "   " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "   " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
+                                                    if(totalNumberOfcommitsPerLine.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "  " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + "  " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                }
+                                                if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
+                                                    if(totalNumberOfcommitsPerLine.length === 1){
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + " " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                    else{
+                                                        console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
+                                                        + " " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else{
+                            console.log(stdout.split("\n")[i].trim().split(" ")[0]);
+                        }
+                    }
+                    console.log("");
+                    resolve();
+                });
+            }
+            else{
+                resolve();
+            }
+        }
+        if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitStatus','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'No'"){
+            resolve();
+        }
+    });
 }
 
 function main(){
 
+    message: console.log(chalk.bgBlackBright ('Choose an option:                                                                                                                                                             '));
+   
 inquirer
     .prompt([
         {
             type: 'list',
             name: 'option',
-            message: 'Choose an option:',
-            pageSize: '16',
-            choices: ['Make a commit and push', 'git push', 'git pull origin master', 'Visualise git', 'Go to origin', 'git-clone from url'
-                , 'git-clone from list of repos'
-                , 'Get list of repos', 'Show infographic', 'Show ohshitgit.com', 'git config core.autocrlf true ( for Windows )'
-                , 'Register repo', 'Open local repo', 'git status', 'Test: use of simple-git functions'],
-        },
+            pageSize: '40',
+            choices:  [
+                chalk.cyan('SYNC PUSH:  Make a local commit and push                     (git add . && git add -A  && git commit -m" + arg1var + " && start cmd /k git push)'),
+                chalk.cyan('SYNC PUSH:  Make a local commit                              (git add . && git add -A  && git commit -m" + arg1var ")'), 
+                chalk.cyan('SYNC PUSH:  Push to remote                                   (git push)'), 
+                chalk.blueBright('SYNC PULL:  Pull origin master                               (git pull origin master)'), 
+                chalk.blueBright('SYNC PULL:  Pull rebase                                      (git pull --rebase)'), 
+                chalk.blueBright('SYNC PULL:  Pull                                             (git pull)'), 
+                chalk.blueBright('SYNC PULL:  Clone from url                                   (git clone <*url*>)'), 
+                chalk.blueBright('SYNC PULL:  Clone from list of repos                         (git clone <*list*>)'), 
+                chalk.green('BRANCHING:  Make new branch                                  (git checkout -b <*name*>)'),
+                chalk.green('BRANCHING:  Show branches                                    (git branch -a)'),
+                chalk.green('BRANCHING:  Switch branches                                  (git checkout <*name*>)'),
+                chalk.green('BRANCHING:  Remove branch                                    (git branch -D <*name*>)'),
+                chalk.green('BRANCHING:  Remove remote branch                             (git push <listOfRemote/origin> --delete <*name*>)'),
+                chalk.green('BRANCHING:  Merge branch current branch with another         (git merge <*name*>)'),
+                chalk.redBright('REVERT:     Reverts the HEAD and the last commit             (git reset HEAD~1)'),
+                chalk.redBright('REVERT:     Like above, but leaves your files and your index (git reset --soft HEAD~1)'),
+                chalk.redBright('REVERT:     Reverts and resets files to past state           (git reset --hard HEAD~1)'),
+                chalk.yellow('INFO:       Go to origin                                     (git config --get remote.origin.url)'), 
+                chalk.yellow('INFO:       Visualise git                                    (<*list of options*>)'), 
+                chalk.yellow('INFO:       Get list of repos                                (gets <*list*>)'),
+                chalk.yellow('INFO:       git log                                          (git log)'),
+                chalk.yellow('INFO:       git reflog                                       (git reflog)'),
+                chalk.yellow('INFO:       git show                                         (git show)'),  
+                chalk.yellow('INFO:       git diff                                         (git diff)'), 
+                chalk.yellow('INFO:       git status                                       (git status)'), 
+                chalk.greenBright('Tagging:    List git tags                                    (git tag)'),
+                chalk.greenBright('Tagging:    Show info about git tags                         (git show <*name*>)'),
+                chalk.greenBright('Tagging:    Create lightweight git tags                      (git tag <*name*>)'),
+                chalk.greenBright('Tagging:    Create annotated git tags                        (git tag -a <*name*> -m <*message*>)'),  
+                chalk.greenBright('Tagging:    Push git tags to remote                          (git push --tags)'),
+                chalk.greenBright('Tagging:    Delete tags                                      (git tag -d <*name*>)'),  
+                chalk.magentaBright('MANAGEMENT: Register local repo                              (writes repo name in $User\\Documents\\GitRepoList\\List.txt)'), 
+                chalk.magentaBright('MANAGEMENT: Open local repo                                  (reads repo name from $User\\Documents\\GitRepoList\\List.txt)'), 
+                chalk.hex('#a434eb')('UTILITY:    git config core.autocrlf true ( for Windows )    (git config core.autocrlf true)'), 
+                chalk.hex('#a434eb')('UTILITY:    Test: use of simple-git functions                (test)'),
+                chalk.blackBright('HELP:       Show infographic                                 (start http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf )'), 
+                chalk.blackBright('HELP:       Show ohshitgit.com                               (start https://ohshitgit.com/ )'),
+                gradient.rainbow('SETTINGS:   Enable or disable startup data fields.'),
+                gradient.rainbow('SETTINGS:   Enable or disable status visualisation types.'),
+                gradient.rainbow('SETTINGS:   Enable, disable or change miscellaneous settings.')
+
+],
+},
     ])
     .then(answers => {
-        if (answers.option == "Make a commit and push") {
-            const args = require('minimist')(process.argv.slice(2));
-
-            if (process.argv.length == 2) {
-                var arg1var;
-
-                var questions1 = [{
-                    type: 'input',
-                    name: 'arg1',
-                    message: "Input argument 1:",
-                }]
-                inquirer.prompt(questions1).then(answers => {
-                    arg1var = (`${answers['arg1']}`);
-
-                    // req.on('response', function(res){
-                    //     var len = parseInt(res.headers['content-length'], 10);
-                      
-                    //     console.log();
-                    //     var bar = new ProgressBar('  downloading [:bar] :rate/bps :percent :etas', {
-                    //       complete: '=',
-                    //       incomplete: ' ',
-                    //       width: 20,
-                    //       total: len
-                    //     });
-                      
-                    //     res.on('data', function (chunk) {
-                    //       bar.tick(chunk.length);
-                    //     });
-                      
-                    //     res.on('end', function () {
-                    //       console.log('\n');
-                    //     });
-                    //   });
-                      
-                    //   req.end();
-                    
-                    var spinner = new Spinner('executing the git commands');
-                    spinner.setSpinnerString('|/-\\');
-                    spinner.start();
-
-                    // req.on('response', function(res){
-
-                    child = exec('git add . && git add -A  && git commit -m"' + arg1var + '" && start cmd /k git push',
-                    { maxBuffer: 1024 * 2048},
-                    function (error, stdout, stderr) {
-
-
-
-                        console.log('stdout: ' + stdout);
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-
-                            if (String(error).includes("Error: Command failed:"))
-                            {
-                                gitPush_ExternalCall()
-                                
-                            }
-
-                        }
-                        if (String(stderr).includes("fatal: could not read Password for"))
-                        {
-                            gitPush_ExternalCall()
-                            
-                        }
-                        if (String(stderr).includes("Your branch is ahead of"))
-                        {
-                            gitPush_ExternalCall()
-                            
-                        }
-                        if (String(stderr).includes("failed to push some refs to"))
-                        {
-                            child = exec('git add --ignore-errors . && git commit -m "initial commit" && git push -u origin master',
-                            { maxBuffer: 1024 * 2048},
-                            function (error, stdout, stderr) {
-                                console.log('stdout: ' + stdout);
-                                console.log('stderr: ' + stderr);
-                                
-                            });
-                        }
-                        
-                        spinner.stop();
-
-                    });
-                   
-
-                    // });
-                    // req.end();
-                        
-                    // }
-                    // });
-                        
-                    
-                    
-
-
-                })
-
-                
-            }
-            if (process.argv.length > 2) {
-                var ArgumentStringTwo = JSON.stringify(args).slice(6, JSON.stringify(args).length - 2);
-                var ArgumentStringThree = ArgumentStringTwo.split("\",\"").join(' ').slice(1, ArgumentStringTwo.split("\",\"").join(' ').length - 1);;
-                console.log('ArgumentStringThree: ' + ArgumentStringThree);
-                child = exec('git add . && git add -A  && git commit -m"' + ArgumentStringThree + '" && start cmd /k git push',
-                    { maxBuffer: 1024 * 1024 },
-                    function (error, stdout, stderr) {
-                        console.log('stdout: ' + stdout);
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-
-                        }
-                    });
-            }
+                    
+        if (answers.option == chalk.cyan('SYNC PUSH:  Make a local commit and push                     (git add . && git add -A  && git commit -m" + arg1var + " && start cmd /k git push)')) {
+            SYNCMakeacommitandpush.CommitAndPush();
         }
-        if (answers.option == "git pull origin master") {
 
-                child = exec('git pull origin master',
-                    { maxBuffer: 1024 * 1024 },
-                    function (error, stdout, stderr) {
-                        console.log('stdout: ' + stdout);
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
+        if (answers.option == chalk.cyan('SYNC PUSH:  Make a local commit                              (git add . && git add -A  && git commit -m" + arg1var ")')) {
+            SYNCMakeacommit.Commit();
+        }
 
-                        }
+        if (answers.option == chalk.cyan('SYNC PUSH:  Push to remote                                   (git push)')) {
+            SYNCgitpush.Sync_GitPush_ExternalCall();
+        }
 
-                        if (String(stderr).includes("fatal: could not read Password for"))
-                        {
-                            gitPull_ExternalCall()
-                        }
-                        if (String(stderr).includes("Your branch is ahead of"))
-                        {
-                            gitPull_ExternalCall()
-                        }
-                        if (String(stderr).includes('could not read Username'))
-                        {
-                            gitPull_ExternalCall()
-                        }
+        if (answers.option == chalk.blueBright('SYNC PULL:  Pull origin master                               (git pull origin master)')) {
+            SYNCgitpulloriginmaster.GitPUllOriginMaster();
+        }
 
-                        
-                    });
+        if (answers.option == chalk.blueBright('SYNC PULL:  Pull rebase                                      (git pull --rebase)')) {
+            SYNCgitpullrebase.GitPUllRebase();
+        }
+
+        if (answers.option == chalk.blueBright('SYNC PULL:  Pull                                             (git pull)')) {
+            SYNCgitpull.GitPUll();
+        }
+
+        if (answers.option ==  chalk.blueBright('SYNC PULL:  Clone from url                                   (git clone <*url*>)')) {
+            SYNCgitclonefromurl.GitCloneFromURl();
+        }
+
+        if (answers.option == chalk.blueBright('SYNC PULL:  Clone from list of repos                         (git clone <*list*>)')) {
+            SYNCgitclonefromlistofrepos.GetListOfRepos(answers);
+        }
+
+        if (answers.option == chalk.green('BRANCHING:  Make new branch                                  (git checkout -b <*name*>)')) {
+            BRANCHINGmakenewbranches.MakeNewBranches();
+        }
+
+        if (answers.option == chalk.green('BRANCHING:  Show branches                                    (git branch -a)')) {
+            BRANCHINGShowbranches.ShowBranches();
+        }
+
+        if (answers.option == chalk.green('BRANCHING:  Switch branches                                  (git checkout <*name*>)')) {
+            BRANCHINGSwitchbranches.SwitchBranches();
+        }
+
+        if (answers.option == chalk.green('BRANCHING:  Remove branch                                    (git branch -D <*name*>)')) {
+            BRANCHINGRemovebranch.RemoveBranch();
+        }
+
+        if (answers.option == chalk.green('BRANCHING:  Remove remote branch                             (git push <listOfRemote/origin> --delete <*name*>)')) {
+            BRANCHINGRemoveremotebranch.BRANCHINGRemoveremotebranch();
+        }
+
+        if (answers.option == chalk.green('BRANCHING:  Merge branch current branch with another         (git merge <*name*>)')) {
+            BRANCHINGMergebranch.MergeBranches();
+        }
+
+        if (answers.option == chalk.redBright('REVERT:     Reverts the HEAD and the last commit             (git reset HEAD~1)')) {
+            REVERTReturnthelastcommit.REVERTHeadAndLastCommit();
+        }
+ 
+        if (answers.option == chalk.redBright('REVERT:     Like above, but leaves your files and your index (git reset --soft HEAD~1)')) {
+            REVERTHeadAndLastCommitSoft.REVERTHeadAndLastCommitSoft();
+        }
+
+        if (answers.option == chalk.redBright('REVERT:     Reverts and resets files to past state           (git reset --hard HEAD~1)')) {
+            REVERTHeadAndLastCommitHard.REVERTHeadAndLastCommitHard();
+        }
+
+        if (answers.option == chalk.yellow('INFO:       Go to origin                                     (git config --get remote.origin.url)')) {
+            INFOGotoorigin.GoToOrigin();
+        }
+
+        if (answers.option == chalk.yellow('INFO:       Get list of repos                                (gets <*list*>)')) {
+            INFOGetlistofrepos.GetListOfRepos(answers);
+        }
+
+        if (answers.option == chalk.yellow('INFO:       git log                                          (git log)')) {
+            INFOGitlog.GitLog();
+        }
+
+        if (answers.option == chalk.yellow('INFO:       git reflog                                       (git reflog)')) {
+            INFOGitReflog.GitReflog();
+        }
+
+        if (answers.option == chalk.yellow('INFO:       git show                                         (git show)')) {
+            INFOGitshow.GitShow();
+        }
+
+        if (answers.option == chalk.yellow('INFO:       git diff                                         (git diff)')) {
+            INFOGitdiff.GitDiff();
+        }
+
+        if (answers.option == chalk.yellow('INFO:       git status                                       (git status)')) {
+            INFOGitStatus.gitStatus();
+        }
+
+        if (answers.option ==  chalk.yellow('INFO:       Visualise git                                    (<*list of options*>)')) {
+            INFOVisualisegit.VisualiseGit();
+        }
+
+        if (answers.option == chalk.greenBright('Tagging:    List git tags                                    (git tag)')) {
+            TaggingListAllTags.ListAllTags();
+        }
+
+        if (answers.option == chalk.greenBright('Tagging:    Show info about git tags                         (git show <*name*>)')) {
+            TaggingShow.TaggingShow();
+        }
+
+        if (answers.option == chalk.greenBright('Tagging:    Create lightweight git tags                      (git tag <*name*>)')) {
+            TaggingCreateLightweightTags.TaggingCreateLightweightTags();
+        }
+
+        if (answers.option == chalk.greenBright('Tagging:    Create annotated git tags                        (git tag -a <*name*> -m <*message*>)')) {
+            TaggingCreateAnnotatedTags.TaggingCreateAnnotatedTags();
+        }
+
+        if (answers.option == chalk.greenBright('Tagging:    Push git tags to remote                          (git push --tags)')) {
+            TaggingPusAllhTagsToRemote.TaggingPusAllhTagsToRemote();
         }
         
-        MakeTerminalCallFromMenuName(answers, "Visualise git", 'git log --graph');
-        if (answers.option == "Go to origin") {
-            child = exec('git config --get remote.origin.url',
-                { maxBuffer: 1024 * 1024 },
-                function (error, stdout, stderr) {
-                    console.log('stdout: ' + stdout);
-                    console.log('stderr: ' + stderr);
-                    if (error !== null) {
-                        console.log('exec error: ' + error);
-                    }
-                    var opsys = process.platform;
-                    if (opsys == "darwin") {
-                        opsys = "MacOS";
-                    } else if (opsys == "win32" || opsys == "win64") {
-                        opsys = "Windows";
-                        var readableURL = MakegitURLtoNormalURL(stdout);
-                        child = exec('start ' + readableURL,
-                            { maxBuffer: 1024 * 1024 },
-                            function (error, stdout, stderr) {
-                                console.log('stdout: ' + stdout);
-                                console.log('stderr: ' + stderr);
-                                if (error !== null) {
-                                    console.log('exec error: ' + error);
-                                }
-                            });
-                    } else if (opsys == "linux") {
-                        var readableURL = MakegitURLtoNormalURL(stdout);
-                        child = exec('firefox ' + readableURL,
-                            { maxBuffer: 1024 * 1024 },
-                            function (error, stdout, stderr) {
-                                console.log('stdout: ' + stdout);
-                                console.log('stderr: ' + stderr);
-                                if (error !== null) {
-                                    console.log('exec error: ' + error);
-                                }
-                            });
-                    }
-                    console.log(opsys) // I don't know what linux is.
-                });
+        if (answers.option == chalk.greenBright('Tagging:    Delete tags                                      (git tag -d <*name*>)')) {
+            TaggingDeleteTags.TaggingDeleteTags();
         }
-        GetListOfRepos(answers, 'Get list of repos', "EndHerePseudo-BooleanYes");
-        if (answers.option == "Show infographic") {
-            var opsys = process.platform;
-            if (opsys == "darwin") {
-                opsys = "MacOS";
-            } else if (opsys == "win32" || opsys == "win64") {
-                opsys = "Windows";
-                child = exec('start http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf',
-                    { maxBuffer: 1024 * 1024 },
-                    function (error, stdout, stderr) {
-                        console.log('stdout: ' + stdout);
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-                        }
-                    });
-            } else if (opsys == "linux") {
-                opsys = "Linux";
-                child = exec('firefox http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf',
-                    { maxBuffer: 1024 * 1024 },
-                    function (error, stdout, stderr) {
-                        console.log('stdout: ' + stdout);
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-                        }
-                    });
-            }
-            console.log(opsys) // I don't know what linux is.
+
+        if (answers.option == chalk.magentaBright('MANAGEMENT: Register local repo                              (writes repo name in $User\\Documents\\GitRepoList\\List.txt)')) {
+            MANAGEMENTRegisterrepo.Registerrepo(answers);
         }
-        if (answers.option == "Show ohshitgit.com") {
-            var opsys = process.platform;
-            if (opsys == "darwin") {
-                opsys = "MacOS";
-            } else if (opsys == "win32" || opsys == "win64") {
-                opsys = "Windows";
-                child = exec('start https://ohshitgit.com/',
-                    { maxBuffer: 1024 * 1024 },
-                    function (error, stdout, stderr) {
-                        console.log('stdout: ' + stdout);
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-                        }
-                    });
-            } else if (opsys == "linux") {
-                opsys = "Linux";
-                child = exec('firefox https://ohshitgit.com/',
-                    { maxBuffer: 1024 * 1024 },
-                    function (error, stdout, stderr) {
-                        console.log('stdout: ' + stdout);
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-                        }
-                    });
-            }
-            console.log(opsys) // I don't know what linux is.
+
+        if (answers.option == chalk.magentaBright('MANAGEMENT: Open local repo                                  (reads repo name from $User\\Documents\\GitRepoList\\List.txt)')) {
+            MANAGEMENTOpenlocalrepo.Openlocalrepo(answers);
         }
-        MakeTerminalCallFromMenuName(answers, "git config core.autocrlf true ( for Windows )", 'git config core.autocrlf true');
-        RegisterRepo(answers, 'Register repo');
-        OpenLocalRepo(answers, 'Open local repo');
-        if (answers.option == "git-clone from url") {
-            const questions = [
-                {
-                    type: 'text',
-                    name: 'url',
-                    pageSize: '50',
-                    message: 'What is the URL of the repository?'
-                }
-            ];
-            (async () => {
-                const response = await prompts(questions);
 
-                child = exec('git clone ' + response.url,
-                    { maxBuffer: 1024 * 1024 },
-                    function (error, stdout, stderr) {
-                        console.log('stdout: ' + stdout);
-                        console.log('stderr: ' + stderr);
-                        if (error !== null) {
-                            console.log('exec error: ' + error);
-                            console.log('response.url ' + response.url + '.git');
-                            
-                            // If it fails
-                            gitCloneFromUrlRetryOnFailure(response.url)
-                        }
-                    });
-
-            })();
+        if (answers.option == chalk.hex('#a434eb')('UTILITY:    git config core.autocrlf true ( for Windows )    (git config core.autocrlf true)')) {
+            UTILITYgitconfigcoreautocrlftrueforWindows.WindowsConfig(answers);          
         }
-        if (answers.option == "git-clone from list of repos") {
-            GetListOfRepos(answers, 'git-clone from list of repos', "EndHerePseudo-BooleanNo");
+
+        if (answers.option == chalk.hex('#a434eb')('UTILITY:    Test: use of simple-git functions                (test)')) {
+            UTILITYTestuseofsimplegitfunctionss.TestFunctionForSimplegit();   
         }
-        if (answers.option == "git push") {
-            gitPush_ExternalCall();   
+
+        if (answers.option == chalk.blackBright('HELP:       Show infographic                                 (start http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf )')) {
+            HELPShowinfographic.ShowInfographic();
         }
-        if (answers.option == "Test: use of simple-git functions") {
-            TestFunctionForSimplegit();   
+
+        if (answers.option == chalk.blackBright('HELP:       Show ohshitgit.com                               (start https://ohshitgit.com/ )')) {
+            HELPShowohshitgit.ShowOhshitgit();
         }
-        if (answers.option == "git status") {
-            gitStatus();   
+
+        if (answers.option == chalk.hex('#a434eb')('UTILITY:    Test: use of simple-git functions                (test)')) {
+            BRANCHINGRemoveremotebranch.BRANCHINGRemoveremotebranch();   
         }
-        
-    });
 
-}
-
-function spawnProcess(dir, cmd) {
-    return (process.platform.toLowerCase().indexOf("win") >= 0) 
-      ? spawnWindowsProcess(dir, cmd)
-      : spawnLinuxProcess(dir, cmd);
-  }
-  
-  function spawnWindowsProcess(dir, cmd) {
-    return spawn("cmd.exe", ["/c", cmd], {cwd: dir});
-  }
-  
-  function spawnLinuxProcess(dir, cmd) {
-    var cmdParts = cmd.split(/\s+/);
-  
-    return spawn(cmdParts[0], cmdParts.slice(1), { cwd: dir});
-  }
-  
-  function runCmdHandler(dir, cmd) {
-    var process = null;
-  
-    try {
-      process = spawnProcess(dir, cmd);
-    } catch (e) {
-      console.error("Error trying to execute command '" + cmd + "' in directory '" + dir + "'");
-      console.error(e);
-      console.log("error", e.message);
-      console.log("finished");
-      return;
-    }
-  
-    process.stdout.on('data', function (data) {
-      console.log("progress", data.toString('utf-8'));
-    });
-  
-    process.stderr.on('data', function (data) {
-      console.log("error", data.toString('utf-8'));
-    });
-  
-    process.on('exit', function (code) {
-      console.log("finished");
-    });
-  }
-
-function gitPush_ExternalCall(){
-    runCmdHandler(".", "start cmd /k git push");
-};
-
-function gitPull_ExternalCall(){
-    runCmdHandler(".", "start cmd /k git pull origin master");
-};
-
-function MakegitURLtoNormalURL(gitURl) {
-
-    console.log("gitURl: " + gitURl);
-
-    if (gitURl.includes("gitlab.com")) {
-        var StringToReturn2 = gitURl.replace(/:/g, "/");
-        return (StringToReturn2);
-    }
-    if (gitURl.includes("bitbucket.org")) {
-        var pattern = /.*https:\/\/(.*)\@.*/gi;
-        var StringToReturn1 = pattern.exec(gitURl);
-
-        console.log("StringToReturn1: " + StringToReturn1);
-
-        if (is_empty(StringToReturn1)){
-            var pattern1 = /.*https:\/\/*/gi;
-            var StringToReturn11 = pattern1.exec(gitURl);
-            var StringToReturn21 = gitURl.replace(StringToReturn11[1], "").replace("@", "");
-            return (StringToReturn21);
+        if (answers.option == gradient.rainbow('SETTINGS:   Enable or disable startup data fields.')) {
+            SETTINGSEnableordisablestartupdatafields.SETTINGSFunction1();
         }
-        else{
-            var StringToReturn2 = gitURl.replace(StringToReturn1[1], "").replace("@", "");
-            return (StringToReturn2);
+
+        if (answers.option == gradient.rainbow('SETTINGS:   Enable or disable status visualisation types.')) {
+            SETTINGSEnableordisableStatusVisualisationTypes.SETTINGSFunction2();
         }
-    }
-}
 
-function TestFunctionForSimplegit()
-{
-    // https://www.npmjs.com/package/simple-git
-
-
-    // const simplegit = require('simple-git')(workingDirPath);
-    // git().pull('origin', 'master', {'--no-rebase': null})
-
-    // require('simple-git')()
-    // .listRemote(['--get-url'], (err, data) => {
-    //     if (!err) {
-    //         console.log('Remote url for repository at ' + __dirname + ':');
-    //         console.log(data);
-
-    //         require('simple-git')()
-    // .log((err, log) => console.log(log))
-
-    //     }
-    // });
-
-
-
-    
-
-
-
-    // require('simple-git')().push('origin', 'master')
-    require('simple-git')().commit('message')
-    
-
-}
-
-function gitStatus()
-{
-
-    child = exec('git status',
-    { maxBuffer: 1024 * 1024 },
-    function (error, stdout, stderr) {
-        console.log(chalk.blue('stdout: ' + stdout));
-        console.log(chalk.yellow('stderr: ' + stderr));
-        if (error !== null) {
-            console.log(chalk.red('exec error: ' + error));
-
+        if (answers.option == gradient.rainbow('SETTINGS:   Enable, disable or change miscellaneous settings.')) {
+            SETTINGSEnableordisableMiscellaneousSettings.SETTINGSFunction3();
         }
     });
 
-    
-    
-}
-
-function TestFunctionForSimplegit()
-{
-
-    runCmdHandler(".", "git status");
-    
-    child = exec('git add . && git add -A  && git commit -m"' + ArgumentStringThree + '" && start cmd /k git push',
-    { maxBuffer: 1024 * 1024 },
-    function (error, stdout, stderr) {
-        console.log('stdout: ' + stdout);
-        console.log('stderr: ' + stderr);
-        if (error !== null) {
-            console.log('exec error: ' + error);
-
-        }
-    });
-    
-}
-
-function is_empty(x)
-{
-   return ( 
-        (typeof x == 'undefined')
-                    ||
-        (x == null) 
-                    ||
-        (x == false)  //same as: !x
-                    ||
-        (x.length == 0)
-                    ||
-        (x == "")
-                    ||
-        (!/[^\s]/.test(x))
-                    ||
-        (/^\s*$/.test(x))
-  );
-}
-
-function MakeTerminalCallFromMenuName(answers, answersOption, TerminalCall) {
-    if (answers.option == answersOption) {
-        child = exec(TerminalCall,
-            { maxBuffer: 1024 * 1024 },
-            function (error, stdout, stderr) {
-                console.log('stdout: ' + stdout);
-                console.log('stderr: ' + stderr);
-                if (error !== null) {
-                    console.log('exec error: ' + error);
-                }
-            });
-    }
-}
-
-function gitCloneFromUrlRetryOnFailure(nameOfRemoteRepo){
-    runCmdHandler(".", "start cmd /k git clone " + nameOfRemoteRepo + '.git');
-}
-
-function RegisterRepo(answers, answersOption) {
-    if (answers.option == answersOption) {
-
-        var opsys = process.platform;
-        if (opsys == "darwin") {
-            opsys = "MacOS";
-        } else if (opsys == "win32" || opsys == "win64") {
-            WinUserName = getUserHome();
-            console.log(WinUserName);
-            opsys = "Windows";
-            var dir = WinUserName + '/Documents/GitRepoList';
-
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir);
-            }
-
-            var readableURL = "";
-            child = exec('git config --get remote.origin.url',
-                { maxBuffer: 1024 * 1024 },
-                function (error, stdout, stderr) {
-                    console.log('stdout: ' + stdout);
-                    console.log('stderr: ' + stderr);
-                    readableURL = MakegitURLtoNormalURL(stdout);
-                    var currentPath = __dirname;
-
-                    var outputVar = currentPath + " " + readableURL;
-                    console.log(outputVar);
-
-                    try {
-                        if (fs.existsSync(dir + "/List.txt")) {
-
-                            FileText = fs.readFileSync(dir + "/List.txt");
-                            var fileSet = uniq(FileText.toString().split(/\r?\n/).clean(''));
-
-                            let uniqueArray = new Set();
-                            fileSet.forEach(function (entry) {
-                                uniqueArray.add(entry);
-                            });
-
-                            var stream = fs.createWriteStream(dir + "/List.txt");
-                            stream.once('open', function (fd) {
-
-                                stream.write(Array.from(uniqueArray).toString().replace("\r\n", "").replace(/,/g, "\r\n"));
-                                stream.write("\r\n");
-                                stream.write(outputVar);
-                                stream.end();
-                            });
-
-                        }
-                        else {
-                            fs.writeFile(dir + "/List.txt", "", { flag: 'wx' }, function (err) {
-                                console.log("File created");
-                            });
-                        }
-                    }
-                    catch (err) {
-
-                    }
-                });
-
-        } else if (opsys == "linux") {
-            LinuxUserName = getUserHome();
-            console.log(LinuxUserName);
-
-            var dir = LinuxUserName + '/GitRepoList';
-
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir);
-            }
-
-            var readableURL = "";
-            child = exec('git config --get remote.origin.url',
-                { maxBuffer: 1024 * 1024 },
-                function (error, stdout, stderr) {
-                    console.log('stdout: ' + stdout);
-                    console.log('stderr: ' + stderr);
-                    readableURL = MakegitURLtoNormalURL(stdout);
-                    var currentPath = __dirname;
-
-                    var outputVar = currentPath + " " + readableURL;
-                    console.log(outputVar);
-
-                    try {
-                        if (fs.existsSync(dir + "/List.txt")) {
-
-                            FileText = fs.readFileSync(dir + "/List.txt");
-                            var fileSet = uniq(FileText.toString().split(/\r?\n/).clean(''));
-
-                            let uniqueArray = new Set();
-                            fileSet.forEach(function (entry) {
-                                uniqueArray.add(entry);
-                            });
-
-                            var stream = fs.createWriteStream(dir + "/List.txt");
-                            stream.once('open', function (fd) {
-
-
-                                stream.write(Array.from(uniqueArray).toString().replace("\r\n", "").replace(/,/g, "\r\n"));
-                                stream.write("\r\n");
-                                stream.write(outputVar);
-                                stream.end();
-                            });
-
-                        }
-                        else {
-                            fs.writeFile(dir + "/List.txt", "", { flag: 'wx' }, function (err) {
-                                console.log("File created");
-                            });
-                        }
-                    }
-                    catch (err) {
-
-                    }
-                });
-        }
-    }
-}
-
-function getUserHome() {
-    const os = require('os');
-    return os.homedir();
-}
-
-function OpenLocalRepo(answers, answersOption) {
-    if (answers.option == answersOption) {
-        var opsys = process.platform;
-        if (opsys == "darwin") {
-            opsys = "MacOS";
-        }
-        else if (opsys == "win32" || opsys == "win64") {
-            WinUserName = getUserHome();
-            var dir = WinUserName + '/Documents/GitRepoList';
-
-            var FileDir = dir + "/List.txt";
-            if (fs.existsSync(FileDir)) {
-                FileText = fs.readFileSync(dir + "/List.txt");
-                var fileSet = uniq(FileText.toString().split(/\r?\n/).clean(''));
-                // console.log(fileSet);
-
-                inquirer
-                    .prompt([
-                        {
-                            type: 'list',
-                            name: 'option',
-                            message: 'Choose an option:',
-                            pageSize: '16',
-                            choices: fileSet,
-                        },
-                    ])
-                    .then(answers => {
-                        var answersString = answers.option;
-                        console.log(answersString);
-
-                        dirString = answersString.split(" ");
-                        console.log(dirString[0]);
-
-                        require('child_process').exec('start "" ' + dirString[0]);
-
-                    });
-
-            }
-        }
-        else if (opsys == "linux") {
-            LinuxUserName = getUserHome();
-            var dir = LinuxUserName + '/GitRepoList';
-
-            var FileDir = dir + "/List.txt";
-            if (fs.existsSync(FileDir)) {
-                FileText = fs.readFileSync(dir + "/List.txt");
-                var fileSet = uniq(FileText.toString().split(/\r?\n/).clean(''));
-                // console.log(fileSet);
-
-                inquirer
-                    .prompt([
-                        {
-                            type: 'list',
-                            name: 'option',
-                            message: 'Choose an option:',
-                            pageSize: '16',
-                            choices: fileSet,
-                        },
-                    ])
-                    .then(answers => {
-                        var answersString = answers.option;
-                        console.log(answersString);
-
-                        dirString = answersString.split(" ");
-                        console.log(dirString[0]);
-                        if (opsys == "darwin") {
-                            opsys = "MacOS";
-                        }
-                        else if (opsys == "win32" || opsys == "win64") {
-                            require('child_process').exec('start "" ' + dirString[0]);
-                        }
-                        else if (opsys == "linux") {
-                            // This is made to work on Ubuntu/Mint
-                            require('child_process').exec('nemo ' + dirString[0]);
-                        }
-
-                    });
-            }
-        }
-    }
-}
-
-Array.prototype.clean = function (deleteValue) {
-    for (var i = 0; i < this.length; i++) {
-        if (this[i] == deleteValue) {
-            this.splice(i, 1);
-            i--;
-        }
-    }
-    return this;
-};
-
-function uniq(a) {
-    var prims = { "boolean": {}, "number": {}, "string": {} }, objs = [];
-
-    return a.filter(function (item) {
-        var type = typeof item;
-        if (type in prims)
-            return prims[type].hasOwnProperty(item) ? false : (prims[type][item] = true);
-        else
-            return objs.indexOf(item) >= 0 ? false : objs.push(item);
-    });
-}
-
-function GetListOfRepos(answers, answersOption, PseudoBooleanOperationControl) {
-    if (answers.option == answersOption) {
-        inquirer
-            .prompt([
-                {
-                    type: 'list',
-                    name: 'option',
-                    message: 'Choose an option:',
-                    pageSize: '16',
-                    choices: ['Github', 'Bitbucket', 'Gitlab'],
-                },
-            ])
-            .then(answers => {
-                if (answers.option == "Github") {
-                    const questions = [
-                        {
-                            type: 'text',
-                            name: 'username',
-                            pageSize: '50',
-                            message: 'What is your username?'
-                        }
-                        ,
-                        {
-                            type: 'password',
-                            name: 'password',
-                            message: 'What is your password?'
-                        }
-                    ];
-                    (async () => {
-                        const response = await prompts(questions);
-
-                        let output = "";
-                        let emptyLines = 0;
-                        for (var i = 0; i < 10; i++) {
-                            var execSyncOutput = execSync('curl -u' + '"' + response.username + ':' + response.password + '" '
-                                + '"https://api.github.com/user/repos?page="' + [i] + '"&per_page=100"');
-
-                            if (execSyncOutput.toString().slice(0, -1).length < 5) {
-                                emptyLines += 1;
-                            }
-
-                            try {
-                                output = output.concat(execSyncOutput.toString().slice(0, -1));
-                            }
-                            catch (err) {
-
-                            }
-
-                        }
-
-                        console.log(emptyLines);
-                        console.log(emptyLines * 3 + 1);
-                        var outputFromCurl = output.replace(/\]\[/g, ',').toString().slice(0, -(emptyLines * 3 + 1)) + "]";
-
-                        var objstdout = JSON.parse(outputFromCurl);
-
-                        var gitURLList = [];
-
-                        for (ii = 0; ii < objstdout.length; ii++) {
-
-                            gitURLList.push(objstdout[ii].html_url);
-
-                        }
-
-                        for (var i = 0; i < gitURLList.length; i++) {
-                            gitURLList[i] = i + ". " + gitURLList[i];
-                        }
-
-                        if (PseudoBooleanOperationControl == "EndHerePseudo-BooleanYes") {
-                            inquirer
-                                .prompt([
-                                    {
-                                        type: 'list',
-                                        name: 'option',
-                                        message: 'Choose an option:',
-                                        pageSize: '50',
-                                        choices: gitURLList,
-                                    },
-                                ])
-                                .then(answers => {
-                                    var answersString = answers.option;
-                                    console.log(answersString);
-
-                                    dirString = answersString.split(" ");
-                                    console.log(dirString[0]);
-                                    console.log(dirString[1]);
-                                    if (opsys == "darwin") {
-                                        opsys = "MacOS";
-                                    }
-                                    else if (opsys == "win32" || opsys == "win64") {
-                                        console.log(answers.option);
-
-                                    }
-                                    else if (opsys == "linux") {
-                                        // This is made to work on Ubuntu/Mint
-                                        console.log(answers.option);
-
-                                    }
-                                });
-                        }
-
-                        if (PseudoBooleanOperationControl == "EndHerePseudo-BooleanNo") {
-                            inquirer
-                                .prompt([
-                                    {
-                                        type: 'list',
-                                        name: 'option',
-                                        message: 'Choose an option:',
-                                        pageSize: '50',
-                                        choices: gitURLList,
-                                    },
-                                ])
-                                .then(answers => {
-                                    var answersString = answers.option;
-                                    var opsys = process.platform;
-                                    console.log(answersString);
-
-                                    dirString = answersString.split(" ");
-                                    console.log(dirString[0]);
-                                    if (opsys == "darwin") {
-                                        opsys = "MacOS";
-                                    }
-                                    else if (opsys == "win32" || opsys == "win64") {
-
-                                        child = exec('git clone ' + dirString[1],
-                                            { maxBuffer: 1024 * 1024 },
-                                            function (error, stdout, stderr) {
-                                                console.log('stdout: ' + stdout);
-                                                console.log('stderr: ' + stderr);
-                                                if (error !== null) {
-                                                    console.log('exec error: ' + error);
-
-                                                    // If it fails
-                                                    gitCloneFromUrlRetryOnFailure(dirString[1])
-                                                }
-                                            });
-
-                                    }
-                                    else if (opsys == "linux") {
-                                        child = exec('git clone ' + dirString[1],
-                                            { maxBuffer: 1024 * 1024 },
-                                            function (error, stdout, stderr) {
-                                                console.log('stdout: ' + stdout);
-                                                console.log('stderr: ' + stderr);
-                                                if (error !== null) {
-                                                    console.log('exec error: ' + error);
-                                                }
-                                            });
-
-                                    }
-                                });
-                        }
-                    })();
-                }
-                if (answers.option == "Bitbucket") {
-                    inquirer
-                        .prompt([
-                            {
-                                type: 'list',
-                                name: 'option',
-                                message: 'Choose an option:',
-                                pageSize: '16',
-                                choices: ['Public repos', 'Private repos'],
-                            },
-                        ])
-                        .then(answers => {
-                            if (answers.option == "Public repos") {
-                                const questions = [
-                                    {
-                                        type: 'text',
-                                        name: 'username',
-                                        pageSize: '50',
-                                        message: 'What is your username?'
-                                    }
-                                ];
-                                (async () => {
-                                    const response = await prompts(questions);
-
-                                    let output = "";
-                                    let emptyLines = 0;
-                                    for (var i = 1; i < 11; i++) {
-                                        var execSyncOutput = execSync('curl "https://api.bitbucket.org/2.0/repositories/'
-                                            + response.username + '?pagelen=100&limit=10000&page=' + [i] + '"');
-
-                                        // console.log( execSyncOutput.toString().replace(/\n|\0|\t|\r|\f|\s/gim, ''));
-
-                                        execSyncOutput = CleanString(execSyncOutput.toString());
-
-                                        if (execSyncOutput.toString().slice(0, -1).length < 5) {
-                                            emptyLines += 1;
-                                        }
-
-                                        try {
-
-                                            output = output + execSyncOutput.toString();
-                                            if (i != 10) {
-                                                output = output + ",";
-                                            }
-                                        }
-                                        catch (err) {
-
-                                        }
-
-                                    }
-
-                                    output = "[" + output + "]";
-
-                                    console.log(emptyLines);
-                                    console.log(emptyLines * 3 + 1);
-
-
-                                    var objstdout = JSON.parse(output.toString());
-                                    var gitURLList = [];
-
-
-                                    for (var iii = 0; iii < 10; iii++) {
-
-
-                                        for (ii = 0; ii < objstdout[iii].values.length; ii++) {
-
-                                            gitURLList.push(objstdout[iii].values[ii].links.self.href);
-
-                                        }
-                                    }
-
-                                    for (var i = 0; i < gitURLList.length; i++) {
-                                        gitURLList[i] = i + ". " + gitURLList[i];
-                                    }
-
-                                    inquirer
-                                        .prompt([
-                                            {
-                                                type: 'list',
-                                                name: 'option',
-                                                message: 'Choose an option:',
-                                                pageSize: '50',
-                                                choices: gitURLList,
-                                            },
-                                        ])
-                                        .then(answers => {
-                                            if (PseudoBooleanOperationControl == "EndHerePseudo-BooleanYes") {
-                                                var answersString = answers.option;
-                                                console.log(answersString);
-
-                                                dirString = answersString.split(" ");
-                                                console.log(dirString[0]);
-                                                console.log(dirString[1]);
-                                                if (opsys == "darwin") {
-                                                    opsys = "MacOS";
-                                                }
-                                                else if (opsys == "win32" || opsys == "win64") {
-                                                    console.log(answers.option);
-
-                                                }
-                                                else if (opsys == "linux") {
-                                                    // This is made to work on Ubuntu/Mint
-                                                    console.log(answers.option);
-
-                                                }
-                                            }
-
-                                            if (PseudoBooleanOperationControl == "EndHerePseudo-BooleanNo") {
-
-                                                var answersString = answers.option;
-                                                var opsys = process.platform;
-                                                console.log(answersString);
-
-                                                dirString = answersString.split(" ");
-                                                // console.log(dirString[0]);
-                                                dirStringCleanValue = dirString[1].replace("https://api.bitbucket.org/2.0/repositories/", "https://bitbucket.org/");
-
-                                                if (opsys == "darwin") {
-                                                    opsys = "MacOS";
-                                                }
-                                                else if (opsys == "win32" || opsys == "win64") {
-
-                                                    child = exec('git clone ' + dirStringCleanValue,
-                                                        { maxBuffer: 1024 * 1024 },
-                                                        function (error, stdout, stderr) {
-                                                            console.log('stdout: ' + stdout);
-                                                            console.log('stderr: ' + stderr);
-                                                            if (error !== null) {
-                                                                console.log('exec error: ' + error);
-
-                                                                // If it fails
-                                                                gitCloneFromUrlRetryOnFailure(dirStringCleanValue)
-
-                                                            }
-                                                        });
-
-                                                }
-                                                else if (opsys == "linux") {
-                                                    child = exec('git clone ' + dirStringCleanValue,
-                                                        { maxBuffer: 1024 * 1024 },
-                                                        function (error, stdout, stderr) {
-                                                            console.log('stdout: ' + stdout);
-                                                            console.log('stderr: ' + stderr);
-                                                            if (error !== null) {
-                                                                console.log('exec error: ' + error);
-                                                            }
-                                                        });
-
-                                                }
-
-                                            }
-                                        });
-                                })();
-                            }
-                            if (answers.option == "Private repos") {
-                                const questions = [
-                                    {
-                                        type: 'text',
-                                        name: 'username',
-                                        message: 'What is your username?'
-                                    }
-                                    ,
-                                    {
-                                        type: 'password',
-                                        name: 'password',
-                                        message: 'What is your password?'
-                                    }
-
-                                ];
-                                (async () => {
-                                    const response = await prompts(questions);
-
-                                    let output = "";
-                                    let emptyLines = 0;
-                                    for (var i = 1; i < 11; i++) {
-                                        var execSyncOutput = execSync('curl "https://api.bitbucket.org/2.0/repositories/' + response.username + '?pagelen=100&limit=10000&page='
-                                            + [i] + '"' + ' -u ' + '"' + response.username + ':' + response.password + '"');
-
-                                        execSyncOutput = CleanString(execSyncOutput.toString());
-
-                                        if (execSyncOutput.toString().slice(0, -1).length < 5) {
-                                            emptyLines += 1;
-                                        }
-
-                                        try {
-
-                                            output = output + execSyncOutput.toString();
-                                            if (i != 10) {
-                                                output = output + ",";
-                                            }
-                                        }
-                                        catch (err) {
-
-                                        }
-
-                                    }
-
-                                    output = "[" + output + "]";
-
-                                    console.log(emptyLines);
-                                    console.log(emptyLines * 3 + 1);
-
-
-                                    var objstdout = JSON.parse(output.toString());
-                                    var gitURLList = [];
-
-
-                                    for (var iii = 0; iii < 10; iii++) {
-
-
-
-                                        for (ii = 0; ii < objstdout[iii].values.length; ii++) {
-
-                                            gitURLList.push(objstdout[iii].values[ii].links.self.href);
-                                            // console.log(objstdout.values[ii]);
-                                        }
-                                    }
-
-                                    for (var i = 0; i < gitURLList.length; i++) {
-                                        gitURLList[i] = i + ". " + gitURLList[i];
-                                    }
-
-                                    inquirer
-                                        .prompt([
-                                            {
-                                                type: 'list',
-                                                name: 'option',
-                                                message: 'Choose an option:',
-                                                pageSize: '50',
-                                                choices: gitURLList,
-                                            },
-                                        ])
-                                        .then(answers => {
-                                            if (PseudoBooleanOperationControl == "EndHerePseudo-BooleanYes") {
-                                                var answersString = answers.option;
-                                                console.log(answersString);
-
-                                                dirString = answersString.split(" ");
-                                                console.log(dirString[0]);
-                                                console.log(dirString[1]);
-                                                if (opsys == "darwin") {
-                                                    opsys = "MacOS";
-                                                }
-                                                else if (opsys == "win32" || opsys == "win64") {
-                                                    console.log(answers.option);
-
-                                                }
-                                                else if (opsys == "linux") {
-                                                    // This is made to work on Ubuntu/Mint
-                                                    console.log(answers.option);
-
-                                                }
-                                            }
-
-                                            if (PseudoBooleanOperationControl == "EndHerePseudo-BooleanNo") {
-
-                                                var answersString = answers.option;
-                                                var opsys = process.platform;
-                                                console.log(answersString);
-
-                                                dirString = answersString.split(" ");
-
-                                                dirStringCleanValue = dirString[1].replace("https://api.bitbucket.org/2.0/repositories/", "https://bitbucket.org/");
-
-
-                                                if (opsys == "darwin") {
-                                                    opsys = "MacOS";
-                                                }
-                                                else if (opsys == "win32" || opsys == "win64") {
-
-                                                    child = exec('git clone ' + dirStringCleanValue,
-                                                        { maxBuffer: 1024 * 1024 },
-                                                        function (error, stdout, stderr) {
-                                                            console.log('stdout: ' + stdout);
-                                                            console.log('stderr: ' + stderr);
-                                                            if (error !== null) {
-                                                                console.log('exec error: ' + error);
-
-                                                                // If it fails
-                                                                gitCloneFromUrlRetryOnFailure(dirStringCleanValue)
-
-                                                            }
-                                                        });
-
-                                                }
-                                                else if (opsys == "linux") {
-
-                                                    child = exec('git clone ' + dirStringCleanValue,
-                                                        { maxBuffer: 1024 * 1024 },
-                                                        function (error, stdout, stderr) {
-                                                            console.log('stdout: ' + stdout);
-                                                            console.log('stderr: ' + stderr);
-                                                            if (error !== null) {
-                                                                console.log('exec error: ' + error);
-                                                            }
-                                                        });
-
-                                                }
-                                            }
-                                        });
-                                })();
-                            }
-                        });
-
-                }
-                if (answers.option == "Gitlab") {
-                    inquirer
-                        .prompt([
-                            {
-                                type: 'list',
-                                name: 'option',
-                                message: 'Choose an option:',
-                                pageSize: '16',
-                                choices: ['Public repos', 'Private repos'],
-                            },
-                        ])
-                        .then(answers => {
-                            if (answers.option == "Public repos") {
-                                const questions = [
-                                    {
-                                        type: 'text',
-                                        name: 'username',
-                                        pageSize: '50',
-                                        message: 'What is your username?'
-                                    }
-                                ];
-                                (async () => {
-                                    const response = await prompts(questions);
-
-                                    let output = "";
-                                    let emptyLines = 0;
-                                    for (var i = 0; i < 10; i++) {
-                                        var execSyncOutput = execSync('curl "https://gitlab.com/api/v4/users/'
-                                            + response.username + '/projects?page=' + i + '&per_page=100" ');
-
-                                        execSyncOutput = CleanString(execSyncOutput);
-                                        var objstdout = JSON.parse(execSyncOutput);
-
-                                        if (execSyncOutput.toString().slice(0, -1).length < 5) {
-                                            emptyLines += 1;
-                                        }
-
-                                        try {
-
-                                            for (var ii = 0; ii < objstdout.length; ii++) {
-
-                                                output = output.concat(objstdout[ii].web_url + " ");
-                                            }
-
-                                        }
-                                        catch (err) {
-
-                                        }
-                                    }
-
-
-                                    var gitURLList = output.split(" ");
-
-                                    var uniqueArray = gitURLList.filter(function (item, pos) {
-                                        return gitURLList.indexOf(item) == pos;
-                                    });
-
-                                    var filtered = uniqueArray.filter(function (el) {
-                                        if (el != "") {
-                                            return el != null;
-                                        }
-                                    });
-
-                                    gitURLList = filtered;
-
-                                    for (var i = 0; i < gitURLList.length; i++) {
-                                        gitURLList[i] = i + ". " + gitURLList[i];
-                                    }
-
-                                    inquirer
-                                        .prompt([
-                                            {
-                                                type: 'list',
-                                                name: 'option',
-                                                message: 'Choose an option:',
-                                                pageSize: '50',
-                                                choices: gitURLList,
-                                            },
-                                        ])
-                                        .then(answers => {
-                                            if (PseudoBooleanOperationControl == "EndHerePseudo-BooleanYes") {
-                                                var answersString = answers.option;
-                                                console.log(answersString);
-
-                                                dirString = answersString.split(" ");
-                                                console.log(dirString[0]);
-                                                console.log(dirString[1]);
-                                                if (opsys == "darwin") {
-                                                    opsys = "MacOS";
-                                                }
-                                                else if (opsys == "win32" || opsys == "win64") {
-                                                    console.log(answers.option);
-
-                                                }
-                                                else if (opsys == "linux") {
-                                                    // This is made to work on Ubuntu/Mint
-                                                    console.log(answers.option);
-
-                                                }
-                                            }
-
-                                            if (PseudoBooleanOperationControl == "EndHerePseudo-BooleanNo") {
-
-                                                var answersString = answers.option;
-                                                var opsys = process.platform;
-                                                console.log(answersString);
-
-                                                dirString = answersString.split(" ");
-
-                                                if (opsys == "darwin") {
-                                                    opsys = "MacOS";
-                                                }
-                                                else if (opsys == "win32" || opsys == "win64") {
-
-                                                    child = exec('git clone ' + dirString[1],
-                                                        { maxBuffer: 1024 * 1024 },
-                                                        function (error, stdout, stderr) {
-                                                            console.log('stdout: ' + stdout);
-                                                            console.log('stderr: ' + stderr);
-                                                            if (error !== null) {
-                                                                console.log('exec error: ' + error);
-
-                                                                // If it fails
-                                                                gitCloneFromUrlRetryOnFailure(dirString[1])
-                                                            }
-                                                        });
-
-                                                }
-                                                else if (opsys == "linux") {
-                                                    child = exec('git clone ' + dirString[1],
-                                                        { maxBuffer: 1024 * 1024 },
-                                                        function (error, stdout, stderr) {
-                                                            console.log('stdout: ' + stdout);
-                                                            console.log('stderr: ' + stderr);
-                                                            if (error !== null) {
-                                                                console.log('exec error: ' + error);
-                                                            }
-                                                        });
-
-                                                }
-
-                                            }
-                                        });
-                                })();
-                            }
-                            if (answers.option == "Private repos") {
-                                const questions = [
-                                    {
-                                        type: 'text',
-                                        name: 'username',
-                                        message: 'What is your username?'
-                                    }
-                                    ,
-                                    {
-                                        type: 'password',
-                                        name: 'private_token',
-                                        message: 'What is your private token?'
-                                    }
-                                ];
-
-                                (async () => {
-                                    const response = await prompts(questions);
-
-                                    let output = "";
-                                    let emptyLines = 0;
-                                    for (var i = 0; i < 10; i++) {
-                                        var execSyncOutput = execSync('curl "https://gitlab.com/api/v4/users/'
-                                            + response.username + '/projects?private_token=' + response.private_token
-                                            + '&page=' + i + '&per_page=100" ');
-
-                                        execSyncOutput = CleanString(execSyncOutput);
-                                        var objstdout = JSON.parse(execSyncOutput);
-
-
-                                        if (execSyncOutput.toString().slice(0, -1).length < 5) {
-                                            emptyLines += 1;
-                                        }
-
-                                        try {
-
-                                            for (var ii = 0; ii < objstdout.length; ii++) {
-
-                                                output = output.concat(objstdout[ii].web_url + " ");
-                                            }
-
-                                        }
-                                        catch (err) {
-
-                                        }
-                                    }
-
-
-
-                                    var gitURLList = output.split(" ");
-
-                                    var uniqueArray = gitURLList.filter(function (item, pos) {
-                                        return gitURLList.indexOf(item) == pos;
-                                    });
-
-                                    var filtered = uniqueArray.filter(function (el) {
-                                        if (el != "") {
-                                            return el != null;
-                                        }
-                                    });
-
-                                    gitURLList = filtered;
-
-                                    for (var i = 0; i < gitURLList.length; i++) {
-                                        gitURLList[i] = i + ". " + gitURLList[i];
-                                    }
-
-                                    inquirer
-                                        .prompt([
-                                            {
-                                                type: 'list',
-                                                name: 'option',
-                                                message: 'Choose an option:',
-                                                pageSize: '50',
-                                                choices: gitURLList,
-                                            },
-                                        ])
-                                        .then(answers => {
-                                            if (PseudoBooleanOperationControl == "EndHerePseudo-BooleanYes") {
-                                                var answersString = answers.option;
-                                                console.log(answersString);
-
-                                                dirString = answersString.split(" ");
-                                                console.log(dirString[0]);
-                                                console.log(dirString[1]);
-                                                if (opsys == "darwin") {
-                                                    opsys = "MacOS";
-                                                }
-                                                else if (opsys == "win32" || opsys == "win64") {
-                                                    console.log(answers.option);
-
-                                                }
-                                                else if (opsys == "linux") {
-                                                    // This is made to work on Ubuntu/Mint
-                                                    console.log(answers.option);
-
-                                                }
-                                            }
-
-                                            if (PseudoBooleanOperationControl == "EndHerePseudo-BooleanNo") {
-
-                                                var answersString = answers.option;
-                                                var opsys = process.platform;
-                                                console.log(answersString);
-
-                                                dirString = answersString.split(" ");
-
-                                                if (opsys == "darwin") {
-                                                    opsys = "MacOS";
-                                                }
-                                                else if (opsys == "win32" || opsys == "win64") {
-
-                                                    child = exec('git clone ' + dirString[1],
-                                                        { maxBuffer: 1024 * 1024 },
-                                                        function (error, stdout, stderr) {
-                                                            console.log('stdout: ' + stdout);
-                                                            console.log('stderr: ' + stderr);
-                                                            if (error !== null) {
-                                                                console.log('exec error: ' + error);
-                                                                
-                                                                // If it fails
-                                                                gitCloneFromUrlRetryOnFailure(dirString[1])
-
-                                                            }
-                                                        });
-                                                }
-                                                else if (opsys == "linux") {
-                                                    child = exec('git clone ' + dirString[1],
-                                                        { maxBuffer: 1024 * 1024 },
-                                                        function (error, stdout, stderr) {
-                                                            console.log('stdout: ' + stdout);
-                                                            console.log('stderr: ' + stderr);
-                                                            if (error !== null) {
-                                                                console.log('exec error: ' + error);
-                                                            }
-                                                        });
-                                                }
-                                            }
-                                        });
-                                })();
-                            }
-                        });
-                }
-            });
-    }
-}
-
-function CleanString(StringValue) {
-    var returnString = StringValue.toString()
-        .replace(/\n|\0|\t|\r|\f|\v|\x0d|\x0a|\x0d\x0a|\↵/g, '')
-        .replace("\\x00", null)
-        .replace(/[^A-Za-z 0-9 \.,\?""!@#\$%\^&\*\(\)-_=\+;:<>\/\\\|\}\{\[\]`~]*/g, '')
-        .replace(/(?![\x00-\x7F]|[\xC0-\xDF][\x80-\xBF]|[\xE0-\xEF][\x80-\xBF]{2}|[\xF0-\xF7][\x80-\xBF]{3})./g)
-        .replace(/([\x7F-\x84]|[\x86-\x9F]|[\uFDD0-\uFDEF]|(?:\uD83F[\uDFFE\uDFFF])|(?:\uD87F[\uDFFE\uDFFF])|(?:\uD8BF[\uDFFE\uDFFF])|(?:\uD8FF[\uDFFE\uDFFF])|(?:\uD93F[\uDFFE\uDFFF])|(?:\uD97F[\uDFFE\uDFFF])|(?:\uD9BF[\uDFFE\uDFFF])|(?:\uD9FF[\uDFFE\uDFFF])|(?:\uDA3F[\uDFFE\uDFFF])|(?:\uDA7F[\uDFFE\uDFFF])|(?:\uDABF[\uDFFE\uDFFF])|(?:\uDAFF[\uDFFE\uDFFF])|(?:\uDB3F[\uDFFE\uDFFF])|(?:\uDB7F[\uDFFE\uDFFF])|(?:\uDBBF[\uDFFE\uDFFF])|(?:\uDBFF[\uDFFE\uDFFF])(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]))/g, '');
-    return returnString;
 }
