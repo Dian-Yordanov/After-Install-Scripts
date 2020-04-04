@@ -50,6 +50,33 @@ var MakegitURLtoNormalURL = function (gitURl)
     }
 }
 
+var MakegitURLtoNormalURL2 = function (gitURl) 
+{
+    console.log("gitURl: " + gitURl);
+
+    if (gitURl.includes("gitlab.com")) {
+        var StringToReturn2 = gitURl.replace('\n','') +".git";
+        return (StringToReturn2);
+    }
+    if (gitURl.includes("bitbucket.org")) {
+        var pattern = /.*https:\/\/(.*)\@.*/gi;
+        var StringToReturn1 = pattern.exec(gitURl);
+
+        console.log("StringToReturn1: " + StringToReturn1);
+
+        if (is_empty(StringToReturn1)){
+            var pattern1 = /.*https:\/\/*/gi;
+            var StringToReturn11 = pattern1.exec(gitURl);
+            var StringToReturn21 = gitURl.replace(StringToReturn11[1], "").replace("@", "");
+            return (StringToReturn21);
+        }
+        else{
+            var StringToReturn2 = gitURl.replace(StringToReturn1[1], "").replace("@", "");
+            return (StringToReturn2);
+        }
+    }
+}
+
 function isNullOrEmpty(str){
     return !str||!str.trim();
 }
@@ -2087,15 +2114,26 @@ function splitString(str) {
     return s1;
     };
 
+function validURL(str) {
+    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    return !!pattern.test(str);
+    }
 
 module.exports = {
     limitStringLinesCount:limitStringLinesCount, 
     getSizeOfStringLines:getSizeOfStringLines,
     testEmpty: testEmpty,
     MakegitURLtoNormalURL: MakegitURLtoNormalURL,
+    MakegitURLtoNormalURL2: MakegitURLtoNormalURL2,
     is_empty: is_empty,
     CleanString: CleanString,
     uniq: uniq,
+    validURL:validURL,
     getUserHome: getUserHome,
     gitCloneFromUrlRetryOnFailure: gitCloneFromUrlRetryOnFailure,
     spawnProcess: spawnProcess,
