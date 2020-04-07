@@ -1,0 +1,1 @@
+choco install emsisoft-emergency-kit -y

@@ -1,0 +1,60 @@
+html {background: */ rgb(0, 0, 0) /* fixed */ !important}
+
+* {
+color: rgba(0,0,0,1) !important;
+text-shadow: 0 0 1px rgba(255,255,255,1) !important;
+box-shadow: none !important;
+background-color: transparent!important;
+border-color: rgba(128,128,128, 1) !important;
+border-top-color: rgba(128,128,128, 1) !important;
+border-bottom-color: rgba(128,128,128, 1) !important;
+border-left-color: rgba(128,128,128, 1) !important;
+border-right-color: rgba(128,128,128, 1) !important}
+*:before, *:after {background-color: transparent !important; border-color: rgba(128,128,128, 1) !important}
+
+/*----- links -----*/
+
+body, #content, #settingsMenu, td.postblock, tr, div.extPanel, strong, span.button, div#theme.panel {
+    color: rgba(0,0,0,1) !important;
+    background-color: rgba(255,255,255,1) !important; background-image: none !important;}
+
+a, a * {
+color: #336699 !important;
+text-decoration: none !important}
+a:hover, a:hover *, a:visited:hover, a:visited:hover *, span[onclick]:hover, div[onclick]:hover, [role="link"]:hover, [role="link"]:hover *, [role="button"]:hover *, [role="menuitem"]:hover, [role="menuitem"]:hover *, .link:hover, .link:hover * {
+color: rgba(255,255,255,1) !important;
+text-shadow: 0 0 1px rgba(255,255,255,1) !important}
+a:visited, a:visited * {
+color: #607069 !important}
+a.highlight, a.highlight *, a.active, a.active *, .selected, .selected *, [href="#"] {
+color: #DDD !important;
+font-weight: bold !important}
+
+a h1, a h2, a h3, a h4, a h5, a h6, h1 a, h2 a, h3 a, a strong, a[id*="headline"], a[class*="headline"], a[id*="header"], a[class*="header"] {text-decoration: underline !important}
+[class*="error"], [class*="alert"], code, span[onclick], div[onclick] {color: #900 !important}
+
+::-moz-selection {background: #377 !important; color: rgba(255,255,255,1) !important}
+::selection {background: #377 !important; color: rgba(255,255,255,1) !important}
+:focus {outline: none !important}
+
+/*----- MENU & CO BACKGROUND-COLORS -----*/
+div[style="display: block;"] {background: rgba(255,255,255,1) !important}
+
+table {
+background: rgba(255,255,255,1) !important;
+border-radius: 6px !important}
+table > tbody > tr:nth-child(even), table > tbody > tr > td:nth-child(even) {
+background-color: rgba(0,0,0,1) !important}
+
+iframe, embed, header, nav, footer, label [onclick], nav ul, div[style*="position:"][style*="left:"][style*="visible"], div[style*="z-index:"][style*="left:"][style*="visible"], div[style*="-moz-user-select"], div[role="menu"], div[role="dialog"], span[class*="script"] div, [id*="menu"], [class*="dropdown"], [class*="popup"], [class="title"], ul[style*="display:"], ul[style*="visibility:"] ul, [id*="nav"] ul, [class*="nav"] ul, ul[class*="menu"], a[onclick][style*="display"], a[id*="ghosteryfirefox"], #ghostery-purple-bubble, #translator-popup, .menu, .tooltip,
+
+.hovercard, .vbmenu_popup {
+background: rgba(255,255,255,1) !important;
+border-radius: 5px;
+box-shadow: 1px 1px 5px rgba(255,255,255,1) !important}
+
+[id*="overlay"], [id*="lightbox"], blockquote {
+background-color: rgba(35,35,35,.9) !important;
+border-radius: 5px}
+pre, dl, .Message code {
+background-color: rgba(5,5,5,.5) !important}

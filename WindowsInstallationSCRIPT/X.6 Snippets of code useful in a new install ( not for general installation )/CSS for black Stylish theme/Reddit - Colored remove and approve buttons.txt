@@ -1,0 +1,12 @@
+@-moz-document domain("reddit.com") {
+@namespace url(http://www.w3.org/1999/xhtml);
+body.moderator .entry .buttons .remove-button a,
+    body.listing-page .entry .buttons .remove-button a {
+        color: #FF0000 !important;
+    }
+    
+    body.moderator .entry .buttons .approve-button a,
+    body.listing-page .entry .buttons .approve-button a{
+        color: #00FF00 !important;
+    }
+}

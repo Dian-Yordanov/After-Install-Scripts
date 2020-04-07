@@ -1,0 +1,609 @@
+html {background:
+
+/* i really want this to be global */
+/***** COPY AND PASTE THE URL OF YOUR BACKROUND-IMAGE INSIDE THE "": *****/
+
+url(https://i.imgur.com/9rVXvIY.png)
+
+/***** FOR A SIMPLE BLACK BACKGROUND JUST REMOVE THE URL LINE ABOVE *****/
+/***** Some background-images (you can also use your own url):
+
+default: https://i.imgur.com/9rVXvIY.png
+old default: http://abload.de/img/ultra_x2vm9k.jpg
+http://abload.de/img/b2w4shd.png
+http://abload.de/img/b3qrs99.png
+http://abload.de/img/b4zcse8.png
+http://abload.de/img/b5b1s7x.png
+http://abload.de/img/b6umsmy.png
+http://abload.de/img/b7ars8c.png
+http://abload.de/img/kubrickbgcolor2darkr8skc.png
+http://abload.de/img/xpattern_darkq8s3i.png
+http://abload.de/img/mainpatternolxcq.png
+
+*/ #000 /* fixed */ !important}
+
+* {
+color: #FFF !important;
+text-shadow: 0 0 3px #000 !important;
+box-shadow: none !important;
+background-color: transparent!important;
+border-color: #444 !important;
+border-top-color: #444 !important;
+border-bottom-color: #444 !important;
+border-left-color: #444 !important;
+border-right-color: #444 !important}
+*:before, *:after {background-color: transparent !important; border-color: #444 !important}
+
+/*----- links -----*/
+
+
+
+a, a * {
+color: #336699 !important;
+text-decoration: none !important}
+a:hover, a:hover *, a:visited:hover, a:visited:hover *, span[onclick]:hover, div[onclick]:hover, [role="link"]:hover, [role="link"]:hover *, [role="button"]:hover *, [role="menuitem"]:hover, [role="menuitem"]:hover *, .link:hover, .link:hover * {
+color: #fff !important;
+text-shadow: 0 0 5px rgba(255,255,200,0.9) !important}
+a:visited, a:visited * {
+color: #607069 !important}
+a.highlight, a.highlight *, a.active, a.active *, .selected, .selected *, [href="#"] {
+color: #DDD !important;
+font-weight: bold !important}
+
+h1, h2, h3, h4, h5, h6, h1 *, h2 *, h3 *, strong, [id*="headline"], [class*="headline"], [id*="header"], [class*="header"], [class*="header"] td {color: #DDD !important}
+a h1, a h2, a h3, a h4, a h5, a h6, h1 a, h2 a, h3 a, a strong, a[id*="headline"], a[class*="headline"], a[id*="header"], a[class*="header"] {text-decoration: underline !important}
+[class*="error"], [class*="alert"], code, span[onclick], div[onclick] {color: #900 !important}
+
+::-moz-selection {background: #377 !important; color: #000 !important}
+::selection {background: #377 !important; color: #000 !important}
+:focus {outline: none !important}
+
+/*----- MENU & CO BACKGROUND-COLORS -----*/
+div[style="display: block;"] {background: rgba(0,0,0,.5) !important}
+
+table {
+background: rgba(0,0,0,.6) !important;
+border-radius: 6px !important}
+table > tbody > tr:nth-child(even), table > tbody > tr > td:nth-child(even) {
+background-color: rgba(0,0,0,.2) !important}
+
+iframe, embed, header, nav, footer, label [onclick], nav ul, div[style*="position:"][style*="left:"][style*="visible"], div[style*="z-index:"][style*="left:"][style*="visible"], div[style*="-moz-user-select"], div[role="menu"], div[role="dialog"], span[class*="script"] div, [id*="menu"], [class*="dropdown"], [class*="popup"], [class="title"], ul[style*="display:"], ul[style*="visibility:"] ul, [id*="nav"] ul, [class*="nav"] ul, ul[class*="menu"], a[onclick][style*="display"], a[id*="ghosteryfirefox"], #ghostery-purple-bubble, #translator-popup, .menu, .tooltip, .hovercard, .vbmenu_popup {
+background: rgba(5,5,5,.9) !important;
+border-radius: 5px;
+box-shadow: 1px 1px 5px #000 !important}
+[id*="overlay"], [id*="lightbox"], blockquote {
+background-color: rgba(35,35,35,.9) !important;
+border-radius: 5px}
+pre, dl, .Message code {
+background-color: rgba(5,5,5,.5) !important}
+
+/*----- CHANGE CURSORS -----*/
+* {cursor: url("data:image/x-icon;base64,AAACAAEAICAAAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/eX9/f3w/f39yz///8A////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf397glJSXM9/f3w/f39yz///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3uAoKCswlJSXM9/f3w/f39ywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/e4BwcHzAoKCswlJSXM9/f3w/f39yz///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf397gEBATMBwcHzAoKCswlJSXM9/f3w/f395f39/eX9/f3l/f395f39/eX9/f3l////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3uAICAswEBATMBwcHzAoKCswODg7MERERzBUVFcwZGRnMHR0dzDU1Ncz39/eX////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/e4AAAAzAICAswEBATMBwcHzAoKCswODg7MERERzBUVFcwvLy/M9/f3l/f39yz///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf397gAAADMAAAAzAICAswEBATMBwcHzAoKCswODg7MKCgozPf395f39/cs////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3uAAAAMwAAADMAAAAzAICAswEBATMBwcHzCIiIsz39/eX9/f3LP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/e4AAAAzAAAAMwAAADMAAAAzAICAswcHBzM9/f3l/f39yz///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf397gAAADMAAAAzAAAAMwAAADMGRkZzPf395f39/cs////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3uAAAAMwAAADMAAAAzBkZGcz39/eX9/f3LP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/e4AAAAzAAAAMwZGRnM9/f3l/f39yz///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf397gAAADMGRkZzPf395f39/cs////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3uBkZGcz39/eX9/f3LP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/e49/f3l/f39yz///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf397j39/cs////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////////////////////////////////////////////////////////////////////////////////P////x////8P////B////wAP//8AD///AB///wA///8Af///AP///wH///8D////B////w////8f////P////3////8="), default !important}
+a, a * {cursor: url("data:image/x-icon;base64,AAACAAEAICAAAAUAAQCoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3lPf398z39/fM9/f3zPf398z39/fM9/f3zPf398z39/fM9/f3lP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf39wT39/exFRUVzBkZGcwdHR3MICAgzCQkJMwnJyfMKioqzCwsLMz39/e0////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3T/f392wRERHMFRUVzBkZGcwdHR3MICAgzCQkJMwnJyfMKioqzPf397H39/cm////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf39wT39/exPDw8zA4ODswRERHMFRUVzBkZGcwdHR3MICAgzCQkJMwnJyfM9/f3bPf392z///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3T/f395AHBwfMCgoKzA4ODswRERHMFRUVzBkZGcwdHR3MICAgzCQkJMxSUlLM9/f3qv///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf39wT39/exNTU1zAQEBMwHBwfMCgoKzA4ODswRERHMFRUVzBkZGcwdHR3MICAgzCQkJMz39/ex9/f3Jv///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3T/f395AAAADMAgICzAQEBMwHBwfMCgoKzA4ODswRERHMFRUVzBkZGcwdHR3MICAgzPf392z39/ds////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/exNDQ0ywAAAMwAAADMAgICzAQEBMwHBwfMCgoKzA4ODswRERHMFRUVzBkZGcwdHR3MTU1NzPf396r///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3T/f395AAAADMNDQ0ywAAAMwAAADMAgICzAQEBMwHBwfMCgoKzA4ODswRERHMFRUVzBkZGcwdHR3M9/f3zP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf39yv39/eUGRkZzAAAAMyDg4PMAAAAzAAAAMwAAADMAgICzAQEBMwHBwfMCgoKzA4ODswRERHMFRUVzBkZGcz39/fM////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3lBkZGcwAAADMAAAAzPf398wAAADMAAAAzAAAAMwAAADMAgICzAQEBMwHBwfMCgoKzA4ODswRERHMFRUVzPf398z///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/fMGRkZzBkZGcz39/eU9/f3zAAAAMwAAADMAAAAzAAAAMwAAADMAgICzAQEBMwHBwfM9/f3zA4ODswRERHM9/f3zP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf395T39/fM9/f3lPf39yv39/fMAAAAzAAAAMz39/fMAAAAzAAAAMz39/fMAgICzAQEBMz39/fMCgoKzD8/P8z39/eU////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf398wAAADMAAAAzPf398wAAADMAAAAzPf398wAAADMAgICzPf398w5OTnM9/f3lPf39xT///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3zAAAAMwAAADM9/f3zAAAAMwAAADM9/f3zAAAAMw0NDTM9/f3zPf395T39/cU////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/fMAAAAzAAAAMz39/fMAAAAzDQ0NMz39/eU9/f3zPf395T39/cr////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf398wAAADMAAAAzPf398z39/fM9/f3lPf39yv///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3zAAAAMwAAADM9/f3zP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/fMAAAAzAAAAMz39/fM////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APf398wAAADMAAAAzPf398z///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9/f3lAAAAMwAAADM9/f3lP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD39/cr9/f3lPf395T39/cr////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//////////////////////////////////////////////////////gB///4Af///AH///AD///wAP//4AD//+AB///AAH//wAB//4AAf/8AAH//AAB//xAAf//wAP//8AH///AH///wP///8P////D////w////8P////n///8="), pointer !important}
+#blueBar{background:#000000 linear-gradient(to bottom,#000000,#000000)!important}
+.hasSmurfbar #blueBarHolder #blueBar:after{background:rgba(0,0,0,0) linear-gradient(to bottom,rgba(0,0,0,.12),rgba(0,0,0,0))!important;border-top:1px solid #000000!important}
+#blueBarNAXAnchor{background:rgba(0,0,0,0) linear-gradient(to bottom,rgba(0,0,0,.12),rgba(0,0,0,0))!important;border-top:1px solid #000000!important}
+span.null {
+background-color: #000000!important
+}
+
+div._5wdf._5w1r {
+background-color: #ff00ff!important
+}
+
+div._5wdf._5w1r div {
+background-color: #000000!important
+}
+embed{
+animation: none;
+animation-delay: 0;
+animation-direction: normal;
+animation-duration: 0;
+animation-fill-mode: none;
+animation-iteration-count: 1;
+animation-name: none;
+animation-play-state: running;
+animation-timing-function: ease;
+backface-visibility: visible;
+background: 0;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: transparent;
+background-image: none;
+background-origin: padding-box;
+background-position: 0 0;
+background-position-x: 0;
+background-position-y: 0;
+background-repeat: repeat;
+background-size: auto auto;
+border: 0;
+border-style: none;
+border-width: medium;
+border-color: inherit;
+border-bottom: 0;
+border-bottom-color: inherit;
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0;
+border-bottom-style: none;
+border-bottom-width: medium;
+border-collapse: separate;
+border-image: none;
+border-left: 0;
+border-left-color: inherit;
+border-left-style: none;
+border-left-width: medium;
+border-radius: 0;
+border-right: 0;
+border-right-color: inherit;
+border-right-style: none;
+border-right-width: medium;
+border-spacing: 0;
+border-top: 0;
+border-top-color: inherit;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+border-top-style: none;
+border-top-width: medium;
+bottom: auto;
+box-shadow: none;
+box-sizing: content-box;
+caption-side: top;
+clear: none;
+clip: auto;
+color: inherit;
+columns: auto;
+column-count: auto;
+column-fill: balance;
+column-gap: normal;
+column-rule: medium none currentColor;
+column-rule-color: currentColor;
+column-rule-style: none;
+column-rule-width: none;
+column-span: 1;
+column-width: auto;
+content: normal;
+counter-increment: none;
+counter-reset: none;
+cursor: auto;
+direction: ltr;
+display: inline;
+empty-cells: show;
+float: none;
+font: normal;
+font-family: inherit;
+font-size: medium;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+hyphens: none;
+left: auto;
+letter-spacing: normal;
+line-height: normal;
+list-style: none;
+list-style-image: none;
+list-style-position: outside;
+list-style-type: disc;
+opacity: 1;
+orphans: 0;
+outline: 0;
+outline-color: invert;
+outline-style: none;
+outline-width: medium;
+overflow: visible;
+overflow-x: visible;
+overflow-y: visible;
+padding: 0;
+padding-bottom: 0;
+padding-left: 0;
+padding-right: 0;
+padding-top: 0;
+page-break-after: auto;
+page-break-before: auto;
+page-break-inside: auto;
+perspective: none;
+perspective-origin: 50% 50%;
+position: static;
+/* May need to alter quotes for different locales (e.g fr) */
+quotes: 'ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬ ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ' 'ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬ ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¯ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¿ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â½' 'ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬ ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¹ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“' 'ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬ ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¾ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢';
+right: auto;
+tab-size: 8;
+table-layout: auto;
+text-align: inherit;
+text-align-last: auto;
+text-decoration: none;
+text-decoration-color: inherit;
+text-decoration-line: none;
+text-decoration-style: solid;
+text-indent: 0;
+text-shadow: none;
+text-transform: none;
+top: auto;
+transform: none;
+transform-style: flat;
+transition: none;
+transition-delay: 0s;
+transition-duration: 0s;
+transition-property: none;
+transition-timing-function: ease;
+unicode-bidi: normal;
+vertical-align: baseline;
+visibility: visible;
+white-space: normal;
+widows: 0;
+word-spacing: normal;
+z-index: auto;
+}
+/*OVERRIDE RES COMMENT BOX HIGHLIGHTING*/
+.commentarea .sitetable .thing .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment {
+background-color:#000000 !important;
+}
+
+.commentarea .sitetable .thing .comment .comment .comment .comment .comment .comment .comment .comment .comment {
+background-color:#000000 !important;
+}
+
+.commentarea .sitetable .thing .comment .comment .comment .comment .comment .comment .comment .comment {
+background-color:#000000 !important;
+}
+
+.commentarea .sitetable .thing .comment .comment .comment .comment .comment .comment .comment {
+background-color:#000000 !important;
+}
+
+.commentarea .sitetable .thing .comment .comment .comment .comment .comment .comment {
+background-color:#000000 !important;
+}
+
+.commentarea .sitetable .thing .comment .comment .comment .comment .comment {
+background-color:#000000 !important;
+}
+
+.commentarea .sitetable .thing .comment .comment .comment .comment {
+background-color:#000000 !important;
+}
+
+.commentarea .sitetable .thing .comment .comment .comment {
+background-color:#000000 !important;
+}
+.commentarea .sitetable .thing .comment .comment {
+background-color:#000000 !important;
+}
+.commentarea .sitetable .thing .comment {
+background-color:#000000 !important;
+}
+.res-commentBoxes.res-commentBoxes-rounded .comment {
+border:1px solid #1c1c1c !important;
+border-radius:5px !important;
+-webkit-border-radius:5px !important;
+}
+.thing .child .entry .noncollapsed {
+background:#000000 !important;
+}
+.commentarea .thing .entry .noncollapsed {
+background:#000000 !important;
+}
+.listing-chooser {
+display:none !important;
+}
+p, [class*="title"]{
+background-color: #000!important;
+} 
+p.title {
+background-color: #000000!important;
+}
+ul.flat-list.buttons {
+background-color: #000000!important;
+}
+a.login-required{
+background-color: #000000!important;
+}
+span.res_post_ups{
+color: #00FF00!important;
+}
+span.res_post_downs{
+color: #FF0000!important;
+} 
+div.md p {
+background-color: #000000 !important;
+}
+div.usertext-body.may-blank-within {
+background-color: #000000 !important;
+}
+ul.flat-list.buttons {
+background-color: #000000 !important;
+}
+div.entry.unvoted {
+background-color: #000000 !important;
+}
+ul.isLoggedIn {
+background-color: #000!important;
+}
+a.clearfix {
+background-color: #000!important;
+}
+div.mw-head {
+background-color: #000!important;
+}
+div.authorInfoToolTip{
+background-color: #000!important;
+} 
+.html5-play-progress, .ytp-play-progress {
+background: #FFFFFF !important; /* Old browsers */
+background: -moz-linear-gradient(left, #1b1b1b 0%, #FFFFFF 100%) !important;
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1b1b1b), color-stop(100%,#FFFFFF)) !important;
+background: -webkit-linear-gradient(left, #1b1b1b 0%,#FFFFFF 100%) !important;
+background: -o-linear-gradient(left, #1b1b1b 0%,#FFFFFF 100%) !important;
+background: -ms-linear-gradient(left, #1b1b1b 0%,#FFFFFF 100%) !important;
+background: linear-gradient(to right, #1b1b1b 0%,#FFFFFF 100%) !important;
+}
+/*.html5-load-progress, .ytp-load-progress {
+background: #404040 !important;
+}*/
+/* actual scrubber button */
+.html5-scrubber-button, .ytp-scrubber-button {
+background: #383A3B !important;
+border-color: #1B1B1B !important;
+box-shadow: 0px 0px 3px #FFFFFF, 0px 0px 5px #FFFFFF, 0px 0px 0px #FFFFFF !important;
+transition: box-shadow 0.2s, background 0.2s !important;
+}
+/* scrubber button on hover */
+.html5-scrubber-button:hover, .ytp-scrubber-button:hover {
+background: #FFFFFF !important;
+border-color: #1B1B1B !important;
+box-shadow: 0px 0px 6px #FFFFFF, 0px 0px 8px #FFFFFF, 0px 0px 10px #FFFFFF !important;
+}
+/* volume control */
+.ytp-volume-slider-foreground:before {
+background: #FFFFFF !important; /* Old browsers */
+background: -moz-linear-gradient(left, #1b1b1b 0%, #FFFFFF 100%) !important;
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1b1b1b), color-stop(100%,#FFFFFF)) !important;
+background: -webkit-linear-gradient(left, #1b1b1b 0%,#FFFFFF 100%) !important;
+background: -o-linear-gradient(left, #1b1b1b 0%,#FFFFFF 100%) !important;
+background: -ms-linear-gradient(left, #1b1b1b 0%,#FFFFFF 100%) !important;
+background: linear-gradient(to right, #1b1b1b 0%,#FFFFFF 100%) !important;
+}
+div.boardBanner {
+background-color: #000!important;
+}
+span.boardList {
+background-color: #000!important;
+}
+div.center{
+background-color: #000!important;
+}
+div.desktop{
+background-color: #000!important;
+} 
+body, #content, #settingsMenu, td.postblock, tr, div.extPanel, strong, span.button, div#theme.panel {color: #FFFFFF!important; background-color: #000 !important; background-image: none !important;}
+blockquote.postMessage {
+background-color: #000!important;
+}
+div.g_b {
+background-color: #000000!important;
+}
+/* dark grey gradient */
+kbd, .minibutton, a.feed, .button:not(img), button.classy, a.button.classy, .pagination a, .list-browser-filterbar,
+.gobutton, .header, .pagination .gap, .comment-header, .pagehead ul.tabs li a, .login_form input[type="submit"],
+.top-bar, ul#bootcamp li a h4, .minibutton:disabled, .pull-info, .notification-indicator,
+#gists .context-menu-container, .zeroclipboard-button, pre.headers, .branch-link,
+body#com #header, .white-nav .selected span, .select-menu-header, .clone-url-button a,
+.filter-tab, #header-wrapper, #header-wrapper .nav, pre div:hover, .diff-table tr:hover pre, .pagination span,
+.commit-ref, .cheatsheet h2, .file-box .highlight tr:not(.inline-comments):hover td, .section a.section-head,
+.dashboard-tabs li a, .full-commit .browse-button, a.function-button, .capped-box h3,
+.expandable-line-num .diff-expander:hover, .boxed-group .heading, #contributors .capped-card h3,
+.comment-form-head.tabnav, .add-pill-form, .gist .gist-file .gist-meta, .file .meta {
+background: linear-gradient(to bottom, #000000, #000000) !important;
+border-color: #000 !important;
+}
+.fm-left-panel {
+background-color: #181818 !important;
+}
+
+.fm-tree-folder {
+color: #ddd !important;
+}
+
+/* Explorer background */
+.fmholder, #fmholder {
+background-color: #222 !important;
+}
+
+/* Tasks */
+.fm-new-folder, .search-files-result,
+.fm-file-upload, .search-messages-result {
+color: #eee !important;
+}
+
+/* Unselected Files */
+.grid-table td, .grid-share-table td, .contacts-grid-table td {
+border-bottom: 2px solid #2c2c2c !important;
+}
+
+.transfer-table td, .grid-table td, .grid-share-table td, .contacts-grid-table td {
+background-color: #333 !important;
+}
+
+.grid-share-table td, .contacts-grid-table td {
+color: #eee !important;
+}
+
+/* Selected File */
+.grid-table tr.ui-selected td, .grid-share-table tr.ui-selected td, .contacts-grid-table tr.ui-selected td {
+background-color: #555 !important;
+}
+
+.transfer-table td, .grid-table td, .grid-share-table td, .contacts-grid-table td {
+color: #ddd !important;
+}
+div.innerWrap {
+    content: 'yo';
+    visibility: visible;
+    display: block;
+    position: absolute;
+    background-color: black;
+    width: 150px;
+}
+div.chat-room-list.chat-menu {
+    display: none !important;
+}
+
+div.chat-interface {
+    display: none;
+}
+
+div.chat-room {
+    height: 1080px;
+    margin-left: -30px;
+    width: 380px;
+}
+#nav_small {
+    background-color: #000000!important;
+}
+#nav_small {
+    color: #ff00ff;
+}
+ul.chat-lines {
+    background-color: #000000!important;
+}
+div.chat-room {
+    background-color: #000000!important;
+}
+blockquote ul li {
+    background-color: #000000!important;
+}
+
+div.md blockquote {
+    background-color: #000000!important;
+}
+div.info {
+    background-color: #000000!important;
+}
+
+button.at_tab.active {
+    background-color: #000000!important;
+}
+
+#at_comments {
+    background-color: #000000!important;
+}
+
+header.at_thread {
+    background-color: #000000!important;
+}
+
+#alientube {
+    background-color: #000000!important;
+}
+
+a.at_permalink {
+    color: #0066aa!important;
+}
+
+span.save {
+    color: #0066aa!important;
+}
+
+span.at_displaysource {
+    color: #0066aa!important;
+}
+
+a.at_parentlink {
+    color: #0066aa!important;
+}
+
+a.giveGold {
+    color: #0066aa!important;
+}
+
+span.report {
+    color: #0066aa!important;
+}
+
+span.at_reply {
+    color: #0066aa!important;
+}
+#alientube {
+    background-color: #000000;
+}
+
+button.at_tab {
+    background-color: #000000;
+}
+
+div.clearfix.yt-base-gutter {
+    height: 28px!important;
+}
+div.clearfix {
+    background-color: #000000!important;
+}
+div.chat-interface {
+    display: none!important;
+}
+
+div.chat-room {
+    height: 1200px!important;
+}
+a.RES-save.noCtrlF {
+    display: none!important;
+}
+
+a.post-sharing-button {
+    display: none!important;
+}
+
+a.toggleChildren.noCtrlF {
+    display: none!important;
+}
+
+form.state-button.hide-button span a {
+    display: none!important;
+}
+
+li.comment-save-button.save-button a {
+    display: none!important;
+}
+
+li.link-save-button.save-button a {
+    display: none!important;
+}
+
+li.reply-button a {
+    display: none!important;
+}
+
+span.redditSingleClick {
+    display: none!important;
+}
+
+.extra { 
+    display: none;
+}
+
+p:hover .extra {
+    display: block;
+}
+div._4f7n._1s4v._26aw._hdd._xxp.fixed_elem {
+    background-color: #000000!important;
+}
+div._uaw._cx4.clearfix{
+    background-color: #000000!important;
+}
+div ._4f7n{
+   background: #000000!important;
+}
+a.reportbtn.access-required {
+    display: none;
+}
+
+a.action-thing {
+    display: none!important;
+}
+
+
+a.give-gold.login-required {
+    display: none!important;
+}
+
+a.noCtrlF {
+    display: none!important;
+}

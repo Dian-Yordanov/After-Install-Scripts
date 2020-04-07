@@ -1,0 +1,134 @@
+@-moz-document domain("8chan.co"), domain("8ch.net") {
+body,
+  div.boardlist,
+  header,
+  td {
+    background-image: none !important;
+    background-color: #444444 !important;
+    color: #333333 !important;
+  }
+  div.post.reply, div.banner {
+    background-color: #111111;
+    color: #ffffff;
+    border-style: none solid solid none;
+    border-color: #87C5D9;
+  }
+  div.post.reply.highlighted {
+    background-color: #555555;
+    color: #ffffff;
+    border-style: none solid solid none;
+    border-color: #87C5D9;
+  }
+  a,
+  a:link,
+  a:visited,
+  div.post.reply div.body a:link,
+  div.post.reply div.body a:visited {
+    color: #ff0000;
+  }
+  div.content_menu {
+    background-color: #111111;
+    color: #ffffff;
+  }
+  a.button {
+    background: none !important;
+    color: #ff0000;
+  }
+  input,
+  textarea,
+  select {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  #options_div {
+    background-color: #333;
+    color: #af0;
+  }
+  .options_tab_icon {
+    color: #fff;
+  }
+  .full-image, .post-image {
+    background-color: #666;
+  }
+  div.module, div.ban
+  {
+    background-color: #222;
+  }
+  .quote {
+    color: #789922;
+  }
+  #options_div, #alert_div {
+    background-color: #444;
+    color: #fff;
+  }
+body,
+  div.boardlist,
+  header {
+    background-image: none !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+  div.post.reply, div.banner {
+    background-color: #111111;
+    color: #ffffff;
+    border-style: none none none none;
+    border-color: #87C5D9;
+  }
+  div.post.reply.highlighted {
+    background-color: #000000;
+    color: #ffffff;
+    border-style: none none none none;
+    border-color: #87C5D9;
+  }
+  a,
+  a:link,
+  a:visited,
+  div.post.reply div.body a:link,
+  div.post.reply div.body a:visited {
+    color: #0000FF;
+  }
+  div.content_menu {
+    background-color: #111111;
+    color: #ffffff;
+  }
+  a.button {
+    background: none !important;
+    color: #0000FF;
+  }
+  input,
+  textarea,
+  select {
+    background-color: #000000;
+    color: #0000FF;
+  }
+  #options_div {
+    background-color: #333;
+    color: #af0;
+  }
+  .options_tab_icon {
+    color: #fff;
+  }
+  .full-image, .post-image {
+    background-color: #666;
+  }
+  div.module, div.ban
+  {
+    background-color: #222;
+  }
+  .quote {
+    color: #789922;
+  }
+  #options_div, #alert_div {
+    background-color: #444;
+    color: #fff;
+  }
+  table.post-table, table.post-table-options {
+    background-color: transparent !important;
+  }
+  form table tr th {
+    background-color: #222;
+  }
+  span.spoiler {
+    color: #000;
+  }
+}

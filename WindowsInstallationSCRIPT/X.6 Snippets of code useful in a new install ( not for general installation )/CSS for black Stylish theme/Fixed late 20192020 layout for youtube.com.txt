@@ -1,0 +1,96 @@
+@-moz-document domain("youtube.com") {
+ytd-rich-item-renderer.style-scope.ytd-rich-grid-renderer {
+    border-style: none;
+    height: 190px;
+    width: 160px;
+    overflow: visible  !important;
+    z-index: 111111111;
+}
+
+yt-img-shadow.style-scope.ytd-rich-grid-video-renderer.no-transition {
+    display: none;
+}
+
+yt-icon.style-scope.ytd-menu-renderer {
+    display: none;
+}
+
+yt-formatted-string.style-scope.ytd-rich-grid-video-renderer {
+    width: 120%;
+    font-size: 14px !important;
+    height: 122px;
+    border-style: none;
+    text-transform: capitalize ;
+    overflow: visible !important;
+    line-height: 16px !important;
+}
+
+div.style-scope.ytd-rich-grid-video-renderer {
+    margin-left: -6px;
+}
+
+html * {
+    font-size: 12px ;
+}
+
+div.style-scope.ytd-video-meta-block {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    overflow: visible  !important;
+}
+
+span.style-scope.ytd-video-meta-block {
+    margin-top: -8px;
+    overflow: visible ;
+    font-size: 0.5vw;
+    font-size: 10px;
+}
+
+a.yt-simple-endpoint.style-scope.yt-formatted-string {
+    margin-top: 12px;
+    overflow: visible !important;
+    font-size: 12px  !important;
+}
+
+yt-formatted-string.style-scope.ytd-video-primary-info-renderer {
+    font-size: 18px;
+}
+
+span.style-scope.yt-formatted-string {
+    font-size: 14px;
+}
+
+yt-formatted-string.style-scope.ytd-channel-name {
+    font-size: 16px;
+}
+
+span.style-scope.ytd-compact-video-renderer {
+    font-size: 18px;
+    overflow: visible !important;
+}
+
+ytd-badge-supported-renderer.badges.style-scope.ytd-compact-video-renderer {
+    display: none;
+}
+
+div.style-scope.ytd-grid-video-renderer {
+    margin-bottom: 8px;
+    margin-top: -8px;
+}
+
+a.yt-simple-endpoint.style-scope.ytd-grid-video-renderer {
+    margin-top: 14px;
+}
+
+span.style-scope.ytd-grid-video-renderer {
+    padding-top: 12px;
+}
+
+
+}
+
+@-moz-document url-prefix("https://www.youtube.com/watch?") {
+a.yt-simple-endpoint.style-scope.yt-formatted-string {
+    font-size: 18px  !important;
+}
+}
