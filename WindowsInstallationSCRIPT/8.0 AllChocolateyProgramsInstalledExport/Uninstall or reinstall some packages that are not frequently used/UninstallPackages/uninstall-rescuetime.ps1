@@ -1,0 +1,1 @@
+choco uninstall rescuetime -y

@@ -1,0 +1,1 @@
+choco uninstall autoit.commandline -y
