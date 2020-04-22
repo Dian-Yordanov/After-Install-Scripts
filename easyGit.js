@@ -91,7 +91,8 @@ chain = chain.then(() => main())
 function AppVersion(){
     return new Promise((resolve) => {
         if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('AppVersion','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'Yes'"){
-            console.log(chalk.black.bgBlue("App Version - 1.4.0                                                                                                                                                           "))
+            // console.log(chalk.black.bgBlue(" App Version - 1.4.1                                                                                                                                                           "))
+            console.log(gradient.summer(' App Version - 1.4.1                                                                                                                                                           '));
         }
         resolve();
     });
@@ -100,8 +101,8 @@ function AppVersion(){
 function gitBranch(){
     return new Promise((resolve) => {
         if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('gitBranches','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'Yes'"){
-            console.log(chalk.black.bgGreen('git branches -                                                                                                                                                                \n'));
-            child = exec('git branch -a --color',
+            console.log(chalk.black.bgGreen(' git branches -                                                                                                                                                                \n'));
+            child = exec(' git branch -a --color',
                     { maxBuffer: 512 * 512 },
                     function (error, stdout, stderr) {
                         console.log(stdout);
@@ -120,7 +121,7 @@ function localRepos(){
         if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('localRepos','./libEasyGit/StartupScreen/easyGitConfig.ini') === "'Yes'"){
             // if (functionsForReadingAndWritingToIniConfigFiles.ReadFromFile('localRepos','./libEasyGit/StartupScreen/easyGitStatusVisualisationType.ini') === "'Yes'"){
             
-            console.log(chalk.black.bgCyan('List of local repos on this PC, registered in easyGit                                                                                                                         \n'));
+            console.log(chalk.black.bgCyan(' List of local repos on this PC, registered in easyGit                                                                                                                         \n'));
 
             var opsys = process.platform;
             if (opsys == "darwin") {
@@ -186,7 +187,7 @@ function gitStatusTypeSimpleFilesTrackingCallingFunction(){
                 function (error, stdout, stderr) {
                     // console.log(chalk.blue('\n'));
 
-                    console.log(chalk.bgMagenta('git status simple file tracking type -                                                                                                                                        \n'));
+                    console.log(chalk.black.bgMagenta(' git status simple file tracking type -                                                                                                                                        \n'));
                     try {
                         
                         stdout = stdout.replace('Changes not staged for commit:','');
@@ -200,13 +201,28 @@ function gitStatusTypeSimpleFilesTrackingCallingFunction(){
 
                         // console.log(stdout);
 
+
                         const strCopy = stdout.split('\n\n'); 
                         var strCopy1 = strCopy[1].split('\n');
-                        var lenghtOfModifiedOrRemovedFiles = strCopy.length;
-
-                        // console.log(strCopy);
                         
-                        try {
+
+                        var filtered = strCopy.filter(function (el) {
+                            return el != null && el != "" && el != "\n";
+                          });
+
+                        var lenghtOfModifiedOrRemovedFiles = filtered.length;
+
+                        // console.log(filtered);
+                        // console.log("cc " + strCopy[2]);
+                        // if (lenghtOfModifiedOrRemovedFiles<50){
+
+                            // console.log("cc1 " + strCopy[3]);
+                        // console.log("cc1 " + strCopy[2].length);
+                        // console.log("cc3 " + lenghtOfModifiedOrRemovedFiles);
+                        // console.log("cc2 " + strCopy[3].length);
+                        
+                        if (lenghtOfModifiedOrRemovedFiles<50 && strCopy[2].length < 1000 && strCopy[3] !== undefined){
+                            try {
                                 if(strCopy[3].split('\n')!=null){
                                     var strCopy2 = strCopy[3].split('\n');
 
@@ -238,7 +254,18 @@ function gitStatusTypeSimpleFilesTrackingCallingFunction(){
                                         //     console.log(e);
                                         // }
 
-                                        entry = strCopy[i].trim();
+                                        //TODO
+                                        // console.log(i);
+                                        // console.log(strCopy[i]);
+
+                                        if(strCopy[i] !== undefined){
+                                            entry = strCopy[i].trim();
+                                        }
+                                        else{
+                                            entry = strCopy[i-1].trim();
+                                        }
+                                        
+
                                         if(i === 0){
                                             console.log(chalk.rgb(0, 124, 255)("Modified files:"));
                                         }
@@ -253,7 +280,14 @@ function gitStatusTypeSimpleFilesTrackingCallingFunction(){
                                     }
 
                                     for (var i=0;i<=strCopy.length;i++){
-                                        entry = strCopy[i].trim();
+
+                                        if(strCopy[i] !== undefined){
+                                            entry = strCopy[i].trim();
+                                        }
+                                        else{
+                                            entry = strCopy[i-1].trim();
+                                        }
+
                                         if(i === 0){
                                             console.log(chalk.rgb(123, 45, 67)("Deleted files:"));
                                         }
@@ -268,7 +302,14 @@ function gitStatusTypeSimpleFilesTrackingCallingFunction(){
                                     }
 
                                     for (var i=0;i<=strCopy.length;i++){
-                                        entry = strCopy[i].trim();
+
+                                        if(strCopy[i] !== undefined){
+                                            entry = strCopy[i].trim();
+                                        }
+                                        else{
+                                            entry = strCopy[i-1].trim();
+                                        }
+
                                         if(!entry.includes('modified') && !entry.includes('deleted') && entry!== null && entry!=="" && entry!== " " && entry!== "  "  && i === 0)
                                         {
                                             console.log(chalk.rgb(123, 255, 67)(entry));
@@ -326,124 +367,132 @@ function gitStatusTypeSimpleFilesTrackingCallingFunction(){
                                 }
                             }
                             catch (e) {
-                                // console.log(e);
+                                    console.log("x2 " + e.toString());
+                                    // console.log(e);
 
-                                if(e.includes('TypeError')){
-                                    console.log(e);
-                                }
+                                    if(e.toString().includes('TypeError')){
+                                        console.log(e);
+                                    }
 
-                                // console.log("sssssssssssss");
-                                // console.log(strCopy1.length);
+                                    // console.log("sssssssssssss");
+                                    // console.log(strCopy1.length);
 
-                                if (strCopy1.includes("nothing to commit, working tree clean")){
-                                    figlet('Everything is up to date !!!', function(err, data) {
-                    
-                                            
-                                        if(stdout.includes("nothing to commit, working tree clean")){
-                                            if (err) {
-                                                console.log('Something went wrong...');
-                                                console.dir(err);
-                            
-                                                return;
-                                            }
-                                            console.log(data)
-                                        }
-                    
-                                            console.log("");
-                                            resolve();
-    
-                                    });
-                                }
-                                else if(strCopy1 != null){
-                                    strCopy1 = strCopy1.filter(function(str) {
-                                        return /\S/.test(str);
-                                    });
+                                    if (strCopy1.includes("nothing to commit, working tree clean")){
+                                        figlet('Everything is up to date !!!', function(err, data) {
                         
-                                    // console.log( "strCopy2");
-                                    // console.log( strCopy1);
-
-                                    if(strCopy1.length>topNumberOfLinesToDisplay*3 && truncation === "'Yes'"){
-
-                                        for (var i=0;i<topNumberOfLinesToDisplay*2;i++){
-                                            entry = strCopy1[i].trim();
-                                            if(entry.includes('modified'))
-                                            {
-                                                console.log(chalk.rgb(0, 124, 255)(entry.replace(/modified:/g,'m: ')));
-                                            }
-                                        }
-                                        for (var i=0;i<topNumberOfLinesToDisplay*2;i++){
-                                            entry = strCopy1[i].trim();
-                                            if(entry.includes('deleted'))
-                                            {
-                                                console.log(chalk.rgb(123, 45, 67)(entry.replace(/deleted:/g,'d: ')));
-                                            }
-                                        }
-                                        for (var i=0;i<topNumberOfLinesToDisplay*2;i++){
-                                            entry = strCopy1[i].trim();
-                                            if(!entry.includes('modified') && !entry.includes('deleted') && entry!== null && entry!=="" && entry!== " " && entry!== "  ")
-                                            {
-                                                console.log(chalk.rgb(123, 255, 67)(entry));
-                                            }
-                                        }
-
-                                        console.log("");
-                                        console.log("Too many changes to display: " + strCopy1.length + " The number is bigger than " + 2*topNumberOfLinesToDisplay + " . Instead of displaying all changes normally, changes are going to be shown in a truncated way. ");
-                                    
-                                    }
-                                    else{
-
-                                        strCopy1.forEach(function(entry) {
-
-                                            entry = entry.trim();
-                                            if(entry.includes('modified'))
-                                            {
-                                                console.log(chalk.rgb(0, 124, 255)(entry.replace(/modified:/g,'m: ')));
-                                            }
-
-                                        });
-                                        strCopy1.forEach(function(entry) {
-
-                                            entry = entry.trim();
-                                            if(entry.includes('deleted'))
-                                            {
-                                                console.log(chalk.rgb(123, 45, 67)(entry.replace(/deleted:/g,'d: ')));
-                                            }
-                                            
-                                        });
-                                        strCopy1.forEach(function(entry) {
-
-                                            entry = entry.trim();
-                                            if(!entry.includes('modified') && !entry.includes('deleted') && entry!== null && entry!=="" && entry!== " " && entry!== "  ")
-                                            {
-                                                console.log(chalk.rgb(123, 255, 67)(entry));
-                                            }
-                                        });
-
-                                    }
-
-                                    strCopy2.forEach(function(entry) {
-
-                                        entry = entry.trim();
-                                        if(entry!=="" && entry!== " " && entry!== "  " && entry!== null){
-                                            console.log(chalk.gray("U: " + entry));
-                                        }
-                                    });
-                                    
-                                    if (stderr !== "") {
-                                    console.log(chalk.yellow('stderr: ' + stderr));
-
-                                    }
-                                    if (error !== null) {
-                                        console.log(chalk.red('exec error: ' + error));
-
-                                    }
-
-                                }
+                                                
+                                            if(stdout.includes("nothing to commit, working tree clean")){
+                                                if (err) {
+                                                    console.log('Something went wrong...');
+                                                    console.dir(err);
                                 
+                                                    return;
+                                                }
+                                                console.log(data)
+                                            }
+                        
+                                                console.log("");
+                                                resolve();
+        
+                                        });
+                                    }
+                                    else if(strCopy1 != null){
+                                        strCopy1 = strCopy1.filter(function(str) {
+                                            return /\S/.test(str);
+                                        });
+                            
+                                        // console.log( "strCopy2");
+                                        // console.log( strCopy1);
+
+                                        if(strCopy1.length>topNumberOfLinesToDisplay*3 && truncation === "'Yes'"){
+
+                                            for (var i=0;i<topNumberOfLinesToDisplay*2;i++){
+                                                entry = strCopy1[i].trim();
+                                                if(entry.includes('modified'))
+                                                {
+                                                    console.log(chalk.rgb(0, 124, 255)(entry.replace(/modified:/g,'m: ')));
+                                                }
+                                            }
+                                            for (var i=0;i<topNumberOfLinesToDisplay*2;i++){
+                                                entry = strCopy1[i].trim();
+                                                if(entry.includes('deleted'))
+                                                {
+                                                    console.log(chalk.rgb(123, 45, 67)(entry.replace(/deleted:/g,'d: ')));
+                                                }
+                                            }
+                                            for (var i=0;i<topNumberOfLinesToDisplay*2;i++){
+                                                entry = strCopy1[i].trim();
+                                                if(!entry.includes('modified') && !entry.includes('deleted') && entry!== null && entry!=="" && entry!== " " && entry!== "  ")
+                                                {
+                                                    console.log(chalk.rgb(123, 255, 67)(entry));
+                                                }
+                                            }
+
+                                            console.log("");
+                                            console.log("Too many changes to display: " + strCopy1.length + " The number is bigger than " + 2*topNumberOfLinesToDisplay + " . Instead of displaying all changes normally, changes are going to be shown in a truncated way. ");
+                                        
+                                        }
+                                        else{
+
+                                            strCopy1.forEach(function(entry) {
+
+                                                entry = entry.trim();
+                                                if(entry.includes('modified'))
+                                                {
+                                                    console.log(chalk.rgb(0, 124, 255)(entry.replace(/modified:/g,'m: ')));
+                                                }
+
+                                            });
+                                            strCopy1.forEach(function(entry) {
+
+                                                entry = entry.trim();
+                                                if(entry.includes('deleted'))
+                                                {
+                                                    console.log(chalk.rgb(123, 45, 67)(entry.replace(/deleted:/g,'d: ')));
+                                                }
+                                                
+                                            });
+                                            strCopy1.forEach(function(entry) {
+
+                                                entry = entry.trim();
+                                                if(!entry.includes('modified') && !entry.includes('deleted') && entry!== null && entry!=="" && entry!== " " && entry!== "  ")
+                                                {
+                                                    console.log(chalk.rgb(123, 255, 67)(entry));
+                                                }
+                                            });
+
+                                        }
+
+                                        strCopy2.forEach(function(entry) {
+
+                                            entry = entry.trim();
+                                            if(entry!=="" && entry!== " " && entry!== "  " && entry!== null){
+                                                console.log(chalk.gray("U: " + entry));
+                                            }
+                                        });
+                                        
+                                        if (stderr !== "") {
+                                        console.log(chalk.yellow('stderr: ' + stderr));
+
+                                        }
+                                        if (error !== null) {
+                                            console.log(chalk.red('exec error: ' + error));
+
+                                        }
+
+                                    }
+                                    
+                                }
                             }
+                       else{
+                            console.log("There are too many changes files to display.");
+                            resolve();
+                            console.log("");
+                       }
 
                     }
                     catch (e) {
+                        // console.log("x1 " + e.toString());
                         if (!e.toString().includes("TypeError:")) {
                             if(!stdout.includes("nothing to commit, working tree clean")){
                                 console.log(e);
@@ -531,7 +580,7 @@ function gitStatusTypeOnelineGraphDecorateColorShortstatCallingFunction(){
                 { maxBuffer: 1024 * 1024 },
                 function (error, stdout, stderr) {
 
-                    console.log(chalk.bgMagenta('git log, one line, graph, decorate, color, shortstat, only 5 -                                                                                                                \n'));
+                    console.log(chalk.black.bgMagenta(' git log, one line, graph, decorate, color, shortstat, only 5 -                                                                                                                \n'));
 
                     // console.log(functions.getSizeOfStringLines(stdout));
                     // console.log(topNumberOfLinesToDisplay);
@@ -567,7 +616,7 @@ function gitLogAbbreviatedCommitsInAshortstatOneLineGraph(){
                 { maxBuffer: 1024 * 1024 },
                 function (error, stdout, stderr) {
 
-                    console.log(chalk.bgMagenta('git  log, abbreviated commits in a shortstat one line graph -                                                                                                                 \n'));
+                    console.log(chalk.black.bgMagenta(' git log, abbreviated commits in a shortstat one line graph -                                                                                                                  \n'));
 
                     for ( var i=0; i<stdout.split("\n").length-1;i++){
                         if(stdout.split("\n")[i].includes("*")){
@@ -583,10 +632,27 @@ function gitLogAbbreviatedCommitsInAshortstatOneLineGraph(){
                             if(i === 0){
 
                                 var stringToPrintNotDivisibleBy2 = "";
-                                stringToPrintNotDivisibleBy2 = stdout.split("\n")[i].toString().match(/[*] \w{7} /g,"")[0] + gradient.rainbow(stdout.split("\n")[i].toString().match(/\(([^)]+)\)/g,"")[0]) + chalk.magenta(stdout.split("\n")[i].toString().replace(/[*] \w{7} \(([^)]+)\)/g,""));
-                                stringToPrintNotDivisibleBy2 = chalk.yellow(stringToPrintNotDivisibleBy2.substring(0,1)) + stringToPrintNotDivisibleBy2.substring(1,stringToPrintNotDivisibleBy2.length);
-                                stringToPrintNotDivisibleBy2 = stringToPrintNotDivisibleBy2.substring(0,6) + chalk.cyan(stringToPrintNotDivisibleBy2.substring(6,20)) 
-                                + stringToPrintNotDivisibleBy2.substring(20,stringToPrintNotDivisibleBy2.length);
+
+                                if(stdout.split("\n")[i].toString().match(/[*] \w{7} /g,"") === null){
+                                    stringToPrintNotDivisibleBy2 = stdout.split("\n")[i].toString().match(/[*][ ].{8}[ ][(]([^)]+)[)]/g,"").toString();
+                                    stringToPrintNotDivisibleBy3 = chalk.magenta(stdout.split("\n")[i].toString().replace(/[*][ ].{8}[ ][(]([^)]+)[)]/g,""));
+
+                                    stringToPrintNotDivisibleBy2 = chalk.yellow(stringToPrintNotDivisibleBy2.substring(0,1)) + stringToPrintNotDivisibleBy2.substring(1,stringToPrintNotDivisibleBy2.length);
+                                    stringToPrintNotDivisibleBy2 = stringToPrintNotDivisibleBy2.substring(0,6) + chalk.cyan(stringToPrintNotDivisibleBy2.substring(6,20)) 
+                                    + gradient.rainbow(stringToPrintNotDivisibleBy2.substring(20,stringToPrintNotDivisibleBy2.length));
+
+                                    stringToPrintNotDivisibleBy2 = stringToPrintNotDivisibleBy2 + stringToPrintNotDivisibleBy3;
+
+                                }
+                                else{
+                                    stringToPrintNotDivisibleBy2 = stdout.split("\n")[i].toString().match(/[*] \w{7} /g,"")[0] 
+                                    + gradient.rainbow(stdout.split("\n")[i].toString().match(/\(([^)]+)\)/g,"")[0]) 
+                                    + chalk.magenta(stdout.split("\n")[i].toString().replace(/[*] \w{7} \(([^)]+)\)/g,""));
+
+                                    stringToPrintNotDivisibleBy2 = chalk.yellow(stringToPrintNotDivisibleBy2.substring(0,1)) + stringToPrintNotDivisibleBy2.substring(1,stringToPrintNotDivisibleBy2.length);
+                                    stringToPrintNotDivisibleBy2 = stringToPrintNotDivisibleBy2.substring(0,6) + chalk.cyan(stringToPrintNotDivisibleBy2.substring(6,20)) 
+                                    + stringToPrintNotDivisibleBy2.substring(20,stringToPrintNotDivisibleBy2.length);
+                                }
 
                                 console.log(stringToPrintNotDivisibleBy2);
                             }
@@ -635,7 +701,7 @@ function ShowCommitsPerDayInANiceFormattedWay(){
                 child = exec('git log --date=short --pretty=format:%ad | sort -r | uniq -c',
                 { maxBuffer: 1024 * 1024 },
                 function (error, stdout, stderr) {
-                    console.log(chalk.bgMagenta('Show commits per day in a nice formatted way -                                                                                                                                \n'));
+                    console.log(chalk.black.bgMagenta(' Show commits per day in a nice formatted way -                                                                                                                                \n'));
 
                     var dateOneWeekAgo = new Date();
                     dateOneWeekAgo.setDate(dateOneWeekAgo.getDate()-7);
@@ -645,6 +711,8 @@ function ShowCommitsPerDayInANiceFormattedWay(){
 
                     var notPrintedWeek = true;
                     var notPrintedMonth = true;
+                    var notYetPrintedTheMessage = true;
+                    var noInputHasBeenPrintedToConsoleYet = true;
 
                     var SummarisedWeeklyCommits = 0;
                     var SummarisedMonthlyCommits = 0;
@@ -656,14 +724,17 @@ function ShowCommitsPerDayInANiceFormattedWay(){
                     var StringThatContainsTheBarsForEachMonth = "";
 
                     for ( var i=0; i<stdout.split("\n").length-1;i++){
-                        
+
+                        // console.log(stdout.split("\n")[i].trim().split(" ").length);
+
                         if(stdout.split("\n")[i].trim().split(" ").length === 2){
 
                             var dateFromArrayFromPipedGitSortedCommand = new Date(stdout.split("\n")[i].trim().split(" ")[1]);
                             
-                            if(dateFromArrayFromPipedGitSortedCommand>date30DaysAgo){
+                            // if(dateFromArrayFromPipedGitSortedCommand>date30DaysAgo){
                                 if(dateFromArrayFromPipedGitSortedCommand>dateOneWeekAgo){
 
+                                    // console.log("SummarisedWeeklyCommits1");
 
                                     if(stdout.split("\n")[i].trim().split(" ")[0].length === 1){
                                         SummarisedWeeklyCommits = SummarisedWeeklyCommits + Number(stdout.split("\n")[i].trim().split(" ")[0]);
@@ -687,14 +758,42 @@ function ShowCommitsPerDayInANiceFormattedWay(){
                                         // console.log(SummarisedMonthlyCommits);
                                     }
 
-
-
                                 }
 
-                            }
+                            // }
+                            // else{
+                            //     if(dateFromArrayFromPipedGitSortedCommand>dateOneWeekAgo){
+
+                            //         // console.log("SummarisedWeeklyCommits1");
+
+                            //         if(stdout.split("\n")[i].trim().split(" ")[0].length === 1){
+                            //             SummarisedWeeklyCommits = SummarisedWeeklyCommits + Number(stdout.split("\n")[i].trim().split(" ")[0]);
+                            //             // console.log(SummarisedWeeklyCommits);
+                            //         }
+                            //         else{
+                            //             SummarisedWeeklyCommits = SummarisedWeeklyCommits + Number(stdout.split("\n")[i].trim().split(" ")[0]);
+                            //             // console.log(SummarisedWeeklyCommits);
+                            //         }
+                                    
+
+                            //     }
+                            //     else{
+
+                            //         if(stdout.split("\n")[i].trim().split(" ")[0].length === 1){
+                            //             SummarisedMonthlyCommits = SummarisedMonthlyCommits + Number(stdout.split("\n")[i].trim().split(" ")[0]);
+                            //             // console.log(SummarisedMonthlyCommits);
+                            //         }
+                            //         else{
+                            //             SummarisedMonthlyCommits = SummarisedMonthlyCommits + Number(stdout.split("\n")[i].trim().split(" ")[0]);
+                            //             // console.log(SummarisedMonthlyCommits);
+                            //         }
+
+                            //     }
+                            // }
 
                         }
                         else{
+                            // console.log("SummarisedWeeklyCommits3");
                             console.log(stdout.split("\n")[i].trim().split(" ")[0]);
                         }
                         
@@ -703,6 +802,9 @@ function ShowCommitsPerDayInANiceFormattedWay(){
                     for ( var i=0; i<stdout.split("\n").length-1;i++){
                         
                         if(stdout.split("\n")[i].trim().split(" ").length === 2){
+
+                            // console.log(stdout.split("\n")[i].trim().split(" "));
+
 
                             var dateFromArrayFromPipedGitSortedCommand = new Date(stdout.split("\n")[i].trim().split(" ")[1]);
 
@@ -758,85 +860,101 @@ function ShowCommitsPerDayInANiceFormattedWay(){
                                                 if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "    " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "    " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
                                                 if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "   " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false; 
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "   " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false; 
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
                                                 if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "  " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "  " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
                                                 if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + " " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false; 
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + " " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                         }
                                         catch(e){
-                                            // console.log(e.toString());
+                                            // console.log("x1 " + e.toString());
                                             if(e.toString().includes("TypeError:")){
                                                 
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
                                                     if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "    " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "    " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
                                                     if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "   " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "   " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
                                                     if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "  " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "  " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
                                                     if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + " " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + " " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                             }
@@ -936,85 +1054,101 @@ function ShowCommitsPerDayInANiceFormattedWay(){
                                                 if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "    " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "    " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
                                                 if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "   " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "   " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
                                                 if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "  " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "  " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
                                                 if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + " " + chalk.red(totalNumberOfcommitsPerLineWeek) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + " " + chalk.red(totalNumberOfcommitsPerLineWeek) + " " + StringThatContainsTheBarsForEachWeek);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                         }
                                         catch(e){
-                                            // console.log(e.toString());
+                                            // console.log("x2 " + e.toString());
                                             if(e.toString().includes("TypeError:")){
                                                 
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
                                                     if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "    " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "    " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
                                                     if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "   " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "   " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
                                                     if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "  " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "  " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
                                                     if(totalNumberOfcommitsPerLineWeek.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + " " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + " " + chalk.red(10) + " " + StringThatContainsTheBarsForEachWeek);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                             }
@@ -1132,85 +1266,101 @@ function ShowCommitsPerDayInANiceFormattedWay(){
                                                 if(totalNumberOfcommitsPerLine.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "    " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "    " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
                                                 if(totalNumberOfcommitsPerLine.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "   " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "   " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
                                                 if(totalNumberOfcommitsPerLine.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "  " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "  " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
                                                 if(totalNumberOfcommitsPerLine.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + " " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + " " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                         }
                                         catch(e){
-                                            // console.log(e.toString());
+                                            // console.log("x3 " + e.toString());
                                             if(e.toString().includes("TypeError:")){
                                                 
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
                                                     if(totalNumberOfcommitsPerLine.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "    " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "    " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
                                                     if(totalNumberOfcommitsPerLine.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "   " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "   " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
                                                     if(totalNumberOfcommitsPerLine.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "  " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "  " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
                                                     if(totalNumberOfcommitsPerLine.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + " " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + " " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                             }
@@ -1248,85 +1398,101 @@ function ShowCommitsPerDayInANiceFormattedWay(){
                                                 if(totalNumberOfcommitsPerLine.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "    " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "    " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
                                                 if(totalNumberOfcommitsPerLine.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "   " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "   " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
                                                 if(totalNumberOfcommitsPerLine.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "  " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + "  " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                             if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
                                                 if(totalNumberOfcommitsPerLine.length === 1){
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + " " + chalk.red(totalNumberOfcommitsPerLine) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                                 else{
                                                     console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                     + " " + chalk.red(totalNumberOfcommitsPerLine) + " " + StringThatContainsTheBarsForEachMonth);
+                                                    noInputHasBeenPrintedToConsoleYet = false;  
                                                 }
                                             }
                                         }
                                         catch(e){
-                                            // console.log(e.toString());
+                                            // console.log("x4 " + e.toString());
                                             if(e.toString().includes("TypeError:")){
                                                 
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 6){
                                                     if(totalNumberOfcommitsPerLine.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "    " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "    " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 7){
                                                     if(totalNumberOfcommitsPerLine.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "   " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "   " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 8){
                                                     if(totalNumberOfcommitsPerLine.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "  " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + "  " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                                 if(dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }).length === 9){
                                                     if(totalNumberOfcommitsPerLine.length === 1){
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + " " + chalk.red(10) + "  " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                     else{
                                                         console.log(stdout.split("\n")[i].trim().split(" ")[1] + " " + dateObjectToGetDay.toLocaleDateString('en-US', { weekday: 'long' }) 
                                                         + " " + chalk.red(10) + " " + StringThatContainsTheBarsForEachMonth);
+                                                        noInputHasBeenPrintedToConsoleYet = false;  
                                                     }
                                                 }
                                             }
@@ -1334,11 +1500,23 @@ function ShowCommitsPerDayInANiceFormattedWay(){
                                     }
                                 }
                             }
+                            else{
+                                // console.log("SummarisedWeeklyCommits55 " + stdout.split("\n")[i].trim().split(" "));
+                                if(notYetPrintedTheMessage === true){
+                                    if(noInputHasBeenPrintedToConsoleYet === true){
+                                        console.log("There are no commits made in the past 30 days.");
+                                        notYetPrintedTheMessage = false;
+                                    }
+                                }
+
+                            }
+
                         }
                         else{
                             console.log(stdout.split("\n")[i].trim().split(" ")[0]);
                         }
                     }
+
                     console.log("");
                     resolve();
                 });
@@ -1355,7 +1533,7 @@ function ShowCommitsPerDayInANiceFormattedWay(){
 
 function main(){
 
-    message: console.log(chalk.bgBlackBright ('Choose an option:                                                                                                                                                             '));
+    message: console.log(chalk.black.bgBlackBright (' Choose an option:                                                                                                                                                             '));
    
 inquirer
     .prompt([

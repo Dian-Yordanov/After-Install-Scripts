@@ -1,0 +1,1 @@
+choco install vmware-workstation-player -y
