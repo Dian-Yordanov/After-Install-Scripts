@@ -1,0 +1,1 @@
+﻿Run, ms-settings:regionlanguage
