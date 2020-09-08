@@ -22,5 +22,7 @@ All other repos are just mirrors
 
 # Licence:
 Everyone is free to use the script and add his/her own additions to it. For the code part, I guess the MIT Licence best fits the idea of giving people maximum freedom over the code. 
+
 License - MIT for my code
+
 IMPORTANT: There are executables bundled in this repo from other developers and I hold no intellectual property over them, neither I claim to have any. If you decide to use the script and install a program like for example Chrome from the provided executable installers, all rights are reserved to the developer - in this case, Google. 
