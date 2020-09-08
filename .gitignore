@@ -2,5 +2,5 @@
 
 AHKassociatedFiles/Clipjump_x64/cache/
 AHKassociatedFiles/Clipjump_x64/cache
-/libEasyGit
-/node_modules
+libEasyGit/
+node_modules/
