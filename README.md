@@ -11,7 +11,9 @@ The only step that cannot be done remotely is the initial Windows OS installatio
 Some steps are decreasing the security of the system and may not be a good idea in different use cases. These steps are usually highlighted as being a security threat. These steps are however included because they make work with Windows much less convenient. In other words, the more you increase convenience, the more you decrease security. 
 
 # EasyGit.js and javascript in root directory:
-There are some nodejs related files in the root directory and the "EasyGit.js" project folder in the root directory but those folders are not directly related to the script. These folders contian a cli git client develop by me and are in the root directory because of mobility. There are plans to change this organisation in the future and this file/folder placement is going to change.  
+There are some nodejs related files in the root directory and the "EasyGit.js" project folder in the root directory but those folders are not directly related to the script. These folders contian a cli git client develop by me and are in the root directory because of mobility. There are plans to change this organisation in the future and this file/folder placement is going to change. 
+
+These have been added to gitignore and should not be seen again, but will be used by me personally when setting up new configurations. 
 
 # How you can help this project:
 1. You can recommend more programs and/or installation processes for Linux. Basically any Linux related information is welcome. 
