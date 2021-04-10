@@ -81,7 +81,7 @@ topNumberOfLinesToDisplay = parseInt(topNumberOfLinesToDisplay);
 let chain = Promise.resolve(); 
 chain = chain.then(() => AppVersion())
 chain = chain.then(() => gitBranch())
-chain = chain.then(() => localRepos())
+// chain = chain.then(() => localRepos())
 chain = chain.then(() => gitStatusTypeSimpleFilesTrackingCallingFunction())
 chain = chain.then(() => gitStatusTypeOnelineGraphDecorateColorShortstatCallingFunction())
 chain = chain.then(() => gitLogAbbreviatedCommitsInAshortstatOneLineGraph())
