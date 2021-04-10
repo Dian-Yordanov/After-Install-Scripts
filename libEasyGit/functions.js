@@ -201,6 +201,12 @@ var gitPush_ExternalCall = function ()
     { maxBuffer: 1024 * 1024 },
     function (error, stdout, stderr) {
         console.log(stdout);
+        if (error == null ){
+            console.log('ERROR: no operations have been made.');
+            console.log('ERROR message:');
+            console.log(error);
+            console.log('');
+        }
         if (error.toString().includes("fatal: TypeLoadException encountered.")) {
             runCmdHandler(".", "start cmd /k git push");
         }
