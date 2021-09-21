@@ -1,1 +1,0 @@
-chocolatey install git -y
