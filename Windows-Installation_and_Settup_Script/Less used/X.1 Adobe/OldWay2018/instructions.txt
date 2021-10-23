@@ -1,0 +1,55 @@
+Pirating windows tutorial: link
+
+Hey there - so this subreddit gets a lot of questions daily about pirating Windows and Adobe CC and it's kind of retarded, so I'm making a detailed guide to help you all out.
+
+Please note this guide is Windows only!
+Creating an Adobe ID
+First things first, you need to make an Adobe account - go to https://accounts.adobe.com and then below the "Sign in" button, choose "Get an Adobe ID"
+
+Put in your email address. Do all that standard stuffs. Make the account.
+
+Once you're done, go back to https://accounts.adobe.com. Sign in. Choose the "Security and Privacy" tab, and in the top-right panel labelled "Privacy" press the "Manage" button. Then, uncheck everything about sharing information with Adobe. A box will pop up on the bottom of your screen - choose "Save".
+
+Now you are done with the Adobe account thing.
+
+Downloading Legitimate Copies of Adobe Software
+Now, go and download and install 7-zip. If you have another archive extractor on your computer, that will work too.
+
+Go to this link and download the CC apps that you want.
+
+Go to this link for downloading other apps that are CC 2015. Make sure to read the instructions on the page.
+
+Now, go to this link and download Acrobat DC if you want it.
+
+If the items you downloaded are a singular EXE file, run it and it will pop up with an extractor. Have the extractor extract the files to a location of your choice - please note that I recommend creating a separate folder for extracting files to.
+
+If the items you downloaded come in an archive (zip, 7z, gz, etc.) use 7-zip. Right-click the file, hover over "7-zip" and then press on "Extract files to "filename""
+
+Once you have successfully extracted all the software, (any extracted software should have the following components - 3 folders "packages", "products", and "resources" and one executable "Set-up.exe") you need to disable your internet
+
+This can be done by physically unplugging the yellow ethernet cable in the back of your desktop, turning off WiFi, or disabling your internet adapter in the Network and Sharing Center adapter settings.
+
+Once you have done this, run all of the Set-up.exe files, one by one. Do not run multiple at a time. If you are installing Acrobat, choose "trial" when asked if you own the software.
+
+Pirating The Software
+They should complete. Do NOT launch anything yet (if it launches automatically, close it!). Now, launch the AMT Emulator. (I will not be accepting PMs for the AMTEmu anymore unless you follow the instructions in EDIT3 at the bottom of the post.)
+
+Hashes here:
+
+File name: amtemu.v0.9.2-painter.exe
+MD5: 8abdc20f619641e29aa9ad2b999a0dcc
+Select one of the programs that you've installed from the drop-down list and press "install". A file explorer windows should pop up. On the top, under the "look in" dropdown menu, find your installation drive (mine is the C: drive). Click on it. Now, navigate to the install directory (default Program Files > Adobe > [application name] or Program Files (x86) > Adobe > [application name]). Go into the [application name] folder and then into the support files folder. (If you are doing Acrobat, this is the Acrobat folder) Scroll down until you find "amtlib.dll". Click on it, and then click on "Open" in the bottom right corner of the window. Repeat for all the programs you installed.
+
+If you did everything correctly, congrats! You're done. You can now reenable your internet and you're good to go!
+
+PEOPLE WILLING TO TAKE PMs FOR AMTEMU (MAKE SURE TO CHECK FILE HASHES, DO NOT PM ME ABOUT THIS, GOOGLE IT): /u/iamdw88 (No longer taking requests, thank you for your service)
+
+EDIT: If you would like to gift me gold/show your gratitude, but have no money, you can do some rendering for me! (only for Windows users). Just download and install Java and then download the "Sheep-it" renderfarm file. Launch the file, the log in using the username "Rubyjunk" and the password "2VpfnqggPJD9wTwhgQb2Tcieuoc6zxJfVcE6CJEX" (without quotations for both of them). It should start downloading and then rendering projects. This will help me out a bunch!!! You can now minimize it and leave your computer running for a few hours, or simply use your computer as normal. Thanks again =)
+
+EDIT2: You need to render for at least an hour for it to even matter.
+
+EDIT3: To obtain a copy of the AMTEmu, please do the rendering (instructions above), and then send me a PM - keep your PC on and keep the rendering software running. Inside of the PM, ask for the AMT Emulator and also include your PC's name (you can find this in Windows 10 searching for "about your pc"). Once I reply to you (typically within a few hours) you can turn off the software. Thanks ;)
+
+EDIT4: Moderator has provided links to some russian forum from which he claims AMTEmu can be found. See the stickied comment below.
+
+EDIT5: This link was in the wiki, I think it works as well. https://drive.google.com/file/d/0B8ITPw67i3gGRHVOUkdrME1abDQ/view
