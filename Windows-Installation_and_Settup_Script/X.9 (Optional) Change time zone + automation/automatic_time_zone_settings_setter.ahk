@@ -3,16 +3,15 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-SendInput {Lwin}
-sleep, 400
-SendInput Taskbar location on screen
-sleep, 4000
-SendInput {Enter}
-sleep, 1000
+Run, ms-settings:dateandtime
+sleep, 2000
+SendInput {Tab}
+Sleep, 300
 SendInput {Space}
-sleep, 300
-SendInput {Up}
-sleep, 300
-SendInput {Up}
-sleep, 300
+Sleep, 300
+Loop, 53
+{
+    SendInput {Down}
+    Sleep, 100
+}
 SendInput {Space}
