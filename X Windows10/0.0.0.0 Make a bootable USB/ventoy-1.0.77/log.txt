@@ -1,0 +1,192 @@
+[2022/06/19 11:31:43.428] 
+##################################################################################
+######################### Ventoy2DiskX86 (1.0.77) #########################
+##################################################################################
+[2022/06/19 11:31:43.428] Current directory:<D>
+[2022/06/19 11:31:43.433] id=16320/7260
+[2022/06/19 11:31:43.433] PPath:<C:\Windows\explorer.exe>
+[2022/06/19 11:31:43.433] PSize:<4389168 4286KB>
+[2022/06/19 11:31:43.434] Lunch main process 0
+[2022/06/19 11:31:43.434] Control Flag: 0 1 1
+[2022/06/19 11:31:43.435] Windows Version: <<Windows 10 Enterprise LTSB, 64-bit (Build 17763.2114)>>
+[2022/06/19 11:31:43.435] 
+===================== Enum All PhyDrives =====================
+[2022/06/19 11:31:43.436] RegOpenKeyExA <SYSTEM\CurrentControlSet\Services\disk\Enum> Ret:0
+[2022/06/19 11:31:43.436] RegQueryValueExA <Count> ret:0  Size:4 Value:3
+[2022/06/19 11:31:43.436] GetPhysicalDriveCount: 3
+[2022/06/19 11:31:43.436] Logical Drives: 0x3c
+[2022/06/19 11:31:43.437] LogicalDrive:\\.\C: PhyDrive:0 Offset:6156189696 ExtentLength:249903972352
+[2022/06/19 11:31:43.437] C --> 0
+[2022/06/19 11:31:43.437] LogicalDrive:\\.\D: PhyDrive:1 Offset:17825792 ExtentLength:1000185266176
+[2022/06/19 11:31:43.437] D --> 1
+[2022/06/19 11:31:43.439] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2022/06/19 11:31:43.439] E --> -1
+[2022/06/19 11:31:43.440] LogicalDrive:\\.\F: PhyDrive:2 Offset:1048576 ExtentLength:15444992000
+[2022/06/19 11:31:43.440] F --> 2
+[2022/06/19 11:31:43.440] Create file Handle:00000124 \\.\PhysicalDrive0 status:0
+[2022/06/19 11:31:43.440] PHYSICALDRIVE0 size 256060514304 bytes
+[2022/06/19 11:31:43.440] Create file Handle:00000124 \\.\PhysicalDrive1 status:0
+[2022/06/19 11:31:43.440] PHYSICALDRIVE1 size 1000204886016 bytes
+[2022/06/19 11:31:43.441] Create file Handle:00000124 \\.\PhysicalDrive2 status:0
+[2022/06/19 11:31:43.441] PHYSICALDRIVE2 size 15479597056 bytes
+[2022/06/19 11:31:43.441] PhyDrv:0 BusType:Nvme Removable:0 Size:256GB(256060514304) Name: CL1-3D256-Q11 NVMe SSSTC 256GB
+[2022/06/19 11:31:43.441] PhyDrv:1 BusType:SATA Removable:0 Size:1024GB(1000204886016) Name: WDC WD10EZEX-75WN4A1
+[2022/06/19 11:31:43.441] PhyDrv:2 BusType:USB  Removable:1 Size:16GB(15479597056) Name:Kingston DataTraveler 112
+[2022/06/19 11:31:43.441] LogicalDrive:\\.\C: PhyDrive:0 Offset:6156189696 ExtentLength:249903972352
+[2022/06/19 11:31:43.441] Logical Drive:C  ===> PhyDrive:0
+[2022/06/19 11:31:43.442] LogicalDrive:\\.\D: PhyDrive:1 Offset:17825792 ExtentLength:1000185266176
+[2022/06/19 11:31:43.442] Logical Drive:D  ===> PhyDrive:1
+[2022/06/19 11:31:43.444] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2022/06/19 11:31:43.444] Logical Drive:E  ===> PhyDrive:-1
+[2022/06/19 11:31:43.445] LogicalDrive:\\.\F: PhyDrive:2 Offset:1048576 ExtentLength:15444992000
+[2022/06/19 11:31:43.445] Logical Drive:F  ===> PhyDrive:2
+[2022/06/19 11:31:43.445] Create file Handle:00000130 \\.\PhysicalDrive2 status:0
+[2022/06/19 11:31:43.447] Read MBR Ret:1 Size:512 code:183
+[2022/06/19 11:31:43.447] =========== Disk2 MBR Partition 1 ============
+[2022/06/19 11:31:43.447] PartTbl.Active = 0x80
+[2022/06/19 11:31:43.447] PartTbl.FsFlag = 0x7
+[2022/06/19 11:31:43.447] PartTbl.StartSectorId = 2048
+[2022/06/19 11:31:43.447] PartTbl.SectorCount = 30166000
+[2022/06/19 11:31:43.448] PartTbl.StartHead = 32
+[2022/06/19 11:31:43.448] PartTbl.StartSector = 33
+[2022/06/19 11:31:43.448] PartTbl.StartCylinder = 0
+[2022/06/19 11:31:43.448] PartTbl.EndHead = 222
+[2022/06/19 11:31:43.448] PartTbl.EndSector = 57
+[2022/06/19 11:31:43.448] PartTbl.EndCylinder = 853
+[2022/06/19 11:31:43.448] =========== Disk2 MBR Partition 2 ============
+[2022/06/19 11:31:43.448] PartTbl.Active = 0x0
+[2022/06/19 11:31:43.448] PartTbl.FsFlag = 0xef
+[2022/06/19 11:31:43.448] PartTbl.StartSectorId = 30168048
+[2022/06/19 11:31:43.448] PartTbl.SectorCount = 65536
+[2022/06/19 11:31:43.448] PartTbl.StartHead = 222
+[2022/06/19 11:31:43.448] PartTbl.StartSector = 58
+[2022/06/19 11:31:43.448] PartTbl.StartCylinder = 853
+[2022/06/19 11:31:43.448] PartTbl.EndHead = 243
+[2022/06/19 11:31:43.449] PartTbl.EndSector = 10
+[2022/06/19 11:31:43.449] PartTbl.EndCylinder = 857
+[2022/06/19 11:31:43.449] =========== Disk2 MBR Partition 3 ============
+[2022/06/19 11:31:43.449] PartTbl.Active = 0x0
+[2022/06/19 11:31:43.449] PartTbl.FsFlag = 0x0
+[2022/06/19 11:31:43.449] PartTbl.StartSectorId = 0
+[2022/06/19 11:31:43.449] PartTbl.SectorCount = 0
+[2022/06/19 11:31:43.449] PartTbl.StartHead = 0
+[2022/06/19 11:31:43.449] PartTbl.StartSector = 0
+[2022/06/19 11:31:43.449] PartTbl.StartCylinder = 0
+[2022/06/19 11:31:43.449] PartTbl.EndHead = 0
+[2022/06/19 11:31:43.449] PartTbl.EndSector = 0
+[2022/06/19 11:31:43.449] PartTbl.EndCylinder = 0
+[2022/06/19 11:31:43.449] =========== Disk2 MBR Partition 4 ============
+[2022/06/19 11:31:43.449] PartTbl.Active = 0x0
+[2022/06/19 11:31:43.450] PartTbl.FsFlag = 0x0
+[2022/06/19 11:31:43.450] PartTbl.StartSectorId = 0
+[2022/06/19 11:31:43.450] PartTbl.SectorCount = 0
+[2022/06/19 11:31:43.450] PartTbl.StartHead = 0
+[2022/06/19 11:31:43.450] PartTbl.StartSector = 0
+[2022/06/19 11:31:43.450] PartTbl.StartCylinder = 0
+[2022/06/19 11:31:43.450] PartTbl.EndHead = 0
+[2022/06/19 11:31:43.450] PartTbl.EndSector = 0
+[2022/06/19 11:31:43.450] PartTbl.EndCylinder = 0
+[2022/06/19 11:31:43.450] PhysicalDrive2 is ventoy disk
+[2022/06/19 11:31:43.450] QueryDosDeviceA success \Device\Harddisk2\DR3
+[2022/06/19 11:31:43.451] [0] CreateFileA \\.\PhysicalDrive2 code:0 00000130
+[2022/06/19 11:31:43.451] Parse FAT fs...
+[2022/06/19 11:31:43.453] attach media success...
+[2022/06/19 11:31:43.520] GetVentoyVerInPhyDrive rc=0...
+[2022/06/19 11:31:43.520] VentoyVerInPhyDrive 2 is <1.0.54>...
+[2022/06/19 11:31:43.524] PhyDrive 2 is Ventoy Disk ver:1.0.54 SecureBoot:0
+[2022/06/19 11:31:43.524] < CL1-3D256-Q11 NVMe SSSTC 256GB> is filtered for not USB type.
+[2022/06/19 11:31:43.524] < WDC WD10EZEX-75WN4A1> is filtered for not USB type.
+[2022/06/19 11:31:43.545] Load languages from json file ...
+[2022/06/19 11:31:43.546] language json file len:217793 json parse:0
+[2022/06/19 11:31:43.547] Total 46 languages ...
+[2022/06/19 11:31:43.585] Combox select change, update secure boot option: 1 0
+[2022/06/19 11:31:52.560] #### Now Refresh PhyDrive ####
+[2022/06/19 11:31:52.560] Current combox selection is PhyDrive2
+[2022/06/19 11:31:52.561] 
+===================== Enum All PhyDrives =====================
+[2022/06/19 11:31:52.562] RegOpenKeyExA <SYSTEM\CurrentControlSet\Services\disk\Enum> Ret:0
+[2022/06/19 11:31:52.562] RegQueryValueExA <Count> ret:0  Size:4 Value:3
+[2022/06/19 11:31:52.562] GetPhysicalDriveCount: 3
+[2022/06/19 11:31:52.562] Logical Drives: 0x3c
+[2022/06/19 11:31:52.562] LogicalDrive:\\.\C: PhyDrive:0 Offset:6156189696 ExtentLength:249903972352
+[2022/06/19 11:31:52.562] C --> 0
+[2022/06/19 11:31:52.562] LogicalDrive:\\.\D: PhyDrive:1 Offset:17825792 ExtentLength:1000185266176
+[2022/06/19 11:31:52.562] D --> 1
+[2022/06/19 11:31:52.567] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2022/06/19 11:31:52.567] E --> -1
+[2022/06/19 11:31:52.567] LogicalDrive:\\.\F: PhyDrive:2 Offset:1048576 ExtentLength:15444992000
+[2022/06/19 11:31:52.567] F --> 2
+[2022/06/19 11:31:52.568] Create file Handle:000002C8 \\.\PhysicalDrive0 status:0
+[2022/06/19 11:31:52.571] PHYSICALDRIVE0 size 256060514304 bytes
+[2022/06/19 11:31:52.571] Create file Handle:000002C8 \\.\PhysicalDrive1 status:0
+[2022/06/19 11:31:52.571] PHYSICALDRIVE1 size 1000204886016 bytes
+[2022/06/19 11:31:52.571] Create file Handle:000002C8 \\.\PhysicalDrive2 status:0
+[2022/06/19 11:31:52.572] PHYSICALDRIVE2 size 15479597056 bytes
+[2022/06/19 11:31:52.572] PhyDrv:0 BusType:Nvme Removable:0 Size:256GB(256060514304) Name: CL1-3D256-Q11 NVMe SSSTC 256GB
+[2022/06/19 11:31:52.572] PhyDrv:1 BusType:SATA Removable:0 Size:1024GB(1000204886016) Name: WDC WD10EZEX-75WN4A1
+[2022/06/19 11:31:52.572] PhyDrv:2 BusType:USB  Removable:1 Size:16GB(15479597056) Name:Kingston DataTraveler 112
+[2022/06/19 11:31:52.572] LogicalDrive:\\.\C: PhyDrive:0 Offset:6156189696 ExtentLength:249903972352
+[2022/06/19 11:31:52.572] Logical Drive:C  ===> PhyDrive:0
+[2022/06/19 11:31:52.572] LogicalDrive:\\.\D: PhyDrive:1 Offset:17825792 ExtentLength:1000185266176
+[2022/06/19 11:31:52.572] Logical Drive:D  ===> PhyDrive:1
+[2022/06/19 11:31:52.574] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2022/06/19 11:31:52.575] Logical Drive:E  ===> PhyDrive:-1
+[2022/06/19 11:31:52.575] LogicalDrive:\\.\F: PhyDrive:2 Offset:1048576 ExtentLength:15444992000
+[2022/06/19 11:31:52.575] Logical Drive:F  ===> PhyDrive:2
+[2022/06/19 11:31:52.576] Create file Handle:000002CC \\.\PhysicalDrive2 status:0
+[2022/06/19 11:31:52.577] Read MBR Ret:1 Size:512 code:183
+[2022/06/19 11:31:52.578] =========== Disk2 MBR Partition 1 ============
+[2022/06/19 11:31:52.578] PartTbl.Active = 0x80
+[2022/06/19 11:31:52.578] PartTbl.FsFlag = 0x7
+[2022/06/19 11:31:52.578] PartTbl.StartSectorId = 2048
+[2022/06/19 11:31:52.578] PartTbl.SectorCount = 30166000
+[2022/06/19 11:31:52.578] PartTbl.StartHead = 32
+[2022/06/19 11:31:52.578] PartTbl.StartSector = 33
+[2022/06/19 11:31:52.578] PartTbl.StartCylinder = 0
+[2022/06/19 11:31:52.578] PartTbl.EndHead = 222
+[2022/06/19 11:31:52.578] PartTbl.EndSector = 57
+[2022/06/19 11:31:52.578] PartTbl.EndCylinder = 853
+[2022/06/19 11:31:52.578] =========== Disk2 MBR Partition 2 ============
+[2022/06/19 11:31:52.578] PartTbl.Active = 0x0
+[2022/06/19 11:31:52.578] PartTbl.FsFlag = 0xef
+[2022/06/19 11:31:52.579] PartTbl.StartSectorId = 30168048
+[2022/06/19 11:31:52.579] PartTbl.SectorCount = 65536
+[2022/06/19 11:31:52.579] PartTbl.StartHead = 222
+[2022/06/19 11:31:52.579] PartTbl.StartSector = 58
+[2022/06/19 11:31:52.579] PartTbl.StartCylinder = 853
+[2022/06/19 11:31:52.579] PartTbl.EndHead = 243
+[2022/06/19 11:31:52.579] PartTbl.EndSector = 10
+[2022/06/19 11:31:52.579] PartTbl.EndCylinder = 857
+[2022/06/19 11:31:52.579] =========== Disk2 MBR Partition 3 ============
+[2022/06/19 11:31:52.579] PartTbl.Active = 0x0
+[2022/06/19 11:31:52.579] PartTbl.FsFlag = 0x0
+[2022/06/19 11:31:52.579] PartTbl.StartSectorId = 0
+[2022/06/19 11:31:52.580] PartTbl.SectorCount = 0
+[2022/06/19 11:31:52.580] PartTbl.StartHead = 0
+[2022/06/19 11:31:52.580] PartTbl.StartSector = 0
+[2022/06/19 11:31:52.580] PartTbl.StartCylinder = 0
+[2022/06/19 11:31:52.580] PartTbl.EndHead = 0
+[2022/06/19 11:31:52.580] PartTbl.EndSector = 0
+[2022/06/19 11:31:52.580] PartTbl.EndCylinder = 0
+[2022/06/19 11:31:52.580] =========== Disk2 MBR Partition 4 ============
+[2022/06/19 11:31:52.580] PartTbl.Active = 0x0
+[2022/06/19 11:31:52.580] PartTbl.FsFlag = 0x0
+[2022/06/19 11:31:52.580] PartTbl.StartSectorId = 0
+[2022/06/19 11:31:52.580] PartTbl.SectorCount = 0
+[2022/06/19 11:31:52.580] PartTbl.StartHead = 0
+[2022/06/19 11:31:52.580] PartTbl.StartSector = 0
+[2022/06/19 11:31:52.580] PartTbl.StartCylinder = 0
+[2022/06/19 11:31:52.581] PartTbl.EndHead = 0
+[2022/06/19 11:31:52.581] PartTbl.EndSector = 0
+[2022/06/19 11:31:52.581] PartTbl.EndCylinder = 0
+[2022/06/19 11:31:52.581] PhysicalDrive2 is ventoy disk
+[2022/06/19 11:31:52.581] QueryDosDeviceA success \Device\Harddisk2\DR3
+[2022/06/19 11:31:52.581] [0] CreateFileA \\.\PhysicalDrive2 code:0 000002CC
+[2022/06/19 11:31:52.581] Parse FAT fs...
+[2022/06/19 11:31:52.584] attach media success...
+[2022/06/19 11:31:52.654] GetVentoyVerInPhyDrive rc=0...
+[2022/06/19 11:31:52.654] VentoyVerInPhyDrive 2 is <1.0.54>...
+[2022/06/19 11:31:52.658] PhyDrive 2 is Ventoy Disk ver:1.0.54 SecureBoot:0
+[2022/06/19 11:31:52.658] < CL1-3D256-Q11 NVMe SSSTC 256GB> is filtered for not USB type.
+[2022/06/19 11:31:52.658] < WDC WD10EZEX-75WN4A1> is filtered for not USB type.
+[2022/06/19 11:31:52.660] Combox select change, update secure boot option: 0 0
