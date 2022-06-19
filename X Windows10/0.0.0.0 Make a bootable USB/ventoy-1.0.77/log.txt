@@ -190,3 +190,185 @@
 [2022/06/19 11:31:52.658] < CL1-3D256-Q11 NVMe SSSTC 256GB> is filtered for not USB type.
 [2022/06/19 11:31:52.658] < WDC WD10EZEX-75WN4A1> is filtered for not USB type.
 [2022/06/19 11:31:52.660] Combox select change, update secure boot option: 0 0
+[2022/06/19 15:00:26.893] 
+##################################################################################
+######################### Ventoy2DiskX86 (1.0.77) #########################
+##################################################################################
+[2022/06/19 15:00:26.908] Current directory:<D>
+[2022/06/19 15:00:26.912] id=9788/7260
+[2022/06/19 15:00:26.912] PPath:<C:\Windows\explorer.exe>
+[2022/06/19 15:00:26.912] PSize:<4389168 4286KB>
+[2022/06/19 15:00:26.912] Lunch main process 0
+[2022/06/19 15:00:26.913] Control Flag: 0 1 1
+[2022/06/19 15:00:26.914] Windows Version: <<Windows 10 Enterprise LTSB, 64-bit (Build 17763.2114)>>
+[2022/06/19 15:00:26.914] 
+===================== Enum All PhyDrives =====================
+[2022/06/19 15:00:26.915] RegOpenKeyExA <SYSTEM\CurrentControlSet\Services\disk\Enum> Ret:0
+[2022/06/19 15:00:26.915] RegQueryValueExA <Count> ret:0  Size:4 Value:3
+[2022/06/19 15:00:26.915] GetPhysicalDriveCount: 3
+[2022/06/19 15:00:26.915] Logical Drives: 0x3c
+[2022/06/19 15:00:26.915] LogicalDrive:\\.\C: PhyDrive:0 Offset:6156189696 ExtentLength:249903972352
+[2022/06/19 15:00:26.915] C --> 0
+[2022/06/19 15:00:26.915] LogicalDrive:\\.\D: PhyDrive:1 Offset:17825792 ExtentLength:1000185266176
+[2022/06/19 15:00:26.915] D --> 1
+[2022/06/19 15:00:26.918] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2022/06/19 15:00:26.918] E --> -1
+[2022/06/19 15:00:26.918] LogicalDrive:\\.\F: PhyDrive:2 Offset:1048576 ExtentLength:15478531584
+[2022/06/19 15:00:26.918] F --> 2
+[2022/06/19 15:00:26.919] Create file Handle:0000012C \\.\PhysicalDrive0 status:0
+[2022/06/19 15:00:26.919] PHYSICALDRIVE0 size 256060514304 bytes
+[2022/06/19 15:00:26.919] Create file Handle:0000012C \\.\PhysicalDrive1 status:0
+[2022/06/19 15:00:26.919] PHYSICALDRIVE1 size 1000204886016 bytes
+[2022/06/19 15:00:26.920] Create file Handle:0000012C \\.\PhysicalDrive2 status:0
+[2022/06/19 15:00:26.920] PHYSICALDRIVE2 size 15479597056 bytes
+[2022/06/19 15:00:26.920] PhyDrv:0 BusType:Nvme Removable:0 Size:256GB(256060514304) Name: CL1-3D256-Q11 NVMe SSSTC 256GB
+[2022/06/19 15:00:26.920] PhyDrv:1 BusType:SATA Removable:0 Size:1024GB(1000204886016) Name: WDC WD10EZEX-75WN4A1
+[2022/06/19 15:00:26.920] PhyDrv:2 BusType:USB  Removable:1 Size:16GB(15479597056) Name:Kingston DataTraveler 112
+[2022/06/19 15:00:26.920] LogicalDrive:\\.\C: PhyDrive:0 Offset:6156189696 ExtentLength:249903972352
+[2022/06/19 15:00:26.920] Logical Drive:C  ===> PhyDrive:0
+[2022/06/19 15:00:26.920] LogicalDrive:\\.\D: PhyDrive:1 Offset:17825792 ExtentLength:1000185266176
+[2022/06/19 15:00:26.921] Logical Drive:D  ===> PhyDrive:1
+[2022/06/19 15:00:26.923] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2022/06/19 15:00:26.923] Logical Drive:E  ===> PhyDrive:-1
+[2022/06/19 15:00:26.924] LogicalDrive:\\.\F: PhyDrive:2 Offset:1048576 ExtentLength:15478531584
+[2022/06/19 15:00:26.924] Logical Drive:F  ===> PhyDrive:2
+[2022/06/19 15:00:26.924] Create file Handle:00000130 \\.\PhysicalDrive2 status:0
+[2022/06/19 15:00:26.924] Read MBR Ret:1 Size:512 code:183
+[2022/06/19 15:00:26.926] =========== Disk2 GPT Partition 1 ============
+[2022/06/19 15:00:26.926] PartTbl.PartType = {ebd0a0a2-b9e5-4433-87c0-68b6b72699c7}
+[2022/06/19 15:00:26.926] PartTbl.PartGuid = {033f28db-89f7-45e2-9a8a-b1c87bab7d1b}
+[2022/06/19 15:00:26.926] PartTbl.StartLBA = 2048
+[2022/06/19 15:00:26.926] PartTbl.LastLBA = 30233554
+[2022/06/19 15:00:26.926] PartTbl.Attribute = 0x0
+[2022/06/19 15:00:26.926] PartTbl.Name = Main Data Partition
+[2022/06/19 15:00:26.926] Invalid ventoy efi part name <null>
+[2022/06/19 15:00:26.926] < CL1-3D256-Q11 NVMe SSSTC 256GB> is filtered for not USB type.
+[2022/06/19 15:00:26.926] < WDC WD10EZEX-75WN4A1> is filtered for not USB type.
+[2022/06/19 15:00:26.954] Load languages from json file ...
+[2022/06/19 15:00:27.014] language json file len:217793 json parse:0
+[2022/06/19 15:00:27.015] Total 46 languages ...
+[2022/06/19 15:00:27.051] Not ventoy disk, set secure boot option
+[2022/06/19 15:00:40.782] SpaceMB:0 SizeInMB:14762
+[2022/06/19 15:00:40.783] #####################################################
+[2022/06/19 15:00:40.783] InstallVentoy2PhyDrive try1 MBR PhyDrive2 <<Kingston DataTraveler 112 16GB>>
+[2022/06/19 15:00:40.783] #####################################################
+[2022/06/19 15:00:40.785] Copy boot img success
+[2022/06/19 15:00:40.785] Disk signature: 0x58cfc49b
+[2022/06/19 15:00:40.785] Disk need to align with 4KB 4
+[2022/06/19 15:00:40.785] ReservedSector: 4
+[2022/06/19 15:00:40.785] Lock disk for clean ............................. 
+[2022/06/19 15:00:40.785] QueryDosDeviceA success \Device\Harddisk2\DR5
+[2022/06/19 15:00:40.786] [0] CreateFileA \\.\PhysicalDrive2 code:0 000002DC
+[2022/06/19 15:00:40.786] FSCTL_LOCK_VOLUME success
+[2022/06/19 15:00:40.786] LogicalDrive:\\.\C: PhyDrive:0 Offset:6156189696 ExtentLength:249903972352
+[2022/06/19 15:00:40.786] LogicalDrive:\\.\D: PhyDrive:1 Offset:17825792 ExtentLength:1000185266176
+[2022/06/19 15:00:40.789] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2022/06/19 15:00:40.789] LogicalDrive:\\.\F: PhyDrive:2 Offset:1048576 ExtentLength:15478531584
+[2022/06/19 15:00:40.789] F: is belong to phydrive2
+[2022/06/19 15:00:40.789] Delete mountpoint F:\ ret:1 code:0
+[2022/06/19 15:00:40.789] Will use 'F:' as volume mountpoint
+[2022/06/19 15:00:41.909] VDS init OK, service 00845784
+[2022/06/19 15:00:41.922] Callback 1 process for disk <\\?\PhysicalDrive2>
+[2022/06/19 15:00:41.922] Deleting ALL partitions from disk '\\?\PhysicalDrive2':
+[2022/06/19 15:00:41.923] * Partition 1 (offset: 1048576, size: 15478531584) delete it.
+[2022/06/19 15:00:41.971] Delete this partitions success
+[2022/06/19 15:00:41.971] VDS_DeleteAllPartitions 2 ret:1 (SUCCESS)
+[2022/06/19 15:00:41.972] Deleting all partitions ......................... OK
+[2022/06/19 15:00:41.972] Lock disk for write ............................. 
+[2022/06/19 15:00:41.972] QueryDosDeviceA success \Device\Harddisk2\DR5
+[2022/06/19 15:00:41.973] [0] CreateFileA \\.\PhysicalDrive2 code:0 0000021C
+[2022/06/19 15:00:41.973] Opened \\.\PhysicalDrive2 for exclusive write access
+[2022/06/19 15:00:41.973] FSCTL_LOCK_VOLUME success
+[2022/06/19 15:00:41.976] Formatting part1 exFAT ...
+[2022/06/19 15:00:41.976] Formatting Part1 exFAT ...
+[2022/06/19 15:00:42.251] Formatting Part1 exFAT success
+[2022/06/19 15:00:42.252] Writing part2 FAT img ...
+[2022/06/19 15:00:42.252] FormatPart2Fat 30168048...
+[2022/06/19 15:00:42.375] Malloc whole img buffer success, now decompress ...
+[2022/06/19 15:00:43.017] decompress finished success
+[2022/06/19 15:00:43.018] VentoyProcSecureBoot 1 ...
+[2022/06/19 15:00:43.018] Secure boot is enabled ...
+[2022/06/19 15:00:43.155] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:44.427] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:44.560] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:45.816] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:45.948] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:46.100] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:46.231] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:47.486] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:47.618] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:47.770] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:47.904] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:49.159] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:49.291] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:49.444] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:49.576] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:50.831] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:50.963] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:51.115] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:51.247] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:52.500] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:52.633] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:52.785] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:52.919] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:54.172] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:54.304] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:54.456] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:54.587] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:55.838] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.002] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.141] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.274] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.414] Write part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.473] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.529] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.584] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.640] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.696] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.752] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.809] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.864] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.920] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:56.976] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.031] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.088] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.144] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.202] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.257] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.313] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.368] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.425] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.480] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.536] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.591] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.648] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.704] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.759] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.814] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.871] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.927] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:57.986] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:58.043] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:58.100] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:58.158] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:58.216] Read part data bRet:1 dwSize:1048576 code:183
+[2022/06/19 15:00:58.222] Writing Boot Image ............................. 
+[2022/06/19 15:00:58.222] WriteGrubStage1ToPhyDrive ...
+[2022/06/19 15:00:58.256] Write MBR stage1 ...
+[2022/06/19 15:00:58.393] WriteFile Ret:1 dwSize:1048064 ErrCode:183
+[2022/06/19 15:00:58.394] Writing Partition Table ........................ 
+[2022/06/19 15:00:58.397] Write MBR OK ...
+[2022/06/19 15:00:58.400] Mounting Ventoy Partition ....................... 
+[2022/06/19 15:00:59.401] LogicalDrive:\\.\C: PhyDrive:0 Offset:6156189696 ExtentLength:249903972352
+[2022/06/19 15:00:59.401] LogicalDrive:\\.\D: PhyDrive:1 Offset:17825792 ExtentLength:1000185266176
+[2022/06/19 15:00:59.403] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2022/06/19 15:00:59.648] LogicalDrive:\\.\F: PhyDrive:2 Offset:1048576 ExtentLength:15444992000
+[2022/06/19 15:00:59.648] F: is belong to phydrive2
+[2022/06/19 15:00:59.706] LogicalDrive:\\.\G: PhyDrive:2 Offset:15446040576 ExtentLength:33554432
+[2022/06/19 15:00:59.706] G: is belong to phydrive2
+[2022/06/19 15:00:59.706] Logical drive letter after write ventoy: <FG>
+[2022/06/19 15:00:59.706] F:\ is ventoy part1, already mounted
+[2022/06/19 15:00:59.763] G:\ is ventoy part2, delete mountpoint
+[2022/06/19 15:00:59.763] OK
+
+[2022/06/19 15:01:06.054] Combox select change, update secure boot option: 1 1
