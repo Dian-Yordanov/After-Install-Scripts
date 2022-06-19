@@ -1,4 +1,5 @@
 choco install firefox -y
+choco install brave -y
 choco install 7zip.install -y
 choco install chocolateygui -y
 choco install treesizefree -y
