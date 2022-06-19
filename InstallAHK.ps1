@@ -1,1 +1,0 @@
-chocolatey install autohotkey -y

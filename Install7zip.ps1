@@ -1,1 +1,0 @@
-chocolatey install 7zip -y
