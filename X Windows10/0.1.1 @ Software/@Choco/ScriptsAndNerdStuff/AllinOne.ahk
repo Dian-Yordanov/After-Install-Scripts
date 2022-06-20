@@ -1,7 +1,7 @@
 ﻿SetWorkingDir %A_ScriptDir% 
 
 
-Gui, Add, Tab3, w880 h680, 1. Choose script to install|2. Launch "Install.ps1"|2.1. Create a new "Install.ps1" script|3. Launch "InstallCustomPrograms.ps1" script|3.1. Create a new "InstallCustomPrograms.ps1" script
+Gui, Add, Tab3, w880 h680, 1. Choose script to install|2. Launch "Install.ps1"|2.1. Create a new "Install.ps1" script|3. Launch "InstallCustomPrograms.ps1" script|3.1 Create a new "InstallCustomPrograms.ps1" script
 Gui, Tab, 1
 filesList := []
 
@@ -19,13 +19,12 @@ Gui, Tab, 2
 Gui, Add, Button, vExecuteScripts_Type1Execution1 gexecute_script1 x400 y310, Execute Scripts Type 1 Execution 
 Gui, Add, Button, vExecuteScripts_Type2Execution2 gexecute_script2 x400 y340, Execute Scripts Type 2 Execution 
 Gui, Tab, 3
-Gui, Add, Button, vExecuteScripts_Type1Execution3 gexecute_script3 x400 y310, Launch the read_Install_script_and_choose_programs_to_install.exe
+Gui, Add, Button, vExecuteScripts_Type2Execution7 gexecute_script7 x400 y340, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 2 Execution 
 Gui, Tab, 4
-Gui, Add, Button, vExecuteScripts_Type1Execution4 gexecute_script4 x400 y310, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 1 Execution 
-Gui, Add, Button, vExecuteScripts_Type2Execution5 gexecute_script5 x400 y340, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 2 Execution 
+Gui, Add, Button, vExecuteScripts_Type1Execution4 gexecute_script4 x400 y310, InstallCustomPrograms.ps1 Type 1 Execution 
+Gui, Add, Button, vExecuteScripts_Type2Execution5 gexecute_script5 x400 y340, InstallCustomPrograms.ps1 Type 2 Execution 
 Gui, Tab, 5
-Gui, Add, Button, vExecuteScripts_Type1Execution6 gexecute_script4 x400 y310, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 1 Execution 
-Gui, Add, Button, vExecuteScripts_Type2Execution7 gexecute_script5 x400 y340, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 2 Execution 
+Gui, Add, Button, vExecuteScripts_Type1Execution3 gexecute_script3 x400 y310, Launch the read_Install_script_and_choose_programs_to_install.exe
 Gui, Show
 
 
@@ -103,7 +102,7 @@ customFunction2(selectedVar)
 
     FileRead, OutputVar, %A_ScriptDir%\%selectedVar%
 
-    OutputVar = "& {"  %OutputVar%  "}"
+    OutputVar = %OutputVar% 
 
     SetKeyDelay, 0, 0
 
@@ -130,27 +129,22 @@ customFunction2(selectedVar)
 
 execute_script1:
 
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+FileRead, OutputVar, %A_ScriptDir%\Install.ps1
+OutputVar = "& {"  %OutputVar%  "}"
+RunWait, powershell.exe -NoExit -ExecutionPolicy Bypass -Command %OutputVar%, Show
 
-path = %A_ScriptDir%\Install.ps1
-; MsgBox, %path%
-Run, PowerShell.exe -Command "%path%", , Show
 return
 
 execute_script2:
 
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-
-path = %A_ScriptDir%\Install.ps1
-; MsgBox, %path%
 FileRead, OutputVar, %A_ScriptDir%\Install.ps1
 clipboard = %OutputVar%
+
+SetKeyDelay, 0, 0
+
+Run, C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe
+Sleep, 4000
+
 ControlSend,, {Enter},ahk_exe powershell.exe
 Send ^v
 Sleep, 1500
@@ -183,26 +177,63 @@ return
 ;                   |_|                                                                                                          |___/                                                              |___/                                                                                                                          
 
 execute_script4:
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-path = %A_ScriptDir%\RunThisToGetPackagesButManuallyRemoveHeaders.ps1
-Run, PowerShell.exe -Command "%path%", , Show
+FileRead, OutputVar, %A_ScriptDir%\InstallCustomPrograms.ps1
+OutputVar = "& {"  %OutputVar%  "}"
+RunWait, powershell.exe -NoExit -ExecutionPolicy Bypass -Command %OutputVar%, Show
+
 return
 
 
 execute_script5:
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-FileRead, OutputVar, %A_ScriptDir%\RunThisToGetPackagesButManuallyRemoveHeaders.ps1
+FileRead, OutputVar, %A_ScriptDir%\InstallCustomPrograms.ps1
 clipboard = %OutputVar%
+
+SetKeyDelay, 0, 0
+
+Run, C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe
+Sleep, 4000
+
 ControlSend,, {Enter},ahk_exe powershell.exe
 Send ^v
 Sleep, 1500
 ControlSend,, {Enter},ahk_exe powershell.exe
+
+return
+
+; ____  __      _____                _                                       _ _ _____           _        _ _  _____          _                  _____                                                    __ _ _                 _       _   
+; |___ \/_ |    / ____|              | |                                     ( | )_   _|         | |      | | |/ ____|        | |                |  __ \                                                  /_ ( | )               (_)     | |  
+;   __) || |   | |     _ __ ___  __ _| |_ ___    __ _   _ __   _____      __  V V  | |  _ __  ___| |_ __ _| | | |    _   _ ___| |_ ___  _ __ ___ | |__) | __ ___   __ _ _ __ __ _ _ __ ___  ___   _ __  ___| |V V   ___  ___ _ __ _ _ __ | |_ 
+;  |__ < | |   | |    | '__/ _ \/ _` | __/ _ \  / _` | | '_ \ / _ \ \ /\ / /       | | | '_ \/ __| __/ _` | | | |   | | | / __| __/ _ \| '_ ` _ \|  ___/ '__/ _ \ / _` | '__/ _` | '_ ` _ \/ __| | '_ \/ __| |     / __|/ __| '__| | '_ \| __|
+;  ___) || |_  | |____| | |  __/ (_| | ||  __/ | (_| | | | | |  __/\ V  V /       _| |_| | | \__ \ || (_| | | | |___| |_| \__ \ || (_) | | | | | | |   | | | (_) | (_| | | | (_| | | | | | \__ \_| |_) \__ \ |     \__ \ (__| |  | | |_) | |_ 
+; |____(_)_(_)  \_____|_|  \___|\__,_|\__\___|  \__,_| |_| |_|\___| \_/\_/       |_____|_| |_|___/\__\__,_|_|_|\_____\__,_|___/\__\___/|_| |_| |_|_|   |_|  \___/ \__, |_|  \__,_|_| |_| |_|___(_) .__/|___/_|     |___/\___|_|  |_| .__/ \__|
+;                                                                                                                                                                  __/ |                         | |                               | |        
+;                                                                                                                                                                 |___/                          |_|                               |_|        
+
+execute_script6:
+
+FileRead, OutputVar, %A_ScriptDir%\RunThisToGetPackagesButManuallyRemoveHeaders.ps1
+OutputVar = "& {"  %OutputVar%  "}"
+RunWait, powershell.exe -NoExit -ExecutionPolicy Bypass -Command %OutputVar%, Show
+
+
+return
+
+execute_script7:
+
+FileRead, OutputVar, %A_ScriptDir%\RunThisToGetPackagesButManuallyRemoveHeaders.ps1
+clipboard = %OutputVar%
+
+SetKeyDelay, 0, 0
+
+Run, C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe
+Sleep, 4000
+
+ControlSend,, {Enter},ahk_exe powershell.exe
+Send ^v
+Sleep, 1500
+ControlSend,, {Enter},ahk_exe powershell.exe
+
+
 return

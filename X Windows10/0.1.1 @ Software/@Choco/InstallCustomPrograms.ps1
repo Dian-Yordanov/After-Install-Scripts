@@ -1,3 +1,2 @@
-choco install curl -y
-choco install cyberduck -y
-choco install DotNet4.0 -y
+choco install chocolateygui -y
+choco install cpu-z -y
