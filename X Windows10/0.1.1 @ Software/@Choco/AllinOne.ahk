@@ -1,6 +1,7 @@
 ﻿SetWorkingDir %A_ScriptDir% 
 
-Gui, Add, Tab3, w680 h480, ChooseScriptToInstall.ahk|launchInstallScript.ahk|Tab3
+
+Gui, Add, Tab3, w880 h680, 1. Choose script to install|2. Launch "Install.ps1"|2.1. Create a new "Install.ps1" script|3. Launch "InstallCustomPrograms.ps1" script|3.1. Create a new "InstallCustomPrograms.ps1" script
 Gui, Tab, 1
 filesList := []
 
@@ -15,13 +16,20 @@ Loop, % filesList.MaxIndex(){
 Gui, Add, Button, vExecuteScripts_Type1Execution ggo1 x400 y310, ExecuteScripts_Type1Execution
 Gui, Add, Button, vExecuteScripts_Type2Execution ggo2 x400 y340, ExecuteScripts_Type2Execution
 Gui, Tab, 2
-Gui, Add, Text,, We are in tab two
+Gui, Add, Button, vExecuteScripts_Type1Execution1 gexecute_script1 x400 y310, Execute Scripts Type 1 Execution 
+Gui, Add, Button, vExecuteScripts_Type2Execution2 gexecute_script2 x400 y340, Execute Scripts Type 2 Execution 
 Gui, Tab, 3
-Gui, Add, Text,, We are in tab three
+Gui, Add, Button, vExecuteScripts_Type1Execution3 gexecute_script3 x400 y310, Launch the read_Install_script_and_choose_programs_to_install.exe
+Gui, Tab, 4
+Gui, Add, Button, vExecuteScripts_Type1Execution4 gexecute_script4 x400 y310, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 1 Execution 
+Gui, Add, Button, vExecuteScripts_Type2Execution5 gexecute_script5 x400 y340, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 2 Execution 
+Gui, Tab, 5
+Gui, Add, Button, vExecuteScripts_Type1Execution6 gexecute_script4 x400 y310, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 1 Execution 
+Gui, Add, Button, vExecuteScripts_Type2Execution7 gexecute_script5 x400 y340, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 2 Execution 
 Gui, Show
 
 
-; _____           _       _     __      _____ _                           _____           _       _ _______   _____           _        _ _        _     _    
+;  _____           _       _     __      _____ _                           _____           _       _ _______   _____           _        _ _        _     _    
 ; / ____|         (_)     | |   /_ |_   / ____| |                         / ____|         (_)     | |__   __| |_   _|         | |      | | |      | |   | |   
 ; | (___   ___ _ __ _ _ __ | |_   | (_) | |    | |__   ___   ___  ___  ___| (___   ___ _ __ _ _ __ | |_ | | ___  | |  _ __  ___| |_ __ _| | |  __ _| |__ | | __
 ; \___ \ / __| '__| | '_ \| __|  | |   | |    | '_ \ / _ \ / _ \/ __|/ _ \\___ \ / __| '__| | '_ \| __|| |/ _ \ | | | '_ \/ __| __/ _` | | | / _` | '_ \| |/ /
@@ -120,3 +128,81 @@ customFunction2(selectedVar)
 ;                   | |                                                                                                 | |                          
 ;                   |_|                                                                                                 |_|                          
 
+execute_script1:
+
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+path = %A_ScriptDir%\Install.ps1
+; MsgBox, %path%
+Run, PowerShell.exe -Command "%path%", , Show
+return
+
+execute_script2:
+
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+path = %A_ScriptDir%\Install.ps1
+; MsgBox, %path%
+FileRead, OutputVar, %A_ScriptDir%\Install.ps1
+clipboard = %OutputVar%
+ControlSend,, {Enter},ahk_exe powershell.exe
+Send ^v
+Sleep, 1500
+ControlSend,, {Enter},ahk_exe powershell.exe
+
+return
+
+;  _____           _       _     ____                         _   _____           _        _ _                 _       _                    _       _                                                                             _         _           _        _ _        _     _    
+; / ____|         (_)     | |   |___ \ _                     | | |_   _|         | |      | | |               (_)     | |                  | |     | |                                                                           | |       (_)         | |      | | |      | |   | |   
+; | (___   ___ _ __ _ _ __ | |_    __) (_)  _ __ ___  __ _  __| |   | |  _ __  ___| |_ __ _| | |  ___  ___ _ __ _ _ __ | |_   __ _ _ __   __| |  ___| |__   ___   ___  ___  ___     _ __  _ __ ___   __ _ _ __ __ _ _ __ ___  ___ | |_ ___   _ _ __  ___| |_ __ _| | |  __ _| |__ | | __
+; \___ \ / __| '__| | '_ \| __|  |__ <    | '__/ _ \/ _` |/ _` |   | | | '_ \/ __| __/ _` | | | / __|/ __| '__| | '_ \| __| / _` | '_ \ / _` | / __| '_ \ / _ \ / _ \/ __|/ _ \   | '_ \| '__/ _ \ / _` | '__/ _` | '_ ` _ \/ __|| __/ _ \ | | '_ \/ __| __/ _` | | | / _` | '_ \| |/ /
+; ____) | (__| |  | | |_) | |_   ___) |_  | | |  __/ (_| | (_| |  _| |_| | | \__ \ || (_| | | | \__ \ (__| |  | | |_) | |_ | (_| | | | | (_| || (__| | | | (_) | (_) \__ \  __/   | |_) | | | (_) | (_| | | | (_| | | | | | \__ \| || (_) || | | | \__ \ || (_| | | || (_| | | | |   < 
+; |_____/ \___|_|  |_| .__/ \__| |____/(_) |_|  \___|\__,_|\__,_| |_____|_| |_|___/\__\__,_|_|_| |___/\___|_|  |_| .__/ \__| \__,_|_| |_|\__,_| \___|_| |_|\___/ \___/|___/\___|   | .__/|_|  \___/ \__, |_|  \__,_|_| |_| |_|___/ \__\___/ |_|_| |_|___/\__\__,_|_|_(_)__,_|_| |_|_|\_\
+;                   | |                                      ______                         ______              | |     ______             ______                           ______| |               __/ |                     ______   ______                                          
+;                   |_|                                     |______|                       |______|             |_|    |______|           |______|                         |______|_|              |___/                     |______| |______|                                         
+
+execute_script3:
+
+Run %A_ScriptDir%\read_Install_script_and_choose_programs_to_install.exe
+
+return
+
+;  _____           _       _     _  _       _____          _______ _     _  _______     _____      _   _____           _                         ____        _   __  __                         _ _       _____                               _    _                _               _____                                          
+; / ____|         (_)     | |   | || |  _  |  __ \        |__   __| |   (_)|__   __|   / ____|    | | |  __ \         | |                       |  _ \      | | |  \/  |                       | | |     |  __ \                             | |  | |              | |             |  __ \                                         
+; | (___   ___ _ __ _ _ __ | |_  | || |_(_) | |__) |   _ _ __ | |  | |__  _ ___| | ___ | |  __  ___| |_| |__) |_ _  ___| | ____ _  __ _  ___  ___| |_) |_   _| |_| \  / | __ _ _ __  _   _  __ _| | |_   _| |__) |___ _ __ ___   _____   _____| |__| | ___  __ _  __| | ___ _ __ ___| |__) |   _ _ __  _ __   ___ _ __ _____  _____ 
+; \___ \ / __| '__| | '_ \| __| |__   _|   |  _  / | | | '_ \| |  | '_ \| / __| |/ _ \| | |_ |/ _ \ __|  ___/ _` |/ __| |/ / _` |/ _` |/ _ \/ __|  _ <| | | | __| |\/| |/ _` | '_ \| | | |/ _` | | | | | |  _  // _ \ '_ ` _ \ / _ \ \ / / _ \  __  |/ _ \/ _` |/ _` |/ _ \ '__/ __|  _  / | | | '_ \| '_ \ / _ \ '__/ _ \ \/ / _ \
+; ____) | (__| |  | | |_) | |_     | |  _  | | \ \ |_| | | | | |  | | | | \__ \ | (_) | |__| |  __/ |_| |  | (_| | (__|   < (_| | (_| |  __/\__ \ |_) | |_| | |_| |  | | (_| | | | | |_| | (_| | | | |_| | | \ \  __/ | | | | | (_) \ V /  __/ |  | |  __/ (_| | (_| |  __/ |  \__ \ | \ \ |_| | | | | | | |  __/ |_|  __/>  <  __/
+; |_____/ \___|_|  |_| .__/ \__|    |_| (_) |_|  \_\__,_|_| |_|_|  |_| |_|_|___/_|\___/ \_____|\___|\__|_|   \__,_|\___|_|\_\__,_|\__, |\___||___/____/ \__,_|\__|_|  |_|\__,_|_| |_|\__,_|\__,_|_|_|\__, |_|  \_\___|_| |_| |_|\___/ \_/ \___|_|  |_|\___|\__,_|\__,_|\___|_|  |___/_|  \_\__,_|_| |_|_| |_|\___|_(_)\___/_/\_\___|
+;                   | |                                                                                                           __/ |                                                              __/ |                                                                                                                         
+;                   |_|                                                                                                          |___/                                                              |___/                                                                                                                          
+
+execute_script4:
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+path = %A_ScriptDir%\RunThisToGetPackagesButManuallyRemoveHeaders.ps1
+Run, PowerShell.exe -Command "%path%", , Show
+return
+
+
+execute_script5:
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+FileRead, OutputVar, %A_ScriptDir%\RunThisToGetPackagesButManuallyRemoveHeaders.ps1
+clipboard = %OutputVar%
+ControlSend,, {Enter},ahk_exe powershell.exe
+Send ^v
+Sleep, 1500
+ControlSend,, {Enter},ahk_exe powershell.exe
+return
