@@ -1,0 +1,94 @@
+# Begin Open GApps Install Log
+------------------------------------------------------------------
+            ROM Android version | 11
+                   ROM Build ID | RQ3A.211001.001 release-keys
+          ROM Version increment | eng.nobody.20220816.031439
+                ROM SDK version | 30
+        ROM/Recovery modversion | 7.21
+                Device Recovery | TWRP 3.6.0_11-0-0fc1ee2c
+                    Device Name | vayu
+                   Device Model | M2102J20SG
+                    Device Type | phone
+                     Device CPU | arm64-v8a,armeabi-v7a,armeabi
+          Device A/B-partitions | false
+             Installer Platform | arm
+                   ROM Platform | arm64
+           Display Density Used | 440
+                   Install Type | Clean[Data Wiped]
+Google Camera already installed | Clean
+              VRMode Compatible | false
+       Google Camera Compatible | true
+      New Camera API Compatible | false
+          Google Pixel Features | false
+          Current GApps Version | No GApps Installed
+          Google Camera version | Legacy
+       Installing GApps Zipfile | /external_sd/ROM_Files_And_Tools/0.2 FirmwareAndROMAndGapps/3rd_open_gapps-arm64-11.0-nano-20220215.zip
+       Installing GApps Version | 20220215
+          Installing GApps Type | nano
+                    Config Type | 
+             Using gapps-config | Not Used
+      Remove Stock/AOSP Browser | false[NO_Chrome]
+       Remove Stock/AOSP Camera | false[NO_CameraGoogle]
+       Remove Stock/AOSP Dialer | false[NO_DialerGoogle]
+        Remove Stock/AOSP Email | false[NO_Gmail]
+      Remove Stock/AOSP Gallery | false[NO_Photos]
+     Remove Stock/AOSP Launcher | false[NO_GoogleNow/PixelLauncher]
+      Remove Stock/AOSP MMS App | false[NO_Messenger]
+     Remove Stock/AOSP Pico TTS | false[default]
+         Ignore Google Contacts | false
+           Ignore Google Dialer | true[NoRemove]
+         Ignore Google Keyboard | false
+Ignore Google Package Installer | false[PackageInstallerGoogle]
+          Ignore Google NFC Tag | false
+          Ignore Google WebView | false
+         Total System Size (KB) | 2347180
+         Used System Space (KB) | 1155096
+        Current Free Space (KB) | 1175700
+   Post Install Free Space (KB) | 470940   << See Calculations Below
+------------------------------------------------------------------
+# End Open GApps Install Log
+
+NOTE: The Stock/AOSP Dialer is not available on your
+ROM (anymore), the Google equivalent will not be removed.
+!!! WARNING !!! - Duplicate files were found between your ROM and this GApps
+package. This is likely due to your ROM's dev including Google proprietary
+files in the ROM. The duplicate files are shown in the log portion below.
+
+# Begin GApps <> ROM Duplicate File List
+/system/app/MarkupGoogle
+# End GApps <> ROM Duplicate File List
+
+# Begin GApps Size Calculations
+------------------------------------------------------------------
+  TYPE  |         DESCRIPTION        |      SIZE |   TOTAL
+        |         Current Free Space |   1175700 | 1175700
+ Remove |             Existing GApps | +      12 | 1175712
+ Remove |             Obsolete Files | +       0 | 1175712
+ Remove |                androidauto | +       0 | 1175712
+ Remove |              cmsetupwizard | +       0 | 1175712
+ Remove |           extservicesstock | +       0 | 1175712
+ Remove |             extsharedstock | +       0 | 1175712
+ Remove |      packageinstallerstock | +       0 | 1175712
+ Remove |                  provision | +       0 | 1175712
+Install |                       Core | -  227284 |  948428
+Install |               batteryusage | -    6788 |  941640
+Install |                    calsync | -    2396 |  939244
+Install |            dialerframework | -      12 |  939232
+Install |               gearheadstub | -    3168 |  936064
+Install |                  googletts | -   62180 |  873884
+Install |                     markup | -    8252 |  865632
+Install |     packageinstallergoogle | -    3144 |  862488
+Install |                     search | -  321668 |  540820
+Install |                soundpicker | -    6184 |  534636
+Install |                     speech | -   39128 |  495508
+Install |                  wellbeing | -   15352 |  480156
+        |               Buffer Space | -    9216 |  470940
+------------------------------------------------------------------
+                        Post Install Free Space |  470940
+------------------------------------------------------------------
+
+# End GApps Size Calculations
+
+# Begin User's gapps-config
+
+# End User's gapps-config
