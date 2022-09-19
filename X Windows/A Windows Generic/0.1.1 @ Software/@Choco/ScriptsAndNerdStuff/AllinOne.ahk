@@ -19,7 +19,8 @@ Gui, Tab, 2
 Gui, Add, Button, vExecuteScripts_Type1Execution1 gexecute_script1 x400 y310, Execute Scripts Type 1 Execution 
 Gui, Add, Button, vExecuteScripts_Type2Execution2 gexecute_script2 x400 y340, Execute Scripts Type 2 Execution 
 Gui, Tab, 3
-Gui, Add, Button, vExecuteScripts_Type2Execution7 gexecute_script7 x400 y340, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 2 Execution 
+Gui, Add, Button, vExecuteScripts_Type2Execution7 gexecute_script7 x400 y310, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 2 Execution 
+Gui, Add, Button, vExecuteScripts_Type2Execution6 gexecute_script61 x400 y340, Add some packages manually to the install script after you make it
 Gui, Tab, 4
 Gui, Add, Button, vExecuteScripts_Type1Execution4 gexecute_script4 x400 y310, InstallCustomPrograms.ps1 Type 1 Execution 
 Gui, Add, Button, vExecuteScripts_Type2Execution5 gexecute_script5 x400 y340, InstallCustomPrograms.ps1 Type 2 Execution 
@@ -217,6 +218,13 @@ FileRead, OutputVar, %A_ScriptDir%\RunThisToGetPackagesButManuallyRemoveHeaders.
 OutputVar = "& {"  %OutputVar%  "}"
 RunWait, powershell.exe -NoExit -ExecutionPolicy Bypass -Command %OutputVar%, Show
 
+return
+
+execute_script61:
+
+FileRead, OutputVarText, %A_ScriptDir%\textToAppend.txt
+
+FileAppend %OutputVarText%`n, %A_ScriptDir%\Install.ps1
 
 return
 

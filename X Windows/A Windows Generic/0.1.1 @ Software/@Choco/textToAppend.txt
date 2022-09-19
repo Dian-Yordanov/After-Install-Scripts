@@ -1,0 +1,2 @@
+choco install choco -y
+choco install firefox -y
