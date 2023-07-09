@@ -1,33 +1,70 @@
 ﻿SetWorkingDir %A_ScriptDir% 
 
+Gui, Add, Button, gtb1 w300 h20 y10 Left, 1. Choose script to install
+Gui, Add, Button, gtb2 w300 h20 y+20 Left, 2. Launch "Install.ps1"
+Gui, Add, Button, gtb3 w300 h20 y+8 Left, 2.1. Create a new "Install.ps1" script
+Gui, Add, Button, gtb4 w300 h20 y+20 Left, 3. Launch "InstallCustomPrograms.ps1" script
+Gui, Add, Button, gtb5 w300 h20 y+8 Left, 3.1 Create a new "InstallCustomPrograms.ps1" script
 
-Gui, Add, Tab3, w680 h680, 1. Choose script to install|2. Launch "Install.ps1"|2.1. Create a new "Install.ps1" script|3. Launch "InstallCustomPrograms.ps1" script|3.1 Create a new "InstallCustomPrograms.ps1" script
-Gui, Tab, 1
+Gui, Add, Tab2,buttons w100 vTAB_BUTTON x-100, a|b|c|d|e  ; note that the position is x-100, so it wont show up in the gui
+Gui, tab, a
+
+Gui, Add, Text,x350 y-10,
+
+Gui, Add, Button, ggo1 x350 y+8, Execute selected script with no delay
+Gui, Add, Button, ggo2 x350 y+8, Execute selected script with delay 
+
 filesList := []
-
 Loop %A_ScriptDir%\*.ps1
 {
     filesVar = %A_LoopFileName%
     filesList.Push(filesVar)
 }
 Loop, % filesList.MaxIndex(){
-    Gui, Add, CheckBox, vOpt%A_Index% , % filesList[A_Index]
+    Gui, Add, CheckBox, vOpt%A_Index% x350 y+8, % filesList[A_Index]
 }
-Gui, Add, Button, vExecuteScripts_Type1Execution ggo1 x400 y310, ExecuteScripts_Type1Execution
-Gui, Add, Button, vExecuteScripts_Type2Execution ggo2 x400 y340, ExecuteScripts_Type2Execution
-Gui, Tab, 2
-Gui, Add, Button, vExecuteScripts_Type1Execution1 gexecute_script1 x400 y310, Type 1 Execution 
-Gui, Add, Button, vExecuteScripts_Type2Execution2 gexecute_script2 x400 y340, Type 2 Execution 
-Gui, Tab, 3
-Gui, Add, Button, vExecuteScripts_Type2Execution7 gexecute_script7 x400 y310, RunThisToGetPackagesButManuallyRemoveHeadersRunner.exe Type 2 Execution 
-Gui, Add, Button, vExecuteScripts_Type2Execution6 gexecute_script61 x400 y340, Add some packages manually to the install script after you make it
-Gui, Tab, 4
-Gui, Add, Button, vExecuteScripts_Type1Execution4 gexecute_script4 x400 y310, InstallCustomPrograms.ps1 Type 1 Execution 
-Gui, Add, Button, vExecuteScripts_Type2Execution5 gexecute_script5 x400 y340, InstallCustomPrograms.ps1 Type 2 Execution 
-Gui, Tab, 5
-Gui, Add, Button, vExecuteScripts_Type1Execution3 gexecute_script3 x400 y310, Launch the read_Install_script_and_choose_programs_to_install.exe
-Gui, Show
 
+Gui, Tab, b
+
+Gui, Add, Text,x350 y-10,
+Gui, Add, Button, gexecute_script1 x350 y+8, Execute Scripts Type 1 Execution 
+Gui, Add, Button, gexecute_script2 x350 y+8, Execute Scripts Type 2 Execution 
+
+Gui, Tab, c
+
+Gui, Add, Text,x350 y-10,
+Gui, Add, Button, gexecute_script7 x350 y+8, GetPackagesButManuallyRemoveHeaders Type 2 Execution 
+Gui, Add, Button, gexecute_script61 x350 y+8, Add some packages manually to the install script after you make it
+
+Gui, Tab, d
+
+Gui, Add, Text,x350 y-10,
+Gui, Add, Button, vExecuteScripts_Type1Execution4 gexecute_script4 x350 y+8, InstallCustomPrograms.ps1 Type 1 Execution 
+Gui, Add, Button, vExecuteScripts_Type2Execution5 gexecute_script5 x350 y+8, InstallCustomPrograms.ps1 Type 2 Execution 
+
+Gui, Tab, e
+
+Gui, Add, Text,x350 y-10,
+Gui, Add, Button, vExecuteScripts_Type1Execution3 gexecute_script3 x350 y+8, Launch the read_Install_script_and_choose_programs_to_install.exe
+
+Gui, Show, w700 h360
+return
+
+tb1:
+GuiControl, Choose, TAB_BUTTON, 1
+return
+tb2:
+GuiControl, Choose, TAB_BUTTON, 2
+return
+tb3:
+GuiControl, Choose, TAB_BUTTON, 3
+return
+tb4:
+GuiControl, Choose, TAB_BUTTON, 4
+return
+tb5:
+GuiControl, Choose, TAB_BUTTON, 5
+return
 
 ;  _____           _       _     __      _____ _                           _____           _       _ _______   _____           _        _ _        _     _    
 ; / ____|         (_)     | |   /_ |_   / ____| |                         / ____|         (_)     | |__   __| |_   _|         | |      | | |      | |   | |   
