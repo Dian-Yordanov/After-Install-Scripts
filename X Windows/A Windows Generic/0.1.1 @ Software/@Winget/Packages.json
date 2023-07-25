@@ -1,7 +1,7 @@
 {
     "winget": {
         "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-        "CreationDate": "2023-07-09 18:03:30.764121",
+        "CreationDate": "2023-07-25 11:29:50.529772",
         "Sources": [
             {
                 "Packages": [],
@@ -13,13 +13,40 @@
                 }
             }
         ],
-        "WinGetVersion": "v1.5.1572\r"
+        "WinGetVersion": "v1.5.1881\r"
     },
     "scoop": {
         "apps": []
     },
     "chocolatey": {
         "apps": [
+            {
+                "Name": "vscodium.install"
+            },
+            {
+                "Name": "vscodium"
+            },
+            {
+                "Name": "KB2919442"
+            },
+            {
+                "Name": "KB2919355"
+            },
+            {
+                "Name": "fileseek.portable"
+            },
+            {
+                "Name": "dotnetfx"
+            },
+            {
+                "Name": "chocolatey-dotnetfx.extension"
+            },
+            {
+                "Name": "chocolatey-core.extension"
+            },
+            {
+                "Name": "chocolatey-compatibility.extension"
+            },
             {
                 "Name": "Chocolatey"
             }
@@ -29,6 +56,9 @@
         "apps": [
             {
                 "Name": "urllib3"
+            },
+            {
+                "Name": "translucenttb"
             },
             {
                 "Name": "soupsieve"
