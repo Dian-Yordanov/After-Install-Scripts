@@ -22,3 +22,4 @@ Remove-Item TempFile.txt
 Remove-Item TempFile2.txt
 Remove-Item TempFile3.txt
 Remove-Item TempFile4.txt
+Exit

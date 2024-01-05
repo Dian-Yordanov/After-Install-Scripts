@@ -1,10 +1,15 @@
 ﻿SetWorkingDir %A_ScriptDir% 
 
-Gui, Add, Button, gtb1 w300 h20 y10 Left, 1. Choose script to install
-Gui, Add, Button, gtb2 w300 h20 y+20 Left, 2. Launch "Install.ps1"
-Gui, Add, Button, gtb3 w300 h20 y+8 Left, 2.1. Create a new "Install.ps1" script
-Gui, Add, Button, gtb4 w300 h20 y+20 Left, 3. Launch "InstallCustomPrograms.ps1" script
-Gui, Add, Button, gtb5 w300 h20 y+8 Left, 3.1 Create a new "InstallCustomPrograms.ps1" script
+Gui, Add, GroupBox, w320 h80 y10 x5, Install all programms
+Gui, Add, Button, gtb2 w300 h20 xp+10 yp+20 Left, Execute "Install.ps1"
+Gui, Add, Button, gtb3 w300 h20 y+8 Left, Export choco list into "Install.ps1" 
+Gui, Add, text, x10 y+20 w300 0x10  ;Horizontal Line > Etched Gray
+Gui, Add, GroupBox, w320 h80 yp+10 x5, Choose what to install
+Gui, Add, Button, gtb4 w300 h20 xp+10 yp+20 Left, Launch "InstallCustomPrograms.ps1" script
+Gui, Add, Button, gtb5 w300 h20 y+8 Left, Create a new "InstallCustomPrograms.ps1" script
+Gui, Add, text, x10 y+20 w300 0x10  ;Horizontal Line > Etched Gray
+Gui, Add, Button, gtb1 w300 h20 y+10 Left, Choose script to execute
+gui, add, text, x+27 y5 h350 0x11  ;Vertical Line > Etched Gray
 
 Gui, Add, Tab2,buttons w100 vTAB_BUTTON x-100, a|b|c|d|e  ; note that the position is x-100, so it wont show up in the gui
 Gui, tab, a
