@@ -33,8 +33,7 @@ Gui, Add, Button, gexecute_script2 x350 y+8, Execute Scripts Type 2 Execution
 Gui, Tab, c
 
 Gui, Add, Text,x350 y-10,
-Gui, Add, Button, gexecute_script7 x350 y+8, GetPackagesButManuallyRemoveHeaders Type 2 Execution 
-Gui, Add, Button, gexecute_script61 x350 y+8, Add some packages manually to the install script after you make it
+Gui, Add, Button, gexecute_script7 x350 y+8, Export choco list
 
 Gui, Tab, d
 
