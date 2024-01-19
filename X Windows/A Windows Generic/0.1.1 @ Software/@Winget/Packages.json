@@ -86,9 +86,93 @@
             }
         },
         {
-            "Id": "MicrosoftCorporationII.WindowsSubs\u2026",
+            "Id": "MicrosoftCorporationII.WindowsSubsyst\u2026",
             "Name": "Windows Subsystem for Linux",
             "Version": "2.0.9.0",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.WindowsSDK.10.0.19041",
+            "Name": "Windows Software Development Kit - Wi\u2026",
+            "Version": "10.1.19041.685",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.WindowsSDK.10.0.20348",
+            "Name": "Windows Software Development Kit - Wi\u2026",
+            "Version": "10.1.20348.1",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.WindowsSDK.10.0.22621",
+            "Name": "Windows Software Development Kit - Wi\u2026",
+            "Version": "10.1.22621.2428",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.WindowsSDK.10.0.22000",
+            "Name": "Windows Software Development Kit - Wi\u2026",
+            "Version": "10.0.22000.832",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -191,7 +275,28 @@
             }
         },
         {
-            "Id": "Microsoft.VisualStudio.2019.BuildT\u2026",
+            "Id": "Microsoft.VisualStudio.2022.Community",
+            "Name": "Visual Studio Community 2022",
+            "Version": "17.8.5",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.VisualStudio.2019.BuildTools",
             "Name": "Visual Studio Build Tools 2019",
             "Version": "16.11.33",
             "Source": "Winget: winget",
@@ -217,6 +322,27 @@
             "Version": "2.4.0",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "urllib3",
+            "Name": "Urllib3",
+            "Version": "2.1.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -401,11 +527,32 @@
             }
         },
         {
-            "Id": "Henry++.simplewall",
-            "Name": "simplewall",
-            "Version": "3.7.7",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
+            "Id": "soupsieve",
+            "Name": "Soupsieve",
+            "Version": "2.5",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "shiboken6",
+            "Name": "Shiboken6",
+            "Version": "6.6.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -443,11 +590,32 @@
             }
         },
         {
-            "Id": "Gluon.SceneBuilder",
-            "Name": "SceneBuilder",
-            "Version": "21.0.0",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
+            "Id": "setuptools",
+            "Name": "Setuptools",
+            "Version": "69.0.3",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "scoop-search",
+            "Name": "Scoop Search",
+            "Version": "1.3.3",
+            "Source": "Scoop: main",
+            "ManagerName": "Scoop",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -485,11 +653,74 @@
             }
         },
         {
-            "Id": "RealtekSemiconductorCorp.RealtekAu\u2026",
+            "Id": "rich",
+            "Name": "Rich",
+            "Version": "13.7.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "requests",
+            "Name": "Requests",
+            "Version": "2.31.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "RealtekSemiconductorCorp.RealtekAudio\u2026",
             "Name": "Realtek Audio Control",
             "Version": "1.47.309.0",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "qt-creator",
+            "Name": "Qt Creator",
+            "Version": "12.0.1",
+            "Source": "Scoop: extras",
+            "ManagerName": "Scoop",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -511,6 +742,27 @@
             "Version": "4.6.2",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pywin32-ctypes",
+            "Name": "Pywin32 Ctypes",
+            "Version": "0.2.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -590,6 +842,132 @@
             }
         },
         {
+            "Id": "PySide6-Essentials",
+            "Name": "Pyside6 Essentials",
+            "Version": "6.6.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "PySide6-Addons",
+            "Name": "Pyside6 Addons",
+            "Version": "6.6.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "PySide6",
+            "Name": "Pyside6",
+            "Version": "6.6.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pyinstaller-hooks-contrib",
+            "Name": "Pyinstaller Hooks Contrib",
+            "Version": "2024.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pyinstaller",
+            "Name": "Pyinstaller",
+            "Version": "6.3.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Pygments",
+            "Name": "Pygments",
+            "Version": "2.17.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "PuTTY.PuTTY",
             "Name": "PuTTY release 0.80 (64-bit)",
             "Version": "0.80.0.0",
@@ -653,11 +1031,32 @@
             }
         },
         {
-            "Id": "Safing.Portmaster",
-            "Name": "Portmaster",
-            "Version": "0.8.8.1",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
+            "Id": "pip",
+            "Name": "Pip",
+            "Version": "23.3.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "pefile",
+            "Name": "Pefile",
+            "Version": "2023.2.7",
+            "Source": "Pip",
+            "ManagerName": "Pip",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -695,11 +1094,53 @@
             }
         },
         {
+            "Id": "parse_pip_search",
+            "Name": "Parse Pip Search",
+            "Version": "0.0.1",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "dotPDNLLC.paintdotnet",
             "Name": "paint.net",
             "Version": "5.0.12",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "packaging",
+            "Name": "Packaging",
+            "Version": "23.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -780,7 +1221,7 @@
         },
         {
             "Id": "Nvidia.PhysX",
-            "Name": "NVIDIA PhysX System Software 9.21\u2026",
+            "Name": "NVIDIA PhysX System Software 9.21.0713",
             "Version": "9.21.0713",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -801,7 +1242,7 @@
         },
         {
             "Id": "Nvidia.GeForceExperience",
-            "Name": "NVIDIA GeForce Experience 3.27.0.\u2026",
+            "Name": "NVIDIA GeForce Experience 3.27.0.120",
             "Version": "3.27.0.120",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -823,7 +1264,7 @@
         {
             "Id": "Notepad++.Notepad++",
             "Name": "Notepad++ (64-bit x64)",
-            "Version": "8.6.1",
+            "Version": "8.6.2",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -926,27 +1367,6 @@
             }
         },
         {
-            "Id": "9426MICRO-STARINTERNATION.MSICente\u2026",
-            "Name": "MSI Center",
-            "Version": "2.0.30.0",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
-            "InstallationOptions": {
-                "SkipHashCheck": false,
-                "InteractiveInstallation": false,
-                "RunAsAdministrator": false,
-                "Architecture": "",
-                "InstallationScope": "",
-                "CustomParameters": [],
-                "PreRelease": false,
-                "CustomInstallLocation": ""
-            },
-            "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
-            }
-        },
-        {
             "Id": "Guru3D.Afterburner",
             "Name": "MSI Afterburner 4.6.5",
             "Version": "4.6.5",
@@ -969,8 +1389,8 @@
         },
         {
             "Id": "clsid2.mpc-hc",
-            "Name": "MPC-HC 2.1.3 (64-bit)",
-            "Version": "2.1.3",
+            "Name": "MPC-HC 2.1.4 (64-bit)",
+            "Version": "2.1.4",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1073,134 +1493,8 @@
             }
         },
         {
-            "Id": "Microsoft.DotNet.DesktopRuntime.5",
-            "Name": "Microsoft Windows Desktop Runtime\u2026",
-            "Version": "5.0.17",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
-            "InstallationOptions": {
-                "SkipHashCheck": false,
-                "InteractiveInstallation": false,
-                "RunAsAdministrator": false,
-                "Architecture": "",
-                "InstallationScope": "",
-                "CustomParameters": [],
-                "PreRelease": false,
-                "CustomInstallLocation": ""
-            },
-            "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
-            }
-        },
-        {
-            "Id": "Microsoft.DotNet.DesktopRuntime.5",
-            "Name": "Microsoft Windows Desktop Runtime\u2026",
-            "Version": "5.0.17",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
-            "InstallationOptions": {
-                "SkipHashCheck": false,
-                "InteractiveInstallation": false,
-                "RunAsAdministrator": false,
-                "Architecture": "",
-                "InstallationScope": "",
-                "CustomParameters": [],
-                "PreRelease": false,
-                "CustomInstallLocation": ""
-            },
-            "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
-            }
-        },
-        {
-            "Id": "Microsoft.DotNet.DesktopRuntime.6",
-            "Name": "Microsoft Windows Desktop Runtime\u2026",
-            "Version": "6.0.26",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
-            "InstallationOptions": {
-                "SkipHashCheck": false,
-                "InteractiveInstallation": false,
-                "RunAsAdministrator": false,
-                "Architecture": "",
-                "InstallationScope": "",
-                "CustomParameters": [],
-                "PreRelease": false,
-                "CustomInstallLocation": ""
-            },
-            "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
-            }
-        },
-        {
-            "Id": "Microsoft.DotNet.DesktopRuntime.6",
-            "Name": "Microsoft Windows Desktop Runtime\u2026",
-            "Version": "6.0.26",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
-            "InstallationOptions": {
-                "SkipHashCheck": false,
-                "InteractiveInstallation": false,
-                "RunAsAdministrator": false,
-                "Architecture": "",
-                "InstallationScope": "",
-                "CustomParameters": [],
-                "PreRelease": false,
-                "CustomInstallLocation": ""
-            },
-            "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
-            }
-        },
-        {
-            "Id": "Microsoft.DotNet.DesktopRuntime.7",
-            "Name": "Microsoft Windows Desktop Runtime\u2026",
-            "Version": "7.0.15",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
-            "InstallationOptions": {
-                "SkipHashCheck": false,
-                "InteractiveInstallation": false,
-                "RunAsAdministrator": false,
-                "Architecture": "",
-                "InstallationScope": "",
-                "CustomParameters": [],
-                "PreRelease": false,
-                "CustomInstallLocation": ""
-            },
-            "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
-            }
-        },
-        {
-            "Id": "Microsoft.DotNet.DesktopRuntime.7",
-            "Name": "Microsoft Windows Desktop Runtime\u2026",
-            "Version": "7.0.15",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
-            "InstallationOptions": {
-                "SkipHashCheck": false,
-                "InteractiveInstallation": false,
-                "RunAsAdministrator": false,
-                "Architecture": "",
-                "InstallationScope": "",
-                "CustomParameters": [],
-                "PreRelease": false,
-                "CustomInstallLocation": ""
-            },
-            "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
-            }
-        },
-        {
             "Id": "Microsoft.DotNet.DesktopRuntime.8",
-            "Name": "Microsoft Windows Desktop Runtime\u2026",
+            "Name": "Microsoft Windows Desktop Runtime - 8\u2026",
             "Version": "8.0.1",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1221,8 +1515,155 @@
         },
         {
             "Id": "Microsoft.DotNet.DesktopRuntime.8",
-            "Name": "Microsoft Windows Desktop Runtime\u2026",
+            "Name": "Microsoft Windows Desktop Runtime - 8\u2026",
             "Version": "8.0.1",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.DotNet.DesktopRuntime.7",
+            "Name": "Microsoft Windows Desktop Runtime - 7\u2026",
+            "Version": "7.0.15",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.DotNet.DesktopRuntime.7",
+            "Name": "Microsoft Windows Desktop Runtime - 7\u2026",
+            "Version": "7.0.15",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.DotNet.DesktopRuntime.6",
+            "Name": "Microsoft Windows Desktop Runtime - 6\u2026",
+            "Version": "6.0.26",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.DotNet.DesktopRuntime.6",
+            "Name": "Microsoft Windows Desktop Runtime - 6\u2026",
+            "Version": "6.0.26",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.DotNet.DesktopRuntime.5",
+            "Name": "Microsoft Windows Desktop Runtime - 5\u2026",
+            "Version": "5.0.17",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.DotNet.DesktopRuntime.5",
+            "Name": "Microsoft Windows Desktop Runtime - 5\u2026",
+            "Version": "5.0.17",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.WebDeploy",
+            "Name": "Microsoft Web Deploy 4.0",
+            "Version": "10.0.7421",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1262,8 +1703,50 @@
             }
         },
         {
+            "Id": "Microsoft.VCRedist.2015+.x64",
+            "Name": "Microsoft Visual C++ 2015-2022 Redist\u2026",
+            "Version": "14.38.33130.0",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.VCRedist.2015+.x86",
+            "Name": "Microsoft Visual C++ 2015-2022 Redist\u2026",
+            "Version": "14.38.33130.0",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "Microsoft.VCLibs.Desktop.14",
-            "Name": "Microsoft Visual C++ 2015 UWP Des\u2026",
+            "Name": "Microsoft Visual C++ 2015 UWP Desktop\u2026",
             "Version": "14.0.32530.0",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1284,7 +1767,7 @@
         },
         {
             "Id": "Microsoft.VCRedist.2010.x86",
-            "Name": "Microsoft Visual C++ 2010 x86 Re\u2026",
+            "Name": "Microsoft Visual C++ 2010 x86 Redist\u2026",
             "Version": "10.0.40219",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1305,7 +1788,7 @@
         },
         {
             "Id": "Microsoft.VCRedist.2010.x64",
-            "Name": "Microsoft Visual C++ 2010 x64 Re\u2026",
+            "Name": "Microsoft Visual C++ 2010 x64 Redist\u2026",
             "Version": "10.0.40219",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1326,7 +1809,7 @@
         },
         {
             "Id": "Microsoft.VCRedist.2008.x64",
-            "Name": "Microsoft Visual C++ 2008 Redistr\u2026",
+            "Name": "Microsoft Visual C++ 2008 Redistribut\u2026",
             "Version": "9.0.30729.7523",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1347,7 +1830,7 @@
         },
         {
             "Id": "Microsoft.VCRedist.2008.x86",
-            "Name": "Microsoft Visual C++ 2008 Redistr\u2026",
+            "Name": "Microsoft Visual C++ 2008 Redistribut\u2026",
             "Version": "9.0.30729.7523",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1368,7 +1851,7 @@
         },
         {
             "Id": "Microsoft.VCRedist.2005.x86",
-            "Name": "Microsoft Visual C++ 2005 Redistr\u2026",
+            "Name": "Microsoft Visual C++ 2005 Redistribut\u2026",
             "Version": "8.0.61187",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1390,7 +1873,28 @@
         {
             "Id": "Microsoft.Teams",
             "Name": "Microsoft Teams (work or school)",
-            "Version": "23320.3021.2567.4799",
+            "Version": "23320.3027.2591.1505",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Microsoft.CLRTypesSQLServer.2019",
+            "Name": "Microsoft System CLR Types for SQL Se\u2026",
+            "Version": "15.0.2000.5",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1411,7 +1915,7 @@
         {
             "Id": "Microsoft.OneDrive",
             "Name": "Microsoft OneDrive",
-            "Version": "23.038.0219.0001",
+            "Version": "23.246.1127.0002",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1432,7 +1936,7 @@
         {
             "Id": "Microsoft.EdgeWebView2Runtime",
             "Name": "Microsoft Edge WebView2 Runtime",
-            "Version": "120.0.2210.133",
+            "Version": "120.0.2210.144",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1473,7 +1977,7 @@
         },
         {
             "Id": "Microsoft.DotNet.Runtime.8",
-            "Name": "Microsoft .NET Runtime - 8.0.1 (x\u2026",
+            "Name": "Microsoft .NET Runtime - 8.0.1 (x86)",
             "Version": "8.0.1",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1494,7 +1998,7 @@
         },
         {
             "Id": "Microsoft.DotNet.Runtime.8",
-            "Name": "Microsoft .NET Runtime - 8.0.1 (x\u2026",
+            "Name": "Microsoft .NET Runtime - 8.0.1 (x64)",
             "Version": "8.0.1",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1515,7 +2019,7 @@
         },
         {
             "Id": "Microsoft.DotNet.Runtime.6",
-            "Name": "Microsoft .NET Runtime - 6.0.26 (\u2026",
+            "Name": "Microsoft .NET Runtime - 6.0.26 (x86)",
             "Version": "6.0.26",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1536,7 +2040,7 @@
         },
         {
             "Id": "Microsoft.DotNet.Runtime.6",
-            "Name": "Microsoft .NET Runtime - 6.0.26 (\u2026",
+            "Name": "Microsoft .NET Runtime - 6.0.26 (x64)",
             "Version": "6.0.26",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1556,51 +2060,72 @@
             }
         },
         {
-            "Id": "Microsoft.NET.Native.Framework.1.7\u2026",
-            "Name": "Microsoft .Net Native Framework P\u2026",
-            "Version": "1.7.27413.0",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
-            "InstallationOptions": {
-                "SkipHashCheck": false,
-                "InteractiveInstallation": false,
-                "RunAsAdministrator": false,
-                "Architecture": "",
-                "InstallationScope": "",
-                "CustomParameters": [],
-                "PreRelease": false,
-                "CustomInstallLocation": ""
-            },
-            "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
-            }
-        },
-        {
-            "Id": "Microsoft.NET.Native.Framework.2.2\u2026",
-            "Name": "Microsoft .Net Native Framework P\u2026",
-            "Version": "2.2.29512.0",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
-            "InstallationOptions": {
-                "SkipHashCheck": false,
-                "InteractiveInstallation": false,
-                "RunAsAdministrator": false,
-                "Architecture": "",
-                "InstallationScope": "",
-                "CustomParameters": [],
-                "PreRelease": false,
-                "CustomInstallLocation": ""
-            },
-            "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
-            }
-        },
-        {
             "Id": "Microsoft.DotNet.Runtime.3_1",
-            "Name": "Microsoft .NET Core Runtime - 3.1\u2026",
+            "Name": "Microsoft .NET Core Runtime - 3.1.32 \u2026",
             "Version": "3.1.32",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "mdurl",
+            "Name": "Mdurl",
+            "Version": "0.1.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "markdown-it-py",
+            "Name": "Markdown It Py",
+            "Version": "3.0.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "launch4j.launch4j",
+            "Name": "Launch4j 3.50",
+            "Version": "3.50",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1640,8 +2165,29 @@
             }
         },
         {
+            "Id": "Oracle.JDK.21",
+            "Name": "Java(TM) SE Development Kit 21.0.1 (6\u2026",
+            "Version": "21.0.1.0",
+            "Source": "Winget: winget",
+            "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "JetBrains.IntelliJIDEA.Community",
-            "Name": "IntelliJ IDEA Community Edition 2\u2026",
+            "Name": "IntelliJ IDEA Community Edition 2023.\u2026",
             "Version": "2023.3.2",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1687,6 +2233,27 @@
             "Version": "9.0.9.1230",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "idna",
+            "Name": "Idna",
+            "Version": "3.6",
+            "Source": "Pip",
+            "ManagerName": "Pip",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -1787,6 +2354,27 @@
             }
         },
         {
+            "Id": "git",
+            "Name": "Git",
+            "Version": "2.43.0",
+            "Source": "Scoop: main",
+            "ManagerName": "Scoop",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "PrimateLabs.Geekbench.6",
             "Name": "Geekbench 6",
             "Version": "Unknown",
@@ -1805,6 +2393,27 @@
             "Updates": {
                 "UpdatesIgnored": false,
                 "IgnoredVersion": "6.1.0"
+            }
+        },
+        {
+            "Id": "fancontrol",
+            "Name": "Fancontrol",
+            "Version": "177",
+            "Source": "Scoop: extras",
+            "ManagerName": "Scoop",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
             }
         },
         {
@@ -1913,11 +2522,32 @@
             }
         },
         {
-            "Id": "chocolatey",
-            "Name": "Chocolatey",
-            "Version": "2.2.2",
-            "Source": "Chocolatey",
-            "ManagerName": "Chocolatey",
+            "Id": "charset-normalizer",
+            "Name": "Charset Normalizer",
+            "Version": "3.3.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "certifi",
+            "Name": "Certifi",
+            "Version": "2023.11.17",
+            "Source": "Pip",
+            "ManagerName": "Pip",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -1935,7 +2565,7 @@
         },
         {
             "Id": "TGRMNSoftware.BulkRenameUtility",
-            "Name": "Bulk Rename Utility 3.4.4.0 (64-b\u2026",
+            "Name": "Bulk Rename Utility 3.4.4.0 (64-bit)",
             "Version": "3.4.4.0",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
@@ -1955,9 +2585,30 @@
             }
         },
         {
+            "Id": "bs4",
+            "Name": "Bs4",
+            "Version": "0.0.2",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "Brave.Brave",
             "Name": "Brave",
-            "Version": "120.1.61.116",
+            "Version": "120.1.61.120",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1981,6 +2632,27 @@
             "Version": "4.1.10",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "beautifulsoup4",
+            "Name": "Beautifulsoup4",
+            "Version": "4.12.3",
+            "Source": "Pip",
+            "ManagerName": "Pip",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -2039,6 +2711,1203 @@
             }
         },
         {
+            "Id": "AzureRM.Websites",
+            "Name": "Azurerm Websites",
+            "Version": "4.2.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.UsageAggregates",
+            "Name": "Azurerm Usageaggregates",
+            "Version": "4.0.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.TrafficManager",
+            "Name": "Azurerm Trafficmanager",
+            "Version": "4.0.3",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Tags",
+            "Name": "Azurerm Tags",
+            "Version": "4.0.1",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.StreamAnalytics",
+            "Name": "Azurerm Streamanalytics",
+            "Version": "4.0.4",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Storage",
+            "Name": "Azurerm Storage",
+            "Version": "4.2.3",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Sql",
+            "Name": "Azurerm Sql",
+            "Version": "4.4.0",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.SiteRecovery",
+            "Name": "Azurerm Siterecovery",
+            "Version": "5.0.6",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.ServiceFabric",
+            "Name": "Azurerm Servicefabric",
+            "Version": "0.3.4",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.ServiceBus",
+            "Name": "Azurerm Servicebus",
+            "Version": "0.6.4",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.ServerManagement",
+            "Name": "Azurerm Servermanagement",
+            "Version": "4.1.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Scheduler",
+            "Name": "Azurerm Scheduler",
+            "Version": "0.16.3",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Resources",
+            "Name": "Azurerm Resources",
+            "Version": "5.5.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Relay",
+            "Name": "Azurerm Relay",
+            "Version": "0.3.3",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.RedisCache",
+            "Name": "Azurerm Rediscache",
+            "Version": "4.1.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.RecoveryServices.SiteRec...",
+            "Name": "Azurerm Recoveryservices Siterec   ",
+            "Version": "0.2.4",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.RecoveryServices.Backup",
+            "Name": "Azurerm Recoveryservices Backup",
+            "Version": "4.1.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.RecoveryServices",
+            "Name": "Azurerm Recoveryservices",
+            "Version": "4.1.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Profile",
+            "Name": "Azurerm Profile",
+            "Version": "4.6.0",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.PowerBIEmbedded",
+            "Name": "Azurerm Powerbiembedded",
+            "Version": "4.1.4",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.OperationalInsights",
+            "Name": "Azurerm Operationalinsights",
+            "Version": "4.3.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.NotificationHubs",
+            "Name": "Azurerm Notificationhubs",
+            "Version": "4.1.1",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Network",
+            "Name": "Azurerm Network",
+            "Version": "5.4.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Media",
+            "Name": "Azurerm Media",
+            "Version": "0.9.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.MarketplaceOrdering",
+            "Name": "Azurerm Marketplaceordering",
+            "Version": "0.2.1",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.MachineLearningCompute",
+            "Name": "Azurerm Machinelearningcompute",
+            "Version": "0.4.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.MachineLearning",
+            "Name": "Azurerm Machinelearning",
+            "Version": "0.17.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.LogicApp",
+            "Name": "Azurerm Logicapp",
+            "Version": "4.0.3",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.KeyVault",
+            "Name": "Azurerm Keyvault",
+            "Version": "4.3.0",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.IotHub",
+            "Name": "Azurerm Iothub",
+            "Version": "3.1.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Insights",
+            "Name": "Azurerm Insights",
+            "Version": "4.0.4",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.HDInsight",
+            "Name": "Azurerm Hdinsight",
+            "Version": "4.1.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.EventHub",
+            "Name": "Azurerm Eventhub",
+            "Version": "0.6.3",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.EventGrid",
+            "Name": "Azurerm Eventgrid",
+            "Version": "0.3.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Dns",
+            "Name": "Azurerm Dns",
+            "Version": "4.1.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.DevTestLabs",
+            "Name": "Azurerm Devtestlabs",
+            "Version": "4.0.4",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.DataLakeStore",
+            "Name": "Azurerm Datalakestore",
+            "Version": "5.2.0",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.DataLakeAnalytics",
+            "Name": "Azurerm Datalakeanalytics",
+            "Version": "4.2.3",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.DataFactoryV2",
+            "Name": "Azurerm Datafactoryv2",
+            "Version": "0.5.3",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.DataFactories",
+            "Name": "Azurerm Datafactories",
+            "Version": "4.2.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.ContainerRegistry",
+            "Name": "Azurerm Containerregistry",
+            "Version": "1.0.4",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.ContainerInstance",
+            "Name": "Azurerm Containerinstance",
+            "Version": "0.2.5",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Consumption",
+            "Name": "Azurerm Consumption",
+            "Version": "0.3.1",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Compute",
+            "Name": "Azurerm Compute",
+            "Version": "4.6.0",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.CognitiveServices",
+            "Name": "Azurerm Cognitiveservices",
+            "Version": "0.9.4",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Cdn",
+            "Name": "Azurerm Cdn",
+            "Version": "4.2.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Billing",
+            "Name": "Azurerm Billing",
+            "Version": "0.14.1",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Batch",
+            "Name": "Azurerm Batch",
+            "Version": "4.0.6",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Backup",
+            "Name": "Azurerm Backup",
+            "Version": "4.0.4",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.Automation",
+            "Name": "Azurerm Automation",
+            "Version": "4.3.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.ApplicationInsights",
+            "Name": "Azurerm Applicationinsights",
+            "Version": "0.1.3",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.ApiManagement",
+            "Name": "Azurerm Apimanagement",
+            "Version": "5.1.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM.AnalysisServices",
+            "Name": "Azurerm Analysisservices",
+            "Version": "0.6.6",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "AzureRM",
+            "Name": "Azurerm",
+            "Version": "5.7.0",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Azure.Storage",
+            "Name": "Azure Storage",
+            "Version": "4.2.1",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Azure.AnalysisServices",
+            "Name": "Azure Analysisservices",
+            "Version": "0.5.0",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "Azure",
+            "Name": "Azure",
+            "Version": "5.1.2",
+            "Source": "PowerShell: https://www.power...",
+            "ManagerName": "PowerShell",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "AutoHotkey.AutoHotkey",
             "Name": "AutoHotkey",
             "Version": "2.0.11",
@@ -2081,11 +3950,53 @@
             }
         },
         {
+            "Id": "apache-netbeans.portable",
+            "Name": "Apache Netbeans Portable",
+            "Version": "20.0.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "AnyDeskSoftwareGmbH.AnyDesk",
             "Name": "AnyDesk MSI",
             "Version": "> 8.0.6",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "altgraph",
+            "Name": "Altgraph",
+            "Version": "0.17.4",
+            "Source": "Pip",
+            "ManagerName": "Pip",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -2121,6 +4032,27 @@
                 "UpdatesIgnored": false,
                 "IgnoredVersion": ""
             }
+        },
+        {
+            "Id": "7zip",
+            "Name": "7zip",
+            "Version": "23.01",
+            "Source": "Scoop: main",
+            "ManagerName": "Scoop",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
         }
     ],
     "incompatible_packages_info": "Incompatible packages cannot be installed from WingetUI, but they have been listed here for logging purposes.",
@@ -2132,25 +4064,25 @@
             "Source": "Microsoft Store"
         },
         {
-            "Id": "Microsoft.XboxIdentityProvider_8we\u2026",
+            "Id": "Microsoft.XboxIdentityProvider_8wekyb\u2026",
             "Name": "Xbox Identity Provider",
             "Version": "12.95.3001.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "Microsoft.XboxSpeechToTextOverlay_\u2026",
+            "Id": "Microsoft.XboxSpeechToTextOverlay_8we\u2026",
             "Name": "Xbox Game Speech Window",
             "Version": "1.21.13002.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "Microsoft.XboxGameOverlay_8wekyb3d\u2026",
+            "Id": "Microsoft.XboxGameOverlay_8wekyb3d8bb\u2026",
             "Name": "Xbox Game Bar Plugin",
             "Version": "1.54.4001.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "Microsoft.XboxGamingOverlay_8wekyb\u2026",
+            "Id": "Microsoft.XboxGamingOverlay_8wekyb3d8\u2026",
             "Name": "Xbox Game Bar",
             "Version": "5.823.3261.0",
             "Source": "Microsoft Store"
@@ -2162,31 +4094,49 @@
             "Source": "Microsoft Store"
         },
         {
-            "Id": "Microsoft.WindowsAppRuntime.1.3_8w\u2026",
+            "Id": "Microsoft.WindowsAppRuntime.1.3_8weky\u2026",
             "Name": "WindowsAppRuntime.1.3",
             "Version": "3000.882.2207.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "Microsoft.WindowsAppRuntime.1.2_8w\u2026",
+            "Id": "Microsoft.WindowsAppRuntime.1.2_8weky\u2026",
             "Name": "WindowsAppRuntime.1.2",
             "Version": "2000.802.31.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "{408A5C50-34F2-4025-968E-A21D6A515\u2026",
+            "Id": "{408A5C50-34F2-4025-968E-A21D6A515D48}",
             "Name": "Windows Subsystem for Linux",
             "Version": "2.0.9.0",
             "Source": "Local PC"
         },
         {
-            "Id": "Microsoft.Winget.Source_8wekyb3d8b\u2026",
-            "Name": "Windows Package Manager Source (w\u2026",
+            "Id": "{126dedf0-cc0e-4b48-9ece-806b0e437195}",
+            "Name": "Windows Software Development Kit - Wi\u2026",
+            "Version": "10.1.18362.1",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "{5fe95b9d-9219-4d8b-a031-71323ae48a81}",
+            "Name": "Windows Software Development Kit - Wi\u2026",
+            "Version": "10.1.17763.132",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "{5AC9D20F-F065-4ECB-A0A4-EEFAB6A34832}",
+            "Name": "Windows SDK AddOn",
+            "Version": "10.1.0.0",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+            "Name": "Windows Package Manager Source (winge\u2026",
             "Version": "2024.115.925.668",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "Microsoft.WindowsCalculator_8wekyb\u2026",
+            "Id": "Microsoft.WindowsCalculator_8wekyb3d8\u2026",
             "Name": "Windows Calculator",
             "Version": "11.2210.0.0",
             "Source": "Microsoft Store"
@@ -2198,37 +4148,49 @@
             "Source": "Local PC"
         },
         {
-            "Id": "Microsoft.WebpImageExtension_8weky\u2026",
+            "Id": "Microsoft.WebpImageExtension_8wekyb3d\u2026",
             "Name": "Webp Image Extensions",
             "Version": "1.0.52351.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "Microsoft.WebMediaExtensions_8weky\u2026",
+            "Id": "Microsoft.WebMediaExtensions_8wekyb3d\u2026",
             "Name": "Web Media Extensions",
             "Version": "1.0.61591.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "Microsoft.VP9VideoExtensions_8weky\u2026",
+            "Id": "{1851460E-0E63-4117-B5BA-25A2F045801B}",
+            "Name": "vs_CoreEditorFonts",
+            "Version": "17.7.40001",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "Microsoft.VP9VideoExtensions_8wekyb3d\u2026",
             "Name": "VP9 Video Extensions",
             "Version": "1.0.61591.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "{99A6B581-0FA3-4E1B-BD84-E796FE26E\u2026",
+            "Id": "{99A6B581-0FA3-4E1B-BD84-E796FE26E41D}",
             "Name": "VMware Player",
             "Version": "17.5.0",
             "Source": "Local PC"
         },
         {
             "Id": "VCMI",
-            "Name": "VCMI 1.4, open-source engine for \u2026",
+            "Name": "VCMI 1.4, open-source engine for Hero\u2026",
             "Version": "1.4",
             "Source": "Local PC"
         },
         {
-            "Id": "28017CharlesMilette.TranslucentTB_\u2026",
+            "Id": "(KB2504637){CFEF48A8-BFB8-3EAC-8BA5-DE4F8AA267CE\u2026",
+            "Name": "Update for",
+            "Version": "1",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "28017CharlesMilette.TranslucentTB_v82\u2026",
             "Name": "TranslucentTB",
             "Version": "2023.2.0.0",
             "Source": "Microsoft Store"
@@ -2240,7 +4202,7 @@
             "Source": "Steam"
         },
         {
-            "Id": "Microsoft.StorePurchaseApp_8wekyb3\u2026",
+            "Id": "Microsoft.StorePurchaseApp_8wekyb3d8b\u2026",
             "Name": "Store Experience Host",
             "Version": "22305.1401.2.0",
             "Source": "Microsoft Store"
@@ -2252,19 +4214,19 @@
             "Source": "Local PC"
         },
         {
-            "Id": "{FDE38B99-3FAA-4273-BE9C-E6E1CC27E\u2026",
+            "Id": "{FDE38B99-3FAA-4273-BE9C-E6E1CC27EE8E}",
             "Name": "StarBank",
             "Version": "1.9",
             "Source": "Local PC"
         },
         {
-            "Id": "SpotifyAB.SpotifyMusic_zpdnekdrzre\u2026",
+            "Id": "SpotifyAB.SpotifyMusic_zpdnekdrzrea0",
             "Name": "Spotify Music",
             "Version": "1.215.828.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "{145C18EE-0ADC-4076-9F3C-BA56BA152\u2026",
+            "Id": "{145C18EE-0ADC-4076-9F3C-BA56BA152ED2\u2026",
             "Name": "Skylords Reborn",
             "Version": "Unknown",
             "Source": "Local PC"
@@ -2282,43 +4244,43 @@
             "Source": "Local PC"
         },
         {
-            "Id": "{0A46A65D-89AC-464C-8026-3CD44960B\u2026",
+            "Id": "{0A46A65D-89AC-464C-8026-3CD44960BD04}",
             "Name": "Realtek USB Audio",
             "Version": "6.3.9600.2369",
             "Source": "Local PC"
         },
         {
-            "Id": "{D9FB7F91-9687-4B09-894D-072903CAD\u2026",
+            "Id": "{D9FB7F91-9687-4B09-894D-072903CADEA4}",
             "Name": "Qualcomm USB Drivers For Windows",
             "Version": "1.00.57",
             "Source": "Local PC"
         },
         {
-            "Id": "{13016E80-C7E5-4610-B149-FA8381CEE\u2026",
+            "Id": "{13016E80-C7E5-4610-B149-FA8381CEE008}",
             "Name": "QTTabBar ver 1043",
             "Version": "0.9.0",
             "Source": "Local PC"
         },
         {
-            "Id": "{B2FE1952-0186-46C3-BAEC-A80AA35AC\u2026",
+            "Id": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8\u2026",
             "Name": "NVIDIA HD Audio Driver 1.3.40.14",
             "Version": "1.3.40.14",
             "Source": "Local PC"
         },
         {
-            "Id": "{B2FE1952-0186-46C3-BAEC-A80AA35AC\u2026",
-            "Name": "NVIDIA Graphics Driver 546.33",
-            "Version": "546.33",
+            "Id": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8\u2026",
+            "Name": "NVIDIA Graphics Driver 546.65",
+            "Version": "546.65",
             "Source": "Local PC"
         },
         {
-            "Id": "{B2FE1952-0186-46C3-BAEC-A80AA35AC\u2026",
-            "Name": "NVIDIA FrameView SDK 1.3.8513.322\u2026",
+            "Id": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8\u2026",
+            "Name": "NVIDIA FrameView SDK 1.3.8513.32290073",
             "Version": "1.3.8513.32290073",
             "Source": "Local PC"
         },
         {
-            "Id": "NVIDIACorp.NVIDIAControlPanel_56jy\u2026",
+            "Id": "NVIDIACorp.NVIDIAControlPanel_56jybvy\u2026",
             "Name": "NVIDIA Control Panel",
             "Version": "8.1.964.0",
             "Source": "Microsoft Store"
@@ -2330,16 +4292,22 @@
             "Source": "Local PC"
         },
         {
-            "Id": "{94D75E05-82F7-4038-B7E4-797E066B7\u2026",
+            "Id": "{3120BAF5-576B-4AEB-882E-5F891B5C6AF5}",
             "Name": "Node.js",
-            "Version": "21.5.0",
+            "Version": "21.6.0",
             "Source": "Local PC"
         },
         {
-            "Id": "{15289038-41BE-48F8-B8B9-0B1021D30\u2026",
+            "Id": "{15289038-41BE-48F8-B8B9-0B1021D3089E\u2026",
             "Name": "MSI Center SDK",
             "Version": "3.2023.1221.01",
             "Source": "Local PC"
+        },
+        {
+            "Id": "9426MICRO-STARINTERNATION.MSICenter_k\u2026",
+            "Name": "MSI Center",
+            "Version": "2.0.30.0",
+            "Source": "Microsoft Store"
         },
         {
             "Id": "MozillaMaintenanceService",
@@ -2354,111 +4322,123 @@
             "Source": "Microsoft Store"
         },
         {
-            "Id": "{6F320B93-EE3C-4826-85E0-ADF79F8D4\u2026",
+            "Id": "{6F320B93-EE3C-4826-85E0-ADF79F8D4C61}",
             "Name": "Microsoft Visual Studio Installer",
-            "Version": "3.6.2122.36397",
+            "Version": "3.8.2122.37638",
             "Source": "Local PC"
         },
         {
-            "Id": "{DF1B52DF-C88E-4DDF-956B-6E7A03327\u2026",
-            "Name": "Microsoft Visual C++ 2022 X86 Min\u2026",
+            "Id": "{DF1B52DF-C88E-4DDF-956B-6E7A03327F46}",
+            "Name": "Microsoft Visual C++ 2022 X86 Minimum\u2026",
             "Version": "14.38.33130",
             "Source": "Local PC"
         },
         {
-            "Id": "{5CA9AE7B-2EFC-4F02-81CD-32ABE173C\u2026",
-            "Name": "Microsoft Visual C++ 2022 X86 Add\u2026",
+            "Id": "{5CA9AE7B-2EFC-4F02-81CD-32ABE173C755}",
+            "Name": "Microsoft Visual C++ 2022 X86 Additio\u2026",
             "Version": "14.38.33130",
             "Source": "Local PC"
         },
         {
-            "Id": "{1CA7421F-A225-4A9C-B320-A36981A2B\u2026",
-            "Name": "Microsoft Visual C++ 2022 X64 Min\u2026",
+            "Id": "{1CA7421F-A225-4A9C-B320-A36981A2B789}",
+            "Name": "Microsoft Visual C++ 2022 X64 Minimum\u2026",
             "Version": "14.38.33130",
             "Source": "Local PC"
         },
         {
-            "Id": "{C31777DB-51C1-4B19-9F80-38EF5C1D7\u2026",
-            "Name": "Microsoft Visual C++ 2022 X64 Add\u2026",
+            "Id": "{C31777DB-51C1-4B19-9F80-38EF5C1D7C89}",
+            "Name": "Microsoft Visual C++ 2022 X64 Additio\u2026",
             "Version": "14.38.33130",
             "Source": "Local PC"
         },
         {
-            "Id": "Microsoft.VCLibs.140.00_8wekyb3d8b\u2026",
-            "Name": "Microsoft Visual C++ 2015 UWP Run\u2026",
+            "Id": "Microsoft.VCLibs.140.00_8wekyb3d8bbwe",
+            "Name": "Microsoft Visual C++ 2015 UWP Runtime\u2026",
             "Version": "14.0.32530.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "{8122DAB1-ED4D-3676-BB0A-CA3681965\u2026",
-            "Name": "Microsoft Visual C++ 2013 x86 Min\u2026",
+            "Id": "{8122DAB1-ED4D-3676-BB0A-CA368196543E}",
+            "Name": "Microsoft Visual C++ 2013 x86 Minimum\u2026",
             "Version": "12.0.40664",
             "Source": "Local PC"
         },
         {
-            "Id": "{D401961D-3A20-3AC7-943B-6139D5BD4\u2026",
-            "Name": "Microsoft Visual C++ 2013 x86 Add\u2026",
+            "Id": "{D401961D-3A20-3AC7-943B-6139D5BD490A}",
+            "Name": "Microsoft Visual C++ 2013 x86 Additio\u2026",
             "Version": "12.0.40664",
             "Source": "Local PC"
         },
         {
-            "Id": "{53CF6934-A98D-3D84-9146-FC4EDF3D5\u2026",
-            "Name": "Microsoft Visual C++ 2013 x64 Min\u2026",
+            "Id": "{53CF6934-A98D-3D84-9146-FC4EDF3D5641}",
+            "Name": "Microsoft Visual C++ 2013 x64 Minimum\u2026",
             "Version": "12.0.40664",
             "Source": "Local PC"
         },
         {
-            "Id": "{010792BA-551A-3AC0-A7EF-0FAB4156C\u2026",
-            "Name": "Microsoft Visual C++ 2013 x64 Add\u2026",
+            "Id": "{010792BA-551A-3AC0-A7EF-0FAB4156C382}",
+            "Name": "Microsoft Visual C++ 2013 x64 Additio\u2026",
             "Version": "12.0.40664",
             "Source": "Local PC"
         },
         {
-            "Id": "{BD95A8CD-1D9F-35AD-981A-3E7925026\u2026",
-            "Name": "Microsoft Visual C++ 2012 x86 Min\u2026",
+            "Id": "{BD95A8CD-1D9F-35AD-981A-3E7925026EBB}",
+            "Name": "Microsoft Visual C++ 2012 x86 Minimum\u2026",
             "Version": "11.0.61135",
             "Source": "Local PC"
         },
         {
-            "Id": "{B175520C-86A2-35A7-8619-86DC37968\u2026",
-            "Name": "Microsoft Visual C++ 2012 x86 Add\u2026",
+            "Id": "{B175520C-86A2-35A7-8619-86DC379688B9}",
+            "Name": "Microsoft Visual C++ 2012 x86 Additio\u2026",
             "Version": "11.0.61135",
             "Source": "Local PC"
         },
         {
-            "Id": "{CF2BEA3C-26EA-32F8-AA9B-331F7E34B\u2026",
-            "Name": "Microsoft Visual C++ 2012 x64 Min\u2026",
+            "Id": "{CF2BEA3C-26EA-32F8-AA9B-331F7E34BA97}",
+            "Name": "Microsoft Visual C++ 2012 x64 Minimum\u2026",
             "Version": "11.0.61135",
             "Source": "Local PC"
         },
         {
-            "Id": "{37B8F9C7-03FB-3253-8781-2517C99D7\u2026",
-            "Name": "Microsoft Visual C++ 2012 x64 Add\u2026",
+            "Id": "{37B8F9C7-03FB-3253-8781-2517C99D7C00}",
+            "Name": "Microsoft Visual C++ 2012 x64 Additio\u2026",
             "Version": "11.0.61135",
             "Source": "Local PC"
         },
         {
-            "Id": "{ad8a2fa1-06e7-4b0d-927d-6e54b3d31\u2026",
-            "Name": "Microsoft Visual C++ 2005 Redistr\u2026",
+            "Id": "{ad8a2fa1-06e7-4b0d-927d-6e54b3d31028}",
+            "Name": "Microsoft Visual C++ 2005 Redistribut\u2026",
             "Version": "8.0.61186",
             "Source": "Local PC"
         },
         {
-            "Id": "{C5E3A69D-D391-45A6-A8FB-00B01E2B0\u2026",
-            "Name": "Microsoft Visual Basic/C++ Runtim\u2026",
+            "Id": "{C5E3A69D-D391-45A6-A8FB-00B01E2B010D}",
+            "Name": "Microsoft Visual Basic/C++ Runtime (x\u2026",
             "Version": "1.1.0",
             "Source": "Local PC"
         },
         {
-            "Id": "Microsoft.WindowsStore_8wekyb3d8bb\u2026",
+            "Id": "Microsoft.WindowsStore_8wekyb3d8bbwe",
             "Name": "Microsoft Store",
             "Version": "22305.1401.1.0",
             "Source": "Microsoft Store"
         },
         {
+            "Id": "{36E492B8-CB83-4DA5-A5D2-D99A8E8228A1}",
+            "Name": "Microsoft SQL Server 2019 LocalDB",
+            "Version": "15.0.4153.1",
+            "Source": "Local PC"
+        },
+        {
             "Id": "OneNoteFreeRetail - en-us",
             "Name": "Microsoft OneNote - en-us",
             "Version": "16.0.17126.20132",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "{57B9F896-DE52-4CFA-B7DE-9EFD00A1E020}",
+            "Name": "Microsoft ODBC Driver 17 for SQL Serv\u2026",
+            "Version": "17.10.5.1",
             "Source": "Local PC"
         },
         {
@@ -2468,73 +4448,121 @@
             "Source": "Local PC"
         },
         {
-            "Id": "Microsoft.NET.Native.Runtime.1.7_8\u2026",
-            "Name": "Microsoft .Net Native Runtime Pac\u2026",
+            "Id": "{3BA7CAA9-97BA-4528-B7E1-B640910BB149}",
+            "Name": "Microsoft Azure PowerShell - April 20\u2026",
+            "Version": "5.7.0.18831",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "{3C188EC3-3DFE-48B1-9C45-D1AF419D534F}",
+            "Name": "Microsoft Azure Libraries for .NET \u2013 \u2026",
+            "Version": "3.0.2310.23",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "Microsoft Azure Compute Emulator - v2\u2026",
+            "Name": "Microsoft Azure Compute Emulator - v2\u2026",
+            "Version": "2.9.8999.43",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "{90462BD2-DF5B-449C-A401-FCC1DC264E4E}",
+            "Name": "Microsoft Azure Authoring Tools - v2.\u2026",
+            "Version": "2.9.8999.45",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "{24E9FB48-4983-4C9C-93D2-27307AE92B5E}",
+            "Name": "Microsoft .NET SDK 8.0.101 (x64) from\u2026",
+            "Version": "8.1.123.58017",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "Microsoft.NET.Native.Runtime.1.7_8wek\u2026",
+            "Name": "Microsoft .Net Native Runtime Package\u2026",
             "Version": "1.7.27422.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "Microsoft.NET.Native.Runtime.2.2_8\u2026",
-            "Name": "Microsoft .Net Native Runtime Pac\u2026",
+            "Id": "Microsoft.NET.Native.Runtime.2.2_8wek\u2026",
+            "Name": "Microsoft .Net Native Runtime Package\u2026",
             "Version": "2.2.28604.0",
             "Source": "Microsoft Store"
         },
         {
+            "Id": "Microsoft.NET.Native.Framework.1.7_8w\u2026",
+            "Name": "Microsoft .Net Native Framework Packa\u2026",
+            "Version": "1.7.27413.0",
+            "Source": "Microsoft Store"
+        },
+        {
+            "Id": "Microsoft.NET.Native.Framework.2.2_8w\u2026",
+            "Name": "Microsoft .Net Native Framework Packa\u2026",
+            "Version": "2.2.29512.0",
+            "Source": "Microsoft Store"
+        },
+        {
             "Id": "KLiteCodecPack_is1",
-            "Name": "K-Lite Codec Pack 18.0.0 Standard",
-            "Version": "18.0.0",
+            "Name": "K-Lite Codec Pack 18.0.5 Standard",
+            "Version": "18.0.5",
             "Source": "Local PC"
         },
         {
-            "Id": "{64A3A4F4-B792-11D6-A78A-00B0D0180\u2026",
-            "Name": "Java SE Development Kit 8 Update \u2026",
+            "Id": "JSmooth 0.9.9-7",
+            "Name": "JSmooth 0.9.9-7",
+            "Version": "Unknown",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "{64A3A4F4-B792-11D6-A78A-00B0D0180211}",
+            "Name": "Java SE Development Kit 8 Update 211 \u2026",
             "Version": "8.0.2110.12",
             "Source": "Local PC"
         },
         {
-            "Id": "{71324AE4-039E-4CA4-87B4-2F6418039\u2026",
+            "Id": "{71324AE4-039E-4CA4-87B4-2F64180391F0}",
             "Name": "Java 8 Update 391 (64-bit)",
             "Version": "8.0.3910.13",
             "Source": "Local PC"
         },
         {
-            "Id": "{71324AE4-039E-4CA4-87B4-2F3218039\u2026",
+            "Id": "{71324AE4-039E-4CA4-87B4-2F32180391F0}",
             "Name": "Java 8 Update 391",
             "Version": "8.0.3910.13",
             "Source": "Local PC"
         },
         {
-            "Id": "{CE2F96D0-63D2-4B9C-A8D6-0D1A60840\u2026",
+            "Id": "{CE2F96D0-63D2-4B9C-A8D6-0D1A60840BD8}",
             "Name": "iVMS-4200",
             "Version": "3.10.0.6",
             "Source": "Local PC"
         },
         {
             "Id": "HAXM",
-            "Name": "Intel\u00ae Hardware Accelerated Execu\u2026",
+            "Name": "Intel\u00ae Hardware Accelerated Execution\u2026",
             "Version": "7.6.5",
             "Source": "Local PC"
         },
         {
-            "Id": "AppUp.IntelGraphicsExperience_8j3e\u2026",
+            "Id": "AppUp.IntelGraphicsExperience_8j3eq9e\u2026",
             "Name": "Intel\u00ae Graphics Command Center",
             "Version": "1.100.5131.0",
             "Source": "Microsoft Store"
         },
         {
-            "Id": "{00000230-0220-1033-84C8-B8D95FA3C\u2026",
+            "Id": "{00000230-0220-1033-84C8-B8D95FA3C8C3}",
             "Name": "Intel(R) Wireless Bluetooth(R)",
             "Version": "22.230.0.2",
             "Source": "Local PC"
         },
         {
             "Id": "PROSetDX",
-            "Name": "Intel(R) Network Connections 26.2\u2026",
+            "Name": "Intel(R) Network Connections 26.2.0.1",
             "Version": "26.2.0.1",
             "Source": "Local PC"
         },
         {
-            "Id": "{9b79ab4c-1596-44ee-84e2-a2001f7af\u2026",
+            "Id": "{9b79ab4c-1596-44ee-84e2-a2001f7af089}",
             "Name": "Intel(R) Chipset Device Software",
             "Version": "10.1.18836.8283",
             "Source": "Local PC"
@@ -2546,19 +4574,31 @@
             "Source": "Local PC"
         },
         {
+            "Id": "{D6E7BFE4-895D-49E9-9D2E-A214C18FA1E5}",
+            "Name": "IIS 10.0 Express",
+            "Version": "10.0.08412",
+            "Source": "Local PC"
+        },
+        {
             "Id": "Honeyview",
             "Name": "Honeyview",
             "Version": "5.51",
             "Source": "Local PC"
         },
         {
+            "Id": "HotA + HD_is1",
+            "Name": "Heroes of Might and Magic\u00ae III: Horn \u2026",
+            "Version": "1.7.0",
+            "Source": "Local PC"
+        },
+        {
             "Id": "Heroes of Might and Magic\u00ae III",
-            "Name": "Heroes of Might and Magic\u00ae III Co\u2026",
+            "Name": "Heroes of Might and Magic\u00ae III Comple\u2026",
             "Version": "Unknown",
             "Source": "Local PC"
         },
         {
-            "Id": "Microsoft.HEIFImageExtension_8weky\u2026",
+            "Id": "Microsoft.HEIFImageExtension_8wekyb3d\u2026",
             "Name": "HEIF Image Extensions",
             "Version": "1.0.61171.0",
             "Source": "Microsoft Store"
@@ -2576,13 +4616,13 @@
             "Source": "Local PC"
         },
         {
-            "Id": "{93086761-C4E7-48FC-A090-E9AE1C73B\u2026",
+            "Id": "{93086761-C4E7-48FC-A090-E9AE1C73B254}",
             "Name": "Futuremark SystemInfo",
             "Version": "5.64.1188.0",
             "Source": "Local PC"
         },
         {
-            "Id": "{3886F49E-5C63-11EC-B6F7-42010A402\u2026",
+            "Id": "{3886F49E-5C63-11EC-B6F7-42010A40204E}",
             "Name": "Evernote Legacy v. 6.25.3",
             "Version": "6.25.3.9348",
             "Source": "Local PC"
@@ -2600,7 +4640,7 @@
             "Source": "Steam"
         },
         {
-            "Id": "{56DDDFB8-7F79-4480-89D5-25E1F52AB\u2026",
+            "Id": "{56DDDFB8-7F79-4480-89D5-25E1F52AB28F}",
             "Name": "Bonjour",
             "Version": "3.1.0.1",
             "Source": "Local PC"
@@ -2613,7 +4653,7 @@
         },
         {
             "Id": "Steam App 813780",
-            "Name": "Age of Empires II: Definitive Edi\u2026",
+            "Name": "Age of Empires II: Definitive Edition",
             "Version": "Unknown",
             "Source": "Steam"
         }
