@@ -235,7 +235,7 @@
         {
             "Id": "VSCodium.VSCodium",
             "Name": "VSCodium",
-            "Version": "1.85.1.23348",
+            "Version": "1.85.2.24019",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -301,6 +301,90 @@
             "Version": "16.11.33",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vcredist140",
+            "Name": "Vcredist140",
+            "Version": "14.38.33130",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vboxapi",
+            "Name": "Vboxapi",
+            "Version": "1.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vboxapi",
+            "Name": "Vboxapi",
+            "Version": "1.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "vboxapi",
+            "Name": "Vboxapi",
+            "Version": "1.0",
+            "Source": "Pip",
+            "ManagerName": "Pip",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -632,27 +716,6 @@
             }
         },
         {
-            "Id": "Rufus.Rufus",
-            "Name": "Rufus",
-            "Version": "3.13.1730.0",
-            "Source": "Winget: winget",
-            "ManagerName": "Winget",
-            "InstallationOptions": {
-                "SkipHashCheck": false,
-                "InteractiveInstallation": false,
-                "RunAsAdministrator": false,
-                "Architecture": "",
-                "InstallationScope": "",
-                "CustomParameters": [],
-                "PreRelease": false,
-                "CustomInstallLocation": ""
-            },
-            "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
-            }
-        },
-        {
             "Id": "rich",
             "Name": "Rich",
             "Version": "13.7.0",
@@ -739,7 +802,7 @@
         {
             "Id": "qBittorrent.qBittorrent",
             "Name": "qBittorrent",
-            "Version": "4.6.2",
+            "Version": "4.6.3",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1011,8 +1074,8 @@
         },
         {
             "Id": "TeamProwlarr.Prowlarr",
-            "Name": "Prowlarr version 1.12.1",
-            "Version": "1.12.1",
+            "Name": "Prowlarr version 1.13.0",
+            "Version": "1.13.0",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1036,6 +1099,48 @@
             "Version": "23.3.2",
             "Source": "Pip",
             "ManagerName": "Pip",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "php",
+            "Name": "Php",
+            "Version": "8.3.2",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "php",
+            "Name": "Php",
+            "Version": "8.3.2",
+            "Source": "Scoop (Global): main",
+            "ManagerName": "Scoop",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -1158,8 +1263,8 @@
         },
         {
             "Id": "Oracle.VirtualBox",
-            "Name": "Oracle VM VirtualBox 7.0.12",
-            "Version": "7.0.12",
+            "Name": "Oracle VM VirtualBox 7.0.14",
+            "Version": "7.0.14",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1684,7 +1789,7 @@
         {
             "Id": "Microsoft.VisualStudioCode",
             "Name": "Microsoft Visual Studio Code",
-            "Version": "1.85.1",
+            "Version": "1.85.2",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -1971,8 +2076,8 @@
                 "CustomInstallLocation": ""
             },
             "Updates": {
-                "UpdatesIgnored": false,
-                "IgnoredVersion": ""
+                "UpdatesIgnored": true,
+                "IgnoredVersion": "*"
             }
         },
         {
@@ -2144,6 +2249,111 @@
             }
         },
         {
+            "Id": "KB3035131",
+            "Name": "Kb3035131",
+            "Version": "1.0.3",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB3033929",
+            "Name": "Kb3033929",
+            "Version": "1.0.5",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB2999226",
+            "Name": "Kb2999226",
+            "Version": "1.0.20181019",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB2919442",
+            "Name": "Kb2919442",
+            "Version": "1.0.20160915",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "KB2919355",
+            "Name": "Kb2919355",
+            "Version": "1.0.20160915",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "sylikc.JPEGView",
             "Name": "JPEGView",
             "Version": "1.3.46.0",
@@ -2166,8 +2376,8 @@
         },
         {
             "Id": "Oracle.JDK.21",
-            "Name": "Java(TM) SE Development Kit 21.0.1 (6\u2026",
-            "Version": "21.0.1.0",
+            "Name": "Java(TM) SE Development Kit 21.0.2 (6\u2026",
+            "Version": "21.0.2.0",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -2209,7 +2419,7 @@
         {
             "Id": "Insomnia.Insomnia",
             "Name": "Insomnia",
-            "Version": "8.5.1",
+            "Version": "8.6.0",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -2396,11 +2606,11 @@
             }
         },
         {
-            "Id": "fancontrol",
-            "Name": "Fancontrol",
-            "Version": "177",
-            "Source": "Scoop: extras",
-            "ManagerName": "Scoop",
+            "Id": "dotnetfx",
+            "Name": "Dotnetfx",
+            "Version": "4.8.0.20220524",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
             "InstallationOptions": {
                 "SkipHashCheck": false,
                 "InteractiveInstallation": false,
@@ -2480,6 +2690,48 @@
             }
         },
         {
+            "Id": "composer",
+            "Name": "Composer",
+            "Version": "2.6.6",
+            "Source": "Scoop (Global): main",
+            "ManagerName": "Scoop",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "chocolatey-windowsupdate.extension",
+            "Name": "Chocolatey Windowsupdate Extension",
+            "Version": "1.0.5",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "Chocolatey.ChocolateyGUI",
             "Name": "Chocolatey GUI",
             "Version": "2.1.0.0",
@@ -2501,9 +2753,72 @@
             }
         },
         {
-            "Id": "Chocolatey",
+            "Id": "chocolatey-dotnetfx.extension",
+            "Name": "Chocolatey Dotnetfx Extension",
+            "Version": "1.0.1",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "chocolatey-core.extension",
+            "Name": "Chocolatey Core Extension",
+            "Version": "1.4.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "chocolatey-compatibility.extension",
+            "Name": "Chocolatey Compatibility Extension",
+            "Version": "1.0.0",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
+            "Id": "chocolatey",
             "Name": "Chocolatey",
-            "Version": "CLI",
+            "Version": "2.2.2",
             "Source": "Chocolatey",
             "ManagerName": "Chocolatey",
             "InstallationOptions": {
@@ -2628,8 +2943,8 @@
         },
         {
             "Id": "beekeeper-studio.beekeeper-studio",
-            "Name": "Beekeeper Studio 4.1.10",
-            "Version": "4.1.10",
+            "Name": "Beekeeper Studio 4.1.13",
+            "Version": "4.1.13",
             "Source": "Winget: winget",
             "ManagerName": "Winget",
             "InstallationOptions": {
@@ -3908,6 +4223,27 @@
             }
         },
         {
+            "Id": "autohotkey.portable",
+            "Name": "Autohotkey Portable",
+            "Version": "2.0.11",
+            "Source": "Chocolatey",
+            "ManagerName": "Chocolatey",
+            "InstallationOptions": {
+                "SkipHashCheck": false,
+                "InteractiveInstallation": false,
+                "RunAsAdministrator": false,
+                "Architecture": "",
+                "InstallationScope": "",
+                "CustomParameters": [],
+                "PreRelease": false,
+                "CustomInstallLocation": ""
+            },
+            "Updates": {
+                "UpdatesIgnored": false,
+                "IgnoredVersion": ""
+            }
+        },
+        {
             "Id": "AutoHotkey.AutoHotkey",
             "Name": "AutoHotkey",
             "Version": "2.0.11",
@@ -4259,6 +4595,12 @@
             "Id": "{13016E80-C7E5-4610-B149-FA8381CEE008}",
             "Name": "QTTabBar ver 1043",
             "Version": "0.9.0",
+            "Source": "Local PC"
+        },
+        {
+            "Id": "b3c9519f-9086-5484-90b3-1a7eda504a7f",
+            "Name": "Penpot Desktop",
+            "Version": "0.2.33",
             "Source": "Local PC"
         },
         {
